@@ -21,29 +21,9 @@ We help startups, small businesses, and students build modern, responsive, and p
 ## 🛠️ Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
-- **Backend (for projects):** PHP, MySQL
 - **Tools:** VS Code, GitHub, Netlify
 - **Design:** Figma (UI/UX)
 - **Hosting:** Netlify
-
----
-
-## 📂 Project Structure
-LocalGrowth-Studio/
-│
-├── index.html
-├── about.html
-├── services.html
-├── contact.html
-├── css/
-│ └── style.css
-├── js/
-│ └── script.js
-└── assets/
-└── images/
-
----
-
 
 ---
 
