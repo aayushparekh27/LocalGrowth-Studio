@@ -1095,6 +1095,11 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li id="logout-li" style="display: none;">
+                <a href="#" id="logout-btn" style="color: #ff6b6b;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
             </ul>
         </nav>
     </header>
@@ -1555,98 +1560,125 @@
             <p>&copy; 2025 LocalGrowth Studio. All rights reserved.</p>
         </div>
     </footer>
+<script>
+    // Mobile Menu Toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
 
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Form Submission with Formspree
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const form = e.target;
-            const formData = new FormData(form);
-            const submitButton = form.querySelector('button[type="submit"]');
-            const statusDiv = document.getElementById('form-status');
-            
-            // Change button text to indicate loading
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitButton.disabled = true;
-            
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    statusDiv.textContent = 'Thank you for your message! We will get back to you soon.';
-                    statusDiv.className = 'form-status success';
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                statusDiv.textContent = 'Oops! There was a problem submitting your form. Please try again or contact us directly.';
-                statusDiv.className = 'form-status error';
-            } finally {
-                // Reset button
-                submitButton.innerHTML = 'Get Free Quote';
-                submitButton.disabled = false;
-                
-                // Scroll to status message
-                statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+    // Logout Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const logoutBtn = document.getElementById('logout-btn');
+        const logoutLi = document.getElementById('logout-li');
+        
+        // Check if user is logged in
+        const isLoggedIn = localStorage.getItem('isLoggedIn') || sessionStorage.getItem('isLoggedIn');
+        
+        if (isLoggedIn === 'true') {
+            logoutLi.style.display = 'block';
+        } else {
+            logoutLi.style.display = 'none';
+        }
+        
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
+                // Clear login status
+                localStorage.removeItem('isLoggedIn');
+                sessionStorage.removeItem('isLoggedIn');
                 
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.querySelector('.nav-links').classList.remove('active');
+                // Redirect to auth page
+                window.location.href = 'auth.html';
+            });
+        }
+    });
+
+    // Form Submission with Formspree
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const form = e.target;
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const statusDiv = document.getElementById('form-status');
+        
+        // Change button text to indicate loading
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitButton.disabled = true;
+        
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
                 }
             });
+            
+            if (response.ok) {
+                statusDiv.textContent = 'Thank you for your message! We will get back to you soon.';
+                statusDiv.className = 'form-status success';
+                form.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            statusDiv.textContent = 'Oops! There was a problem submitting your form. Please try again or contact us directly.';
+            statusDiv.className = 'form-status error';
+        } finally {
+            // Reset button
+            submitButton.innerHTML = 'Get Free Quote';
+            submitButton.disabled = false;
+            
+            // Scroll to status message
+            statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            }
         });
+    });
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    // Add animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.feature-card, .service-card, .project-card, .pricing-card, .testimonial-card, .language-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
         });
-    </script>
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.feature-card, .service-card, .project-card, .pricing-card, .testimonial-card, .language-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+</script>
 </body>
 </html>
