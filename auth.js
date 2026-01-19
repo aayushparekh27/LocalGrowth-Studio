@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("❌ " + error.message);
     } else {
       alert("✅ Login successful!");
-      window.location.href = "index.html";
+      window.location.href = "home.html";
     }
   });
 
