@@ -1095,9 +1095,11 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li id="logout-li" style="display: none;">
-                <a href="#" id="logout-btn" style="color: #ff6b6b;">
+                <li id="logout-li" style="display:none;">
+                <a href="#" id="logout-btn">
                     <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                </li>
                 </a>
             </li>
             </ul>
@@ -1565,43 +1567,56 @@
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
 <script>
+/* ===============================
+   SUPABASE CONFIG
+================================ */
 const supabase = window.supabase.createClient(
   "https://mtnuxxrqtfrezrbypqzr.supabase.co",
   "sb_publishable_DmlEgucOtfmUfu5FBeOUHw_mReGFpR1"
 );
 
 document.addEventListener("DOMContentLoaded", async () => {
+  console.log("✅ HOME JS LOADED");
 
-  /* MOBILE MENU */
+  /* ---------- MOBILE MENU ---------- */
   const menuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
-  if (menuBtn) {
+
+  if (menuBtn && navLinks) {
     menuBtn.addEventListener("click", () => {
       navLinks.classList.toggle("active");
     });
   }
 
-  /* AUTH CHECK */
+  /* ---------- AUTH CHECK ---------- */
   const logoutLi = document.getElementById("logout-li");
   const logoutBtn = document.getElementById("logout-btn");
 
-  const { data: { session } } = await supabase.auth.getSession();
-  console.log("SESSION:", session); // debug
-
-  if (!session) {
-    window.location.replace("index.html"); // auth page
+  if (!logoutLi || !logoutBtn) {
+    console.error("❌ Logout HTML elements missing");
     return;
   }
 
-  // show logout
-  if (logoutLi) logoutLi.style.display = "block";
+  const { data: { session }, error } = await supabase.auth.getSession();
+  console.log("SESSION =", session);
 
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", async (e) => {
-      e.preventDefault();
-      await supabase.auth.signOut();
-      window.location.replace("index.html");
-    });
+  // ❌ NOT LOGGED IN → AUTH PAGE
+  if (!session) {
+    console.log("❌ No session, redirecting to auth");
+    window.location.replace("index.html");
+    return;
   }
+
+  // ✅ LOGGED IN → SHOW LOGOUT
+  console.log("✅ User logged in, showing logout");
+  logoutLi.style.display = "block";
+
+  /* ---------- LOGOUT ---------- */
+  logoutBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    console.log("🚪 Logout clicked");
+    await supabase.auth.signOut();
+    window.location.replace("index.html");
+  });
 });
 </script>
