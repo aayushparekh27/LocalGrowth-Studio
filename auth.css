@@ -13,28 +13,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+
+  /* ✅ better mobile height */
+  min-height: 100svh;
+
+  padding: 20px;
   background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
 }
 
 .container {
   position: relative;
-  width: 850px;
+
+  /* ✅ responsive width */
+  width: min(850px, 100%);
   height: 550px;
+
   background: #fff;
-  margin: 20px;
   border-radius: 30px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
 .container h1 {
-  font-size: 36px;
+  font-size: clamp(26px, 3.2vw, 36px);
   margin: -10px 0;
 }
 
 .container p {
-  font-size: 14.5px;
+  font-size: clamp(13px, 1.6vw, 14.5px);
   margin: 15px 0;
 }
 
@@ -52,7 +58,10 @@ form {
   align-items: center;
   color: #333;
   text-align: center;
-  padding: 40px;
+
+  /* ✅ responsive padding */
+  padding: clamp(18px, 4vw, 40px);
+
   z-index: 1;
   transition: 0.6s ease-in-out 1.2s, visibility 0s 1s;
 }
@@ -70,7 +79,7 @@ form {
 
 .input-box {
   position: relative;
-  margin: 30px 0;
+  margin: 22px 0;
 }
 
 .input-box input {
@@ -122,6 +131,8 @@ form {
 .social-icons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* ✅ small screen pe wrap */
+  gap: 10px;
 }
 
 .social-icons a {
@@ -131,7 +142,6 @@ form {
   border-radius: 8px;
   font-size: 24px;
   color: #333;
-  margin: 0 8px;
 }
 
 .toggle-box {
@@ -147,7 +157,6 @@ form {
   width: 300%;
   height: 100%;
   background: #7494ec;
-  /* border: 2px solid red; */
   border-radius: 150px;
   z-index: 2;
   transition: 1.8s ease-in-out;
@@ -161,7 +170,6 @@ form {
   position: absolute;
   width: 50%;
   height: 100%;
-  /* background: seagreen; */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -169,6 +177,9 @@ form {
   align-items: center;
   z-index: 2;
   transition: 0.6s ease-in-out;
+
+  /* ✅ prevent text overflow */
+  padding: 16px;
 }
 
 .toggle-panel.toggle-left {
@@ -191,6 +202,7 @@ form {
 
 .toggle-panel p {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .toggle-panel .btn {
@@ -201,20 +213,26 @@ form {
   box-shadow: none;
 }
 
+/* ✅ Mobile Layout */
 @media screen and (max-width: 650px) {
+  body {
+    padding: 12px;
+  }
+
   .container {
-    height: calc(100vh - 40px);
+    height: calc(100svh - 24px);
+    border-radius: 22px;
   }
 
   .form-box {
     bottom: 0;
     width: 100%;
-    height: 70%;
+    height: 72%;
+    right: 0;
   }
 
   .container.active .form-box {
-    right: 0;
-    bottom: 30%;
+    bottom: 28%;
   }
 
   .toggle-box::before {
@@ -226,25 +244,27 @@ form {
   }
 
   .container.active .toggle-box::before {
-    left: 0;
-    top: 70%;
-  }
-
-  .container.active .toggle-panel.toggle-left {
-    left: 0;
-    top: -30%;
+    top: 72%;
   }
 
   .toggle-panel {
     width: 100%;
-    height: 30%;
+    height: 28%;
   }
+
   .toggle-panel.toggle-left {
     top: 0;
+    left: 0;
   }
+
   .toggle-panel.toggle-right {
     right: 0;
-    bottom: -30%;
+    bottom: -28%;
+  }
+
+  .container.active .toggle-panel.toggle-left {
+    top: -28%;
+    left: 0;
   }
 
   .container.active .toggle-panel.toggle-right {
@@ -252,12 +272,18 @@ form {
   }
 }
 
+/* ✅ Extra Small */
 @media screen and (max-width: 400px) {
   .form-box {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .input-box input {
+    font-size: 15px;
+    padding: 12px 44px 12px 16px;
   }
 
   .toggle-panel h1 {
-    font-size: 30px;
+    font-size: 26px;
   }
 }
