@@ -343,14 +343,15 @@ form{width:100%;}
     border-radius: 22px;
     backdrop-filter: blur(10px);
   }
-
-  /* make gradient become top header */
-  .toggle-box::before{
-    width:100%;
-    height: 240px;
-    transform: none !important;
-    border-radius: 22px 22px 26px 26px;
-  }
+.toggle-box{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:auto; /* ✅ allow clicks */
+}
+.toggle-box::before{
+  pointer-events:none; /* ✅ background layer ignores clicks */
+}
 
   .toggle-panel{
     width:100%;
