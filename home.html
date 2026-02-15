@@ -1,1636 +1,1370 @@
-<!--
-####################################################################################################
-#                                                                                                  #
-#        😂😂😂😂😂   T H E L O C A L G R O W T H S T U D I O   😂😂😂😂😂        #
-#                                                                                                  #
-####################################################################################################
-
-👀 OYE DEVELOPER / INSPECTOR SAAB!
-
-Haan haan, hume pata tha tum yahan aaoge 😏
-Par bhai… PAGE SOURCE dekh ke website judge karna
-bilkul wahi baat hai jaise
-restaurant ka menu dekh ke khana rate kar dena 🍔❌
-
-😎 Website ko WEBSITE ki tarah dekho na!
-
-👉 REAL MAGIC IDHAR HAI:
-https://thelocalgrowthstudio.netlify.app/
-
-⚠️ Warning:
-Zyada source dekhne se dimag me CSS overflow
-aur JavaScript anxiety ho sakti hai 🤯
-
-💡 Pro Tip:
-Client ho? → Website dekho
-Visitor ho? → Website dekho
-Hacker ho? → Bhai galat jagah aa gaye ho 😂
-
-Bas itna hi kehna tha.
-Ab jao, upar scroll karo aur website enjoy karo 🚀
-
-— Team THELOCALGROWTHSTUDIO 😎🔥
-####################################################################################################
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LocalGrowth Studio | Custom Website Design & Student Projects</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Base Styles & Variables */
-        :root {
-            --primary: #8A2BE2;
-            --primary-dark: #6A1CB0;
-            --primary-light: #9d4edd;
-            --secondary: #FF6B35;
-            --secondary-dark: #E55A2B;
-            --white: #FFFFFF;
-            --light-gray: #F8F9FA;
-            --medium-gray: #E9ECEF;
-            --dark-gray: #212529;
-            --text: #495057;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --border-radius: 12px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            color: var(--text);
-            line-height: 1.7;
-            background-color: var(--white);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5 {
-            color: var(--dark-gray);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        section {
-            padding: 6rem 1rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2.2rem;
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
-        }
-
-        .btn-secondary {
-            background-color: var(--secondary);
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--secondary-dark);
-            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title h2 {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary), var(--primary-light));
-            border-radius: 3px;
-        }
-
-        .section-title.secondary h2::after {
-            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
-        }
-
-        .section-title p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            line-height: 1;
-        }
-
-        .logo-line1 {
-            font-size: 1.8rem;
-            font-weight: 800;
-        }
-
-        .logo-line2 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-top: 2px;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-gray);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--dark-gray);
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 12rem 1rem 8rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiM4YTJiZTIiLz48cGF0aCBkPSJNMCw1MDBMMTAwMCw1MDBMMTAwMCw3MDBMMCw3MDBaIiBmaWxsPSIjN2ExY2IwIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0wLDMwMEwxMDAwLDMwMEwxMDAwLDUwMEwwLDUwMFoiIGZpbGw9IiM3YTFjYjAiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTAsMTAwTDEwMDAsMTAwTDEwMDAsMzAwTDAsMzAwWiIgZmlsbD0iIzdhMWNiMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=');
-            opacity: 0.1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            color: var(--white);
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            opacity: 0.9;
-        }
-
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .hero .btn {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        .hero .btn:hover {
-            background-color: var(--light-gray);
-        }
-
-        .hero .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-
-        .hero .btn-outline:hover {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        /* Features Section */
-        .features {
-            background-color: var(--light-gray);
-            position: relative;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .feature-card {
-            background-color: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .feature-card:hover::before {
-            width: 100%;
-            opacity: 0.05;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-        }
-
-        .feature-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        /* Services Section */
-        .services {
-            background-color: var(--white);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            align-self: flex-start;
-            padding: 1rem;
-            background-color: rgba(138, 43, 226, 0.1);
-            border-radius: 12px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            flex-grow: 1;
-        }
-
-        /* Student Projects Section */
-        .student-projects {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .student-projects::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNGRjZCMzUiLz48cGF0aCBkPSJNMCw1MDBMMTAwMCw1MDBMMTAwMCw3MDBMMCw3MDBaIiBmaWxsPSIjRTU1QTJCIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0wLDMwMEwxMDAwLDMwMEwxMDAwLDUwMEwwLDUwMFoiIGZpbGw9IiNFNTVBMkIiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTAsMTAwTDEwMDAsMTAwTDEwMDAsMzAwTDAsMzAwWiIgZmlsbD0iI0U1NUEyQiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=');
-            opacity: 0.1;
-        }
-
-        .student-projects .section-title h2,
-        .student-projects .section-title p {
-            color: var(--white);
-        }
-
-        .student-projects .section-title h2::after {
-            background: linear-gradient(to right, var(--white), rgba(255,255,255,0.7));
-        }
-
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .language-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .language-card:hover {
-            transform: translateY(-5px);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .language-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .language-card h4 {
-            color: var(--white);
-            font-size: 1.2rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .project-header {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: var(--white);
-            text-align: center;
-        }
-
-        .project-price {
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0.5rem 0;
-            color: var(--white);
-        }
-
-        .project-features {
-            padding: 2rem;
-        }
-
-        .project-features ul {
-            list-style: none;
-        }
-
-        .project-features li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            color: var(--text);
-        }
-
-        .project-features li i {
-            color: var(--primary);
-            margin-right: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .project-cta {
-            padding: 0 2rem 2rem;
-            text-align: center;
-        }
-        .project-card:hover .project-header {
-    filter: brightness(1.1);
-}
-
-        /* Custom Project Note */
-        .custom-project-note {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            font-size: 1.2rem;
-            border-left: 4px solid var(--white);
-            color: var(--white);
-        }
-
-        .custom-project-note i {
-            margin-right: 0.5rem;
-            color: var(--white);
-        }
-
-        /* Payment Policy */
-        .payment-policy {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: var(--border-radius);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .payment-policy h4 {
-            color: var(--white);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .payment-policy p {
-            color: var(--white);
-            margin-bottom: 0;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .payment-policy .highlight {
-            color: #FFEB3B;
-            font-weight: 700;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-
-        /* Pricing Section */
-        .pricing {
-            background-color: var(--light-gray);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .pricing-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .pricing-card.featured {
-            border: 2px solid var(--primary);
-            transform: scale(1.05);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-8px);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: linear-gradient(to right, var(--primary), var(--primary-light));
-            color: var(--white);
-            padding: 0.7rem 1.5rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border-bottom-left-radius: var(--border-radius);
-            z-index: 2;
-        }
-
-        .pricing-header {
-            padding: 2.5rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--light-gray), var(--medium-gray));
-            position: relative;
-        }
-
-        .pricing-card.featured .pricing-header {
-            background: linear-gradient(135deg, var(--primary-light), var(--primary));
-            color: var(--white);
-        }
-
-        .pricing-card.featured .pricing-header h3,
-        .pricing-card.featured .pricing-price {
-            color: var(--white);
-        }
-
-        .pricing-price {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 1rem 0;
-        }
-
-        .pricing-features {
-            padding: 2.5rem 2rem;
-        }
-
-        .pricing-features ul {
-            list-style: none;
-        }
-
-        .pricing-features li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .pricing-features li i {
-            color: var(--primary);
-            margin-right: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .pricing-cta {
-            padding: 0 2rem 2.5rem;
-            text-align: center;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--light-gray);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .testimonial-card {
-            background-color: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-
-        .testimonial-card::before { 
-            content: """;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(138, 43, 226, 0.1);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        .testimonial-card::before {
-    content: "“";
-}
-
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            margin-right: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            padding: 1.5rem;
-            background-color: var(--light-gray);
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
-
-        .contact-method:hover {
-            background-color: var(--medium-gray);
-            transform: translateX(5px);
-        }
-
-        .contact-icon {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-right: 1.5rem;
-            width: 50px;
-            text-align: center;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            margin-bottom: 0.7rem;
-            font-weight: 500;
-            color: var(--dark-gray);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 1rem 1.2rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: var(--transition);
-            color: var(--text);
-            background-color: var(--white);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
-        }
-
-        .contact-btns {
-            display: flex;
-            gap: 1.2rem;
-            margin-top: 1rem;
-        }
-        .contact-form textarea {
-    resize: none;
-}
-
-
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            z-index: 100;
-            transition: var(--transition);
-            text-decoration: none;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-        }
-
-  /* Footer - Improved & Clean */
-footer {
-    background: linear-gradient(135deg, var(--dark-gray), #000);
-    color: var(--white);
-    padding: 2.5rem 1rem;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-content h3 {
-    color: var(--white);
-    margin-bottom: 0.4rem;
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-
-.footer-tagline {
-    font-weight: 600;
-    color: var(--primary-light);
-    margin-bottom: 0.6rem;
-    font-size: 0.95rem;
-}
-
-.footer-content p {
-    margin-bottom: 0.3rem;
-    font-size: 0.85rem;
-    color: #ccc;
-}
-
-/* Footer Links */
-.footer-links {
-    margin: 0.8rem 0;
-}
-
-.footer-links a {
-    color: #bbb;
-    margin: 0 8px;
-    text-decoration: none;
-    font-size: 0.85rem;
-}
-
-.footer-links a:hover {
-    color: var(--primary-light);
-}
-
-/* Footer Social */
-.footer-social {
-    margin: 0.6rem 0;
-}
-
-.footer-social a {
-    color: #bbb;
-    margin: 0 10px;
-    font-size: 0.85rem;
-    text-decoration: none;
-}
-
-.footer-social a:hover {
-    color: var(--primary-light);
-}
-
-/* Copyright */
-.footer-copy {
-    margin-top: 0.8rem;
-    font-size: 0.75rem;
-    color: #888;
-}
-
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-
-            h2 {
-                font-size: 2.2rem;
-            }
-
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-
-            .pricing-card.featured:hover {
-                transform: translateY(-8px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.4rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .navbar {
-                padding: 1rem;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                padding: 1.5rem 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                border-top: 1px solid var(--medium-gray);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 0;
-                text-align: center;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem 2rem;
-                color: var(--dark-gray);
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero {
-                padding: 10rem 1rem 6rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-btns {
-                flex-direction: column;
-            }
-            
-            /* Smaller footer on mobile */
-            footer {
-                padding: 1.5rem 1rem;
-            }
-            
-            .footer-content h3 {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            section {
-                padding: 4rem 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            /* Even smaller footer on very small screens */
-            footer {
-                padding: 1rem;
-            }
-            
-            .footer-content h3 {
-                font-size: 1.2rem;
-            }
-            
-            .footer-content p {
-                font-size: 0.8rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .languages-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 400px) {
-            .languages-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-btns .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        /* Form Status Messages */
-        .form-status {
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 1rem;
-            text-align: center;
-            display: none;
-        }
-
-        .form-status.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            display: block;
-        }
-
-        .form-status.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocalGrowth Studio | Custom Website Design & Student Projects</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --primary:#8A2BE2; --primary-2:#9d4edd; --primary-dark:#6A1CB0;
+      --secondary:#FF6B35; --secondary-2:#ff8a5c; --secondary-dark:#E55A2B;
+
+      --bg:#ffffff; --bg-2:#F8F9FA; --card:#ffffff;
+      --text:#495057; --heading:#1f2430; --muted:#6c757d;
+
+      --border: rgba(15, 23, 42, 0.10);
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --shadow-hover: 0 18px 55px rgba(0,0,0,0.12);
+
+      --r-sm: 10px; --r-md: 14px; --r-lg: 18px;
+      --t: 220ms ease;
+      --t2: 420ms cubic-bezier(0.175,0.885,0.32,1.275);
+      --container: 1200px;
+      --pad: 1rem;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+    ::selection{background: rgba(138,43,226,0.22);}
+
+    body::before{
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(138,43,226,0.08), transparent 40%),
+        radial-gradient(circle at 90% 30%, rgba(255,107,53,0.08), transparent 45%),
+        linear-gradient(to bottom, rgba(2,6,23,0.03), transparent 35%);
+    }
+
+    h1,h2,h3,h4,h5{color:var(--heading);font-weight:800;line-height:1.15;}
+    h1{font-size:clamp(2.1rem,4vw,3.4rem);margin-bottom:1rem;letter-spacing:-0.5px;}
+    h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:1rem;letter-spacing:-0.4px;}
+    h3{font-size:1.55rem;margin-bottom:0.75rem;}
+    p{margin-bottom:1.2rem;}
+
+    section{padding: clamp(4rem, 7vw, 6rem) var(--pad);}
+    .container{max-width:var(--container);margin:0 auto;}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:0.55rem;
+      padding:0.95rem 2.05rem; border-radius:999px; font-weight:700; text-decoration:none;
+      cursor:pointer; border:1px solid transparent; user-select:none;
+      transition: transform var(--t2), box-shadow var(--t), background var(--t), color var(--t), border var(--t), opacity var(--t);
+      position:relative; overflow:hidden; will-change:transform;
+      box-shadow: 0 10px 25px rgba(138,43,226,0.22);
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color:#fff;
+    }
+    .btn::after{
+      content:""; position:absolute; inset:-2px;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), transparent 45%);
+      opacity:0; transition: opacity var(--t);
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(138,43,226,0.30);}
+    .btn:hover::after{opacity:1;}
+    .btn:active{transform:translateY(-1px);}
+
+    .btn-secondary{
+      background: linear-gradient(135deg, var(--secondary), var(--secondary-2));
+      box-shadow: 0 10px 25px rgba(255,107,53,0.22);
+    }
+    .btn-secondary:hover{box-shadow:0 18px 40px rgba(255,107,53,0.30);}
+
+    .btn-outline{
+      background:transparent; color:var(--primary);
+      border-color: rgba(138,43,226,0.35);
+      box-shadow:none;
+    }
+    .btn-outline:hover{
+      background: rgba(138,43,226,0.08);
+      border-color: rgba(138,43,226,0.55);
+      box-shadow: 0 10px 25px rgba(138,43,226,0.10);
+    }
+
+    /* Section title */
+    .section-title{text-align:center;margin-bottom:3.25rem;}
+    .section-title h2{display:inline-block;position:relative;padding-bottom:0.75rem;}
+    .section-title h2::after{
+      content:""; position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+      width:92px; height:6px; border-radius:999px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      box-shadow: 0 10px 22px rgba(138,43,226,0.22);
+    }
+    .section-title p{max-width:780px;margin:0.75rem auto 0;color:var(--muted);font-size:1.05rem;}
+
+    /* Header + Navbar upgrades */
+    header{
+      position:fixed; width:100%; top:0; z-index:1000;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(15,23,42,0.08);
+      transition: box-shadow var(--t), background var(--t);
+    }
+    header.scrolled{
+      background: rgba(255,255,255,0.86);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+    }
+    .navbar{
+      max-width:var(--container); margin:0 auto;
+      padding:0.95rem 1.2rem;
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    }
+    .logo{text-decoration:none;display:flex;flex-direction:column;line-height:1;color:var(--primary);}
+    .logo-line1{font-size:1.55rem;font-weight:900;letter-spacing:-0.6px;}
+    .logo-line2{font-size:1.05rem;font-weight:700;opacity:0.9;margin-top:2px;letter-spacing:1px;}
+
+    .nav-links{list-style:none;display:flex;align-items:center;gap:1.6rem;}
+    .nav-links a{
+      text-decoration:none;color:var(--heading);font-weight:800;font-size:0.98rem;
+      position:relative;transition: color var(--t), background var(--t);
+      padding: 0.5rem 0.2rem;
+      border-radius: 12px;
+    }
+    .nav-links a::after{
+      content:""; position:absolute; left:0; bottom:-7px;
+      width:0%; height:3px; border-radius:999px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      transition: width var(--t2);
+    }
+    .nav-links a:hover{color:var(--primary);}
+    .nav-links a:hover::after{width:100%;}
+    .nav-links a.active{
+      color: var(--primary-dark);
+      background: rgba(138,43,226,0.08);
+    }
+    .nav-links a.active::after{width:100%;}
+
+    .mobile-menu-btn{
+      display:none; border:none; background:transparent;
+      font-size:1.4rem; color:var(--heading); cursor:pointer;
+      padding:0.45rem 0.6rem; border-radius:12px;
+      transition: background var(--t);
+    }
+    .mobile-menu-btn:hover{background: rgba(15,23,42,0.06);}
+
+    /* HERO upgrades (stats + scroll indicator + blob) */
+    .hero{
+      padding: 10rem var(--pad) 6.5rem;
+      text-align:center; position:relative; overflow:hidden; color:#fff;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.18), transparent 45%),
+        radial-gradient(circle at 80% 25%, rgba(255,255,255,0.18), transparent 50%),
+        linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:0.12;
+      background:
+        linear-gradient( to bottom, rgba(0,0,0,0.16), transparent 35% ),
+        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiM4YTJiZTIiLz48cGF0aCBkPSJNMCw1MDBMMTAwMCw1MDBMMTAwMCw3MDBMMCw3MDBaIiBmaWxsPSIjN2ExY2IwIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0wLDMwMEwxMDAwLDMwMEwxMDAwLDUwMEwwLDUwMFoiIGZpbGw9IiM3YTFjYjAiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTAsMTAwTDEwMDAsMTAwTDEwMDAsMzAwTDAsMzAwWiIgZmlsbD0iIzdhMWNiMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=');
+    }
+    /* animated blob */
+    .hero-blob{
+      position:absolute;
+      width: 520px; height: 520px;
+      right: -220px; top: -190px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.22), rgba(255,255,255,0.06), transparent 65%);
+      filter: blur(0px);
+      opacity: 0.9;
+      transform-origin:center;
+      animation: blobFloat 10s ease-in-out infinite;
+      pointer-events:none;
+    }
+    .hero-blob::after{
+      content:"";
+      position:absolute; inset:0;
+      border-radius: 44% 56% 52% 48% / 46% 44% 56% 54%;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.18), transparent 55%);
+      animation: blobMorph 8s ease-in-out infinite;
+    }
+    @keyframes blobFloat{
+      0%,100%{transform: translate(0,0) rotate(0deg) scale(1);}
+      50%{transform: translate(-25px, 25px) rotate(8deg) scale(1.05);}
+    }
+    @keyframes blobMorph{
+      0%,100%{border-radius: 44% 56% 52% 48% / 46% 44% 56% 54%;}
+      50%{border-radius: 52% 48% 42% 58% / 58% 52% 48% 42%;}
+    }
+
+    .hero-content{position:relative;max-width:900px;margin:0 auto;z-index:1;}
+    .hero h1{color:#fff;text-shadow:0 10px 30px rgba(0,0,0,0.22);}
+    .hero p{color:rgba(255,255,255,0.9);font-size:1.15rem;max-width:740px;margin:0 auto 1.3rem;}
+    .hero-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:0.75rem;}
+    .hero .btn{
+      background: rgba(255,255,255,0.96);
+      color: var(--primary-dark);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+    }
+    .hero .btn:hover{opacity:0.95;}
+    .hero .btn-outline{
+      background: transparent;
+      border-color: rgba(255,255,255,0.55);
+      color:#fff; box-shadow:none;
+    }
+    .hero .btn-outline:hover{
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.75);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.10);
+    }
+
+    /* mini stats */
+    .hero-stats{
+      margin: 1.25rem auto 0;
+      display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;
+    }
+    .stat-pill{
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+      font-weight: 800;
+      color: rgba(255,255,255,0.92);
+      display:flex; align-items:center; gap:0.55rem;
+    }
+    .stat-pill i{opacity:0.9;}
+
+    /* scroll indicator */
+    .scroll-indicator{
+      position:absolute;
+      left:50%;
+      bottom: 1.6rem;
+      transform: translateX(-50%);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:0.35rem;
+      color: rgba(255,255,255,0.85);
+      text-decoration:none;
+      font-weight:800;
+      z-index:2;
+      opacity:0.95;
+    }
+    .scroll-indicator .mouse{
+      width: 28px; height: 44px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,0.55);
+      display:grid; place-items:center;
+    }
+    .scroll-indicator .dot{
+      width:6px; height:6px; border-radius:50%;
+      background: rgba(255,255,255,0.85);
+      animation: scrollDot 1.4s ease-in-out infinite;
+    }
+    @keyframes scrollDot{
+      0%{transform: translateY(-8px); opacity:0.3;}
+      50%{transform: translateY(0px); opacity:1;}
+      100%{transform: translateY(10px); opacity:0.2;}
+    }
+
+    /* Shared card look */
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
+      transition: transform var(--t2), box-shadow var(--t), border var(--t);
+      position:relative; overflow:hidden;
+    }
+    .card:hover{
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(138,43,226,0.18);
+    }
+
+    /* Features */
+    .features{background:var(--bg-2);}
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;}
+    .feature-card{padding:2.1rem 1.75rem;text-align:center;}
+    .feature-card.card::before{
+      content:""; position:absolute; inset:-2px;
+      background: radial-gradient(circle at 30% 0%, rgba(138,43,226,0.18), transparent 45%);
+      opacity:0; transition: opacity var(--t); pointer-events:none;
+    }
+    .feature-card.card:hover::before{opacity:1;}
+    .feature-icon{
+      width:74px;height:74px;border-radius:18px;display:grid;place-items:center;
+      margin:0 auto 1.15rem;background:rgba(138,43,226,0.12);
+      border:1px solid rgba(138,43,226,0.16);color:var(--primary);font-size:1.8rem;
+      transition: transform var(--t2), background var(--t);
+    }
+    .feature-card:hover .feature-icon{transform:scale(1.06) rotate(-2deg);background:rgba(138,43,226,0.16);}
+    .feature-card p{color:var(--muted);margin-bottom:0;}
+
+    /* Services */
+    .services{background:var(--bg);}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;}
+    .service-card{padding:2.2rem;}
+    .service-icon{
+      width:74px;height:74px;border-radius:18px;display:grid;place-items:center;
+      margin-bottom:1.2rem;background:rgba(138,43,226,0.12);
+      border:1px solid rgba(138,43,226,0.16);color:var(--primary);font-size:1.65rem;
+    }
+    .service-card p{color:var(--muted);margin-bottom:0;}
+
+    /* NEW: How it works */
+    .howitworks{background: var(--bg-2);}
+    .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;}
+    .step-card{padding:1.9rem;}
+    .step-top{display:flex;align-items:center;gap:0.85rem;margin-bottom:0.6rem;}
+    .step-num{
+      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+      font-weight:900;color:#fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 16px 35px rgba(138,43,226,0.18);
+    }
+    .step-card p{color:var(--muted);margin-bottom:0;}
+
+    /* NEW: What you get */
+    .deliverables{background: var(--bg);}
+    .deliver-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;}
+    .deliver-item{
+      display:flex;gap:0.85rem;align-items:flex-start;
+      padding:1.1rem 1.1rem;
+      border-radius:16px;
+      background: rgba(15,23,42,0.03);
+      border:1px solid rgba(15,23,42,0.08);
+      transition: transform var(--t2), border var(--t), background var(--t);
+    }
+    .deliver-item:hover{
+      transform: translateY(-6px);
+      background: rgba(138,43,226,0.05);
+      border-color: rgba(138,43,226,0.18);
+    }
+    .deliver-ico{
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      background: rgba(138,43,226,0.12);
+      color: var(--primary);
+      flex:0 0 auto;
+      border:1px solid rgba(138,43,226,0.16);
+    }
+    .deliver-item h4{font-size:1.05rem;margin:0;}
+    .deliver-item p{margin:0.2rem 0 0;color:var(--muted);font-weight:650;}
+
+    /* Student projects */
+    .student-projects{
+      position:relative;overflow:hidden;color:#fff;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255,255,255,0.18), transparent 48%),
+        radial-gradient(circle at 80% 15%, rgba(255,255,255,0.16), transparent 55%),
+        linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+    }
+    .student-projects::before{
+      content:""; position:absolute; inset:0; opacity:0.10; pointer-events:none;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.18), transparent 40%),
+        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNGRjZCMzUiLz48cGF0aCBkPSJNMCw1MDBMMTAwMCw1MDBMMTAwMCw3MDBMMCw3MDBaIiBmaWxsPSIjRTU1QTJCIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0wLDMwMEwxMDAwLDMwMEwxMDAwLDUwMEwwLDUwMFoiIGZpbGw9IiNFNTVBMkIiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTAsMTAwTDEwMDAsMTAwTDEwMDAsMzAwTDAsMzAwWiIgZmlsbD0iI0U1NUEyQiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=');
+    }
+    .student-projects .section-title h2, .student-projects .section-title p{color:#fff;}
+    .student-projects .section-title h2::after{background:linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.65));box-shadow:none;}
+    .student-projects .section-title p{color:rgba(255,255,255,0.88);}
+
+    .custom-project-note{
+      position:relative;z-index:1;text-align:center;margin:0 auto 1.75rem;padding:1rem 1.2rem;max-width:900px;
+      border-radius:16px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.20);
+      backdrop-filter: blur(10px);font-weight:700;
+    }
+    .custom-project-note i{margin-right:0.4rem;}
+
+    .languages-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem;}
+    .language-card{
+      padding:1.15rem;text-align:center;border-radius:16px;background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.20);backdrop-filter:blur(10px);
+      transition: transform var(--t2), background var(--t), border var(--t);
+    }
+    .language-card:hover{transform:translateY(-6px);background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.35);}
+    .language-icon{font-size:2rem;margin-bottom:0.6rem;color:#fff;}
+    .language-card h4{color:#fff;font-size:1.05rem;font-weight:800;}
+
+    .projects-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem;}
+    .project-card{
+      background: rgba(255,255,255,0.96);
+      border:1px solid rgba(15,23,42,0.10);
+      border-radius:18px; overflow:hidden;
+      box-shadow:0 18px 50px rgba(0,0,0,0.14);
+      transition: transform var(--t2), box-shadow var(--t), border var(--t);
+    }
+    .project-card:hover{transform:translateY(-10px);box-shadow:0 26px 70px rgba(0,0,0,0.18);border-color:rgba(138,43,226,0.18);}
+    .project-header{
+      padding:1.4rem 1.4rem 1.2rem;text-align:center;color:#fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      position:relative;
+    }
+    .project-header::after{
+      content:""; position:absolute; inset:0;
+      background: radial-gradient(circle at 30% 0%, rgba(255,255,255,0.30), transparent 45%);
+      opacity:0.35; pointer-events:none;
+    }
+    .project-header h3, .project-header p, .project-price{position:relative;z-index:1;}
+    .project-price{font-size:2rem;font-weight:900;margin:0.35rem 0;}
+    .project-features{padding:1.5rem 1.5rem 1.1rem;}
+    .project-features ul{list-style:none;}
+    .project-features li{display:flex;align-items:flex-start;gap:0.7rem;padding:0.45rem 0;color:var(--text);font-weight:650;}
+    .project-features li i{color:var(--primary);margin-top:0.25rem;}
+    .project-cta{padding:0 1.5rem 1.5rem;text-align:center;}
+
+    .payment-policy{
+      position:relative;z-index:1;margin-top:2.2rem;padding:1.6rem 1.3rem;border-radius:18px;
+      background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);
+      backdrop-filter: blur(10px); text-align:center;
+    }
+    .payment-policy h4{color:#fff;font-size:1.25rem;margin-bottom:0.6rem;}
+    .payment-policy p{color:rgba(255,255,255,0.9);margin-bottom:0.2rem;}
+    .payment-policy .highlight{color:#fffb8a;font-weight:900;text-shadow:0 10px 22px rgba(0,0,0,0.20);}
+
+    /* Pricing */
+    .pricing{background:var(--bg-2);}
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;}
+    .pricing-card{border-radius:18px;}
+    .pricing-card.featured{border:2px solid rgba(138,43,226,0.35);transform:scale(1.03);}
+    .pricing-card.featured:hover{transform:scale(1.03) translateY(-10px);}
+    .pricing-badge{
+      position:absolute; top:14px; right:14px; padding:0.55rem 1rem; border-radius:999px;
+      color:#fff; font-weight:900; font-size:0.85rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow:0 16px 35px rgba(138,43,226,0.25); z-index:2;
+    }
+    .pricing-header{
+      padding:2rem 1.6rem 1.3rem;text-align:center;
+      background: linear-gradient(135deg, rgba(15,23,42,0.04), rgba(15,23,42,0.06));
+      border-bottom:1px solid rgba(15,23,42,0.08);
+    }
+    .pricing-card.featured .pricing-header{background:linear-gradient(135deg, rgba(138,43,226,0.14), rgba(138,43,226,0.18));}
+    .pricing-price{font-size:2.45rem;font-weight:900;color:var(--primary);margin:0.7rem 0;letter-spacing:-0.6px;}
+    .pricing-card.featured .pricing-price{color:var(--primary-dark);}
+    .pricing-features{padding:1.5rem 1.6rem 1.2rem;}
+    .pricing-features ul{list-style:none;}
+    .pricing-features li{display:flex;align-items:flex-start;gap:0.75rem;padding:0.5rem 0;font-weight:650;color:var(--text);}
+    .pricing-features li i{margin-top:0.25rem;}
+    .pricing-cta{padding:0 1.6rem 1.6rem;text-align:center;}
+
+    /* Testimonials (slider + stars + verified) */
+    .testimonials{background:var(--bg-2);}
+    .testimonial-shell{
+      position:relative;
+      border-radius: 20px;
+      padding: 0.8rem;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(15,23,42,0.10);
+      box-shadow: 0 18px 55px rgba(0,0,0,0.08);
+    }
+    .testimonial-viewport{overflow:hidden;border-radius:18px;}
+    .testimonial-track{
+      display:flex;
+      gap: 1.2rem;
+      padding: 0.6rem;
+      transform: translateX(0);
+      transition: transform 550ms ease;
+      will-change: transform;
+    }
+    .testimonial-card{min-width: min(360px, 88vw); padding: 1.8rem;}
+    .testimonial-card::before{
+      content:"“";
+      position:absolute;
+      top: 10px;
+      left: 16px;
+      font-size: 5.2rem;
+      line-height: 1;
+      color: rgba(138,43,226,0.10);
+      font-family: Georgia, serif;
+      pointer-events:none;
+    }
+    .testimonial-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 0.8rem;
+      margin-bottom: 0.85rem;
+      position:relative;
+      z-index:1;
+    }
+    .stars{display:flex;gap:0.25rem;align-items:center;}
+    .stars i{color:#ffc107;filter: drop-shadow(0 6px 14px rgba(255,193,7,0.18));}
+    .verified{
+      display:inline-flex;
+      align-items:center;
+      gap:0.4rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(25,135,84,0.10);
+      border: 1px solid rgba(25,135,84,0.20);
+      color: #198754;
+      font-weight: 900;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    .testimonial-text{font-style:italic;color:var(--text);font-weight:550;margin-bottom:1.2rem;position:relative;z-index:1;}
+    .testimonial-author{display:flex;align-items:center;gap:1rem;}
+    .author-avatar{
+      width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 16px 35px rgba(138,43,226,0.20);
+      flex: 0 0 auto;
+    }
+    .testimonial-author h4{margin:0;font-size:1.05rem;}
+    .testimonial-author p{margin:0;color:var(--muted);font-weight:650;}
+
+    .t-controls{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+      padding: 0 0.4rem 0.2rem;
+    }
+    .t-btn{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,23,42,0.10);
+      background: rgba(255,255,255,0.8);
+      cursor:pointer;
+      display:grid; place-items:center;
+      transition: transform var(--t2), background var(--t), border var(--t), box-shadow var(--t);
+    }
+    .t-btn:hover{
+      transform: translateY(-3px);
+      background: #fff;
+      border-color: rgba(138,43,226,0.18);
+      box-shadow: 0 16px 45px rgba(0,0,0,0.10);
+    }
+    .t-dots{
+      display:flex; gap:0.45rem; align-items:center; justify-content:center; flex:1;
+    }
+    .dot-btn{
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(31,36,48,0.22);
+      cursor:pointer;
+      transition: transform var(--t2), background var(--t);
+    }
+    .dot-btn.active{background: linear-gradient(135deg, var(--primary), var(--primary-2)); transform: scale(1.2);}
+
+    /* FAQs (accordion) */
+    .faqs{background: var(--bg);}
+    .faq-wrap{max-width: 900px; margin: 0 auto;}
+    .faq-item{
+      border-radius: 18px;
+      border: 1px solid rgba(15,23,42,0.10);
+      background: rgba(15,23,42,0.02);
+      overflow:hidden;
+      margin-bottom: 0.9rem;
+      transition: border var(--t), background var(--t), transform var(--t2);
+    }
+    .faq-item:hover{
+      transform: translateY(-4px);
+      border-color: rgba(138,43,226,0.18);
+      background: rgba(138,43,226,0.04);
+    }
+    .faq-q{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 1rem;
+      padding: 1.05rem 1.1rem;
+      border:none;
+      background: transparent;
+      cursor:pointer;
+      font-weight: 900;
+      color: var(--heading);
+      text-align:left;
+      font-size: 1.02rem;
+    }
+    .faq-q i{transition: transform var(--t2); color: var(--primary);}
+    .faq-a{
+      max-height: 0px;
+      overflow:hidden;
+      transition: max-height 420ms ease;
+      padding: 0 1.1rem;
+    }
+    .faq-a p{margin: 0 0 1rem; color: var(--muted); font-weight: 650;}
+    .faq-item.open .faq-a{padding: 0 1.1rem; max-height: 260px;}
+    .faq-item.open .faq-q i{transform: rotate(180deg);}
+
+    /* Contact */
+    .contact{background:var(--bg);}
+    .contact-container{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:start;}
+    .contact-info{display:flex;flex-direction:column;gap:1.2rem;}
+    .contact-method{
+      display:flex;align-items:center;gap:1rem;
+      padding:1.15rem 1.15rem;background:rgba(15,23,42,0.03);
+      border:1px solid rgba(15,23,42,0.08);border-radius:16px;
+      transition: transform var(--t2), background var(--t), border var(--t);
+    }
+    .contact-method:hover{transform:translateY(-4px);background:rgba(138,43,226,0.05);border-color:rgba(138,43,226,0.18);}
+    .contact-icon{
+      width:52px;height:52px;display:grid;place-items:center;border-radius:14px;
+      background:rgba(138,43,226,0.12);color:var(--primary);font-size:1.4rem;
+    }
+    .contact-method h4{margin:0;font-size:1.05rem;}
+    .contact-method p{margin:0;color:var(--muted);font-weight:650;}
+    .contact-btns{display:flex;gap:0.9rem;flex-wrap:wrap;margin-top:0.2rem;}
+
+    .contact-form{
+      padding:1.6rem 1.6rem;border-radius:18px;
+      background:rgba(15,23,42,0.02);
+      border:1px solid rgba(15,23,42,0.08);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+    }
+    .contact-form h3{margin-bottom:1rem;}
+    .form-group{display:flex;flex-direction:column;margin-bottom:1rem;}
+    .form-group label{margin-bottom:0.5rem;font-weight:800;color:var(--heading);font-size:0.95rem;}
+    .form-group input,.form-group select,.form-group textarea{
+      padding:0.95rem 1rem;border-radius:14px;border:1px solid rgba(15,23,42,0.10);
+      background:#fff;font-size:1rem;outline:none;
+      transition: border var(--t), box-shadow var(--t), transform var(--t);
+    }
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+      border-color: rgba(138,43,226,0.45);
+      box-shadow: 0 0 0 4px rgba(138,43,226,0.12);
+      transform: translateY(-1px);
+    }
+    .contact-form textarea{resize:none;}
+
+    .form-status{display:none;padding:0.95rem 1rem;border-radius:14px;margin-bottom:1rem;font-weight:750;text-align:center;}
+    .form-status.success{display:block;background:#e8f7ee;border:1px solid #b7e4c7;color:#1b4332;}
+    .form-status.error{display:block;background:#fdecec;border:1px solid #f5c2c7;color:#7a1f2a;}
+
+    /* Floating WhatsApp */
+    .whatsapp-btn{
+      position:fixed; bottom:1.6rem; right:1.6rem;
+      width:68px;height:68px;border-radius:50%;
+      display:grid;place-items:center;text-decoration:none;color:#fff;
+      background: linear-gradient(135deg,#25D366,#128C7E);
+      box-shadow: 0 22px 60px rgba(18,140,126,0.28);
+      transition: transform var(--t2), box-shadow var(--t);
+      z-index:999; animation:pulse 2s infinite;
+    }
+    .whatsapp-btn i{font-size:2rem;}
+    .whatsapp-btn:hover{transform: translateY(-4px) scale(1.03); box-shadow: 0 28px 70px rgba(18,140,126,0.34);}
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45),0 22px 60px rgba(18,140,126,0.28);}
+      70%{box-shadow:0 0 0 16px rgba(37,211,102,0.0),0 22px 60px rgba(18,140,126,0.28);}
+      100%{box-shadow:0 0 0 0 rgba(37,211,102,0.0),0 22px 60px rgba(18,140,126,0.28);}
+    }
+
+    /* Footer */
+    footer{
+      padding:2.2rem var(--pad);text-align:center;
+      background: linear-gradient(135deg,#111827,#000);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-content{max-width:var(--container);margin:0 auto;}
+    .footer-content h3{color:#fff;font-size:1.35rem;margin-bottom:0.2rem;}
+    .footer-tagline{color:rgba(255,255,255,0.85);font-weight:750;margin-bottom:0.35rem;}
+    .footer-location{color:rgba(255,255,255,0.65);font-weight:650;}
+    .footer-links{margin:0.85rem 0;}
+    .footer-links a{color:rgba(255,255,255,0.72);text-decoration:none;margin:0 10px;font-weight:700;font-size:0.9rem;transition:color var(--t);}
+    .footer-links a:hover{color:#fff;}
+    .footer-social{margin:0.5rem 0;}
+    .footer-social a{color:rgba(255,255,255,0.72);text-decoration:none;margin:0 10px;font-weight:750;font-size:0.9rem;transition:color var(--t);}
+    .footer-social a:hover{color:#fff;}
+    .footer-copy{margin-top:0.8rem;color:rgba(255,255,255,0.55);font-size:0.82rem;font-weight:650;}
+
+    /* Responsive + Mobile menu slide-down animation */
+    @media (max-width: 992px){
+      .pricing-card.featured{transform: scale(1);}
+      .pricing-card.featured:hover{transform: translateY(-10px);}
+    }
+    @media (max-width: 768px){
+      .navbar{padding:0.9rem 1rem;}
+      .mobile-menu-btn{display:block;}
+
+      .nav-links{
+        position:absolute; top:100%; left:0; width:100%;
+        padding: 0.6rem 0.8rem 1rem;
+        background: rgba(255,255,255,0.92);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(15,23,42,0.10);
+
+        display:flex;
+        flex-direction:column;
+        gap: 0.25rem;
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition: max-height 420ms ease, opacity 280ms ease, transform 420ms ease;
+      }
+      .nav-links.active{
+        max-height: 420px;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .nav-links li{width:100%;}
+      .nav-links a{
+        display:block; width:100%;
+        padding:0.95rem 1rem; border-radius:14px;
+      }
+      .nav-links a::after{display:none;}
+      .nav-links a:hover{background: rgba(138,43,226,0.06);}
+
+      .hero{padding:9.5rem var(--pad) 6rem;}
+      .hero-btns{flex-direction:column;align-items:center;}
+      .hero-btns .btn{width:100%;max-width:430px;}
+      .hero-stats{padding: 0 0.4rem;}
+      .scroll-indicator{display:none;}
+
+      .contact-container{grid-template-columns:1fr;}
+      .contact-form{padding:1.4rem 1.2rem;}
+    }
+    @media (max-width: 520px){
+      .languages-grid{grid-template-columns:repeat(2,1fr);}
+      .whatsapp-btn{width:62px;height:62px;right:1.2rem;bottom:1.2rem;}
+      .whatsapp-btn i{font-size:1.85rem;}
+    }
+    @media (max-width: 380px){
+      .languages-grid{grid-template-columns:1fr;}
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{transition:none !important; animation:none !important; scroll-behavior:auto !important;}
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">
-                <div class="logo-line1">LocalGrowth</div>
-                <div class="logo-line2">Studio</div>
-            </a>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#student-projects">Student Projects</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li id="logout-li" style="display: none;">
-                <a href="#" id="logout-btn" style="color: #ff6b6b;">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
+  <!-- Header -->
+  <header id="site-header">
+    <nav class="navbar">
+      <a href="#" class="logo" aria-label="LocalGrowth Studio">
+        <div class="logo-line1">LocalGrowth</div>
+        <div class="logo-line2">Studio</div>
+      </a>
 
-            </li>
+      <button class="mobile-menu-btn" aria-label="Open menu" id="menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#student-projects">Student Projects</a></li>
+        <li><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+
+        <li id="logout-li" style="display:none;">
+          <a href="#" id="logout-btn" style="color:#ff6b6b;">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <h1>Professional Websites & Student Projects</h1>
+        <p>Get custom websites for your business or academic projects at affordable prices. Starting from just ₹199 for student projects!</p>
+
+        <!-- mini stats -->
+        <div class="hero-stats" aria-label="Quick stats">
+          <div class="stat-pill"><i class="fa-solid fa-check"></i> 20+ Projects</div>
+          <div class="stat-pill"><i class="fa-solid fa-globe"></i> 10+ Websites</div>
+          <div class="stat-pill"><i class="fa-solid fa-bolt"></i> Fast Delivery</div>
+        </div>
+
+        <div class="hero-btns">
+          <a href="#student-projects" class="btn">
+            <i class="fas fa-graduation-cap"></i> Student Projects from ₹199
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fab fa-whatsapp"></i> WhatsApp for Free Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- scroll indicator -->
+    <a class="scroll-indicator" href="#services" aria-label="Scroll to next section">
+      <div class="mouse"><div class="dot"></div></div>
+      <div style="font-size:0.85rem;">Scroll</div>
+    </a>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Our Services</h2>
+        <p>We provide high-quality solutions for both businesses and students</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card card">
+          <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Custom Website Design</h3>
+          <p>Professional, responsive websites tailored to your business needs with modern UI/UX design.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon"><i class="fas fa-database"></i></div>
+          <h3>Database Integration</h3>
+          <p>Secure database solutions for dynamic content, user management, and e-commerce functionality.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Student Projects</h3>
+          <p>Affordable coding projects for college students in multiple programming languages.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
+          <h3>Contact Forms</h3>
+          <p>Custom forms that integrate seamlessly with your email and database systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Website Services</h2>
+        <p>Professional website solutions for businesses of all sizes</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card card">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>Custom Website Design</h3>
+          <p>Unique, responsive websites designed specifically for your business with modern UI/UX principles that convert visitors into customers.</p>
+        </div>
+
+        <div class="service-card card">
+          <div class="service-icon"><i class="fas fa-database"></i></div>
+          <h3>Database Integration</h3>
+          <p>Secure database solutions for user accounts, product catalogs, booking systems, and dynamic content management.</p>
+        </div>
+
+        <div class="service-card card">
+          <div class="service-icon"><i class="fas fa-file-signature"></i></div>
+          <h3>Contact & Lead Forms</h3>
+          <p>Custom forms that capture leads, process orders, and integrate with your email and CRM systems for seamless lead management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: How it works -->
+  <section class="howitworks" id="how-it-works">
+    <div class="container">
+      <div class="section-title">
+        <h2>How It Works</h2>
+        <p>Simple process — clear communication, quick demo, smooth delivery.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card card">
+          <div class="step-top">
+            <div class="step-num">1</div>
+            <h3 style="margin:0;">Requirement</h3>
+          </div>
+          <p>Tell us your project needs, features, and deadline. We’ll suggest the best plan & approach.</p>
+        </div>
+
+        <div class="step-card card">
+          <div class="step-top">
+            <div class="step-num">2</div>
+            <h3 style="margin:0;">Demo</h3>
+          </div>
+          <p>We show you the working demo first. You can request changes if needed before final delivery.</p>
+        </div>
+
+        <div class="step-card card">
+          <div class="step-top">
+            <div class="step-num">3</div>
+            <h3 style="margin:0;">Final Delivery</h3>
+          </div>
+          <p>After confirmation, we deliver source code + docs + setup help so you can run it smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: What you get -->
+  <section class="deliverables" id="deliverables">
+    <div class="container">
+      <div class="section-title">
+        <h2>What You Get</h2>
+        <p>Everything you need to submit, present, or deploy your project confidently.</p>
+      </div>
+
+      <div class="deliver-grid">
+        <div class="deliver-item">
+          <div class="deliver-ico"><i class="fa-solid fa-code"></i></div>
+          <div>
+            <h4>Source Code</h4>
+            <p>Clean & structured code with proper folders.</p>
+          </div>
+        </div>
+
+        <div class="deliver-item">
+          <div class="deliver-ico"><i class="fa-solid fa-file-lines"></i></div>
+          <div>
+            <h4>Documentation</h4>
+            <p>Simple docs for features, modules, and flow.</p>
+          </div>
+        </div>
+
+        <div class="deliver-item">
+          <div class="deliver-ico"><i class="fa-solid fa-video"></i></div>
+          <div>
+            <h4>Setup Video</h4>
+            <p>Short video / steps to run on your system.</p>
+          </div>
+        </div>
+
+        <div class="deliver-item">
+          <div class="deliver-ico"><i class="fa-solid fa-server"></i></div>
+          <div>
+            <h4>Hosting Guide</h4>
+            <p>Basic guide for hosting + domain + deploy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Projects -->
+  <section id="student-projects" class="student-projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Student Projects</h2>
+        <p>Educational Projects & Mentorship starting from just ₹199</p>
+      </div>
+
+      <div class="custom-project-note">
+        <i class="fas fa-code"></i> Custom projects available in any programming language!
+      </div>
+
+      <div class="languages-grid">
+        <div class="language-card"><div class="language-icon"><i class="fab fa-python"></i></div><h4>Python</h4></div>
+        <div class="language-card"><div class="language-icon"><i class="fab fa-html5"></i></div><h4>HTML/CSS</h4></div>
+        <div class="language-card"><div class="language-icon"><i class="fab fa-js-square"></i></div><h4>JavaScript</h4></div>
+        <div class="language-card"><div class="language-icon"><i class="fab fa-php"></i></div><h4>PHP</h4></div>
+        <div class="language-card"><div class="language-icon"><i class="fas fa-database"></i></div><h4>SQL</h4></div>
+        <div class="language-card"><div class="language-icon"><i class="fab fa-java"></i></div><h4>Java</h4></div>
+        <div class="language-card"><div class="language-icon"><i class="fas fa-copyright"></i></div><h4>C/C++</h4></div>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Basic Project</h3>
+            <div class="project-price">₹199 - ₹399</div>
+            <p>Simple coding tasks</p>
+          </div>
+          <div class="project-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Small programs & scripts</li>
+              <li><i class="fas fa-check"></i> Basic HTML/CSS pages</li>
+              <li><i class="fas fa-check"></i> Simple calculations</li>
+              <li><i class="fas fa-check"></i> Basic form validation</li>
+              <li><i class="fas fa-check"></i> 2-3 days delivery</li>
             </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Professional Websites & Student Projects</h1>
-                <p>Get custom websites for your business or academic projects at affordable prices. Starting from just ₹199 for student projects!</p>
-                <div class="hero-btns">
-                    <a href="#student-projects" class="btn">
-                        <i class="fas fa-graduation-cap"></i> Student Projects from ₹199
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fab fa-whatsapp"></i> WhatsApp for Free Consultation
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Our Services</h2>
-                <p>We provide high-quality solutions for both businesses and students</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Custom Website Design</h3>
-                    <p>Professional, responsive websites tailored to your business needs with modern UI/UX design.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Database Integration</h3>
-                    <p>Secure database solutions for dynamic content, user management, and e-commerce functionality.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Student Projects</h3>
-                    <p>Affordable coding projects for college students in multiple programming languages.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <h3>Contact Forms</h3>
-                    <p>Custom forms that integrate seamlessly with your email and database systems.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Website Services</h2>
-                <p>Professional website solutions for businesses of all sizes</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Custom Website Design</h3>
-                    <p>Unique, responsive websites designed specifically for your business with modern UI/UX principles that convert visitors into customers.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Database Integration</h3>
-                    <p>Secure database solutions for user accounts, product catalogs, booking systems, and dynamic content management.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <h3>Contact & Lead Forms</h3>
-                    <p>Custom forms that capture leads, process orders, and integrate with your email and CRM systems for seamless lead management.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Student Projects Section -->
-    <section id="student-projects" class="student-projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Student Projects</h2>
-                <p>Educational Projects & Mentorship starting from just ₹199</p>
-            </div>
-            
-            <!-- Custom Project Note -->
-            <div class="custom-project-note">
-                <i class="fas fa-code"></i> Custom projects available in any programming language!
-            </div>
-            
-            <div class="languages-grid">
-                <div class="language-card">
-                    <div class="language-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h4>Python</h4>
-                </div>
-                <div class="language-card">
-                    <div class="language-icon">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h4>HTML/CSS</h4>
-                </div>
-                <div class="language-card">
-                    <div class="language-icon">
-                        <i class="fab fa-js-square"></i>
-                    </div>
-                    <h4>JavaScript</h4>
-                </div>
-                <div class="language-card">
-                    <div class="language-icon">
-                        <i class="fab fa-php"></i>
-                    </div>
-                    <h4>PHP</h4>
-                </div>
-                <div class="language-card">
-                    <div class="language-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h4>SQL</h4>
-                </div>
-                <div class="language-card">
-                    <div class="language-icon">
-                        <i class="fab fa-java"></i>
-                    </div>
-                    <h4>Java</h4>
-                </div>
-                <div class="language-card">
-                    <div class="language-icon">
-                        <i class="fas fa-copyright"></i>
-                    </div>
-                    <h4>C/C++</h4>
-                </div>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Basic Project</h3>
-                        <div class="project-price">₹199 - ₹399</div>
-                        <p>Simple coding tasks</p>
-                    </div>
-                    <div class="project-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Small programs & scripts</li>
-                            <li><i class="fas fa-check"></i> Basic HTML/CSS pages</li>
-                            <li><i class="fas fa-check"></i> Simple calculations</li>
-                            <li><i class="fas fa-check"></i> Basic form validation</li>
-                            <li><i class="fas fa-check"></i> 2-3 days delivery</li>
-                        </ul>
-                    </div>
-                    <div class="project-cta">
-                        <a href="#contact" class="btn btn-secondary">Order Now</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Intermediate Project</h3>
-                        <div class="project-price">₹499 - ₹799</div>
-                        <p>Medium complexity</p>
-                    </div>
-                    <div class="project-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Database connectivity</li>
-                            <li><i class="fas fa-check"></i> Multi-page websites</li>
-                            <li><i class="fas fa-check"></i> CRUD operations</li>
-                            <li><i class="fas fa-check"></i> API integration</li>
-                            <li><i class="fas fa-check"></i> 5-7 days delivery</li>
-                        </ul>
-                    </div>
-                    <div class="project-cta">
-                        <a href="#contact" class="btn btn-secondary">Order Now</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Advanced Project</h3>
-                        <div class="project-price">₹999 - ₹1499</div>
-                        <p>Complex applications</p>
-                    </div>
-                    <div class="project-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Full-stack applications</li>
-                            <li><i class="fas fa-check"></i> User authentication</li>
-                            <li><i class="fas fa-check"></i> Complex algorithms</li>
-                            <li><i class="fas fa-check"></i> Documentation included</li>
-                            <li><i class="fas fa-check"></i> 7-10 days delivery</li>
-                        </ul>
-                    </div>
-                    <div class="project-cta">
-                        <a href="#contact" class="btn btn-secondary">Order Now</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Payment Policy -->
-            <div class="payment-policy">
-                <h4><i class="fas fa-handshake"></i> Student-Friendly Payment Policy</h4>
-                <p>We understand the importance of money for students. That's why we offer:</p>
-                <p><span class="highlight">First Demo & After Satisfaction Payment!</span></p>
-                <p>See the project working first, then make payment only when you're completely satisfied.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <div class="section-title">
-                <h2>Website Design Packages</h2>
-                <p>Professional website solutions starting from ₹2,000</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Basic Website</h3>
-                        <div class="pricing-price">₹2,000 to 5,000</div>
-                       <p style="margin:0;">One-time payment</p>
-                        <p style="margin:0;">Final price depends on requirements</p>    
-                    </div>
-                    <div class="pricing-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> 3-5 Page Custom Website</li>
-                            <li><i class="fas fa-check"></i> Mobile Responsive Design</li>
-                            <li><i class="fas fa-check"></i> Contact Form</li>
-                            <li><i class="fas fa-check"></i> Basic SEO Setup</li>
-                            <li><i class="fas fa-check"></i> Free Hosting for 3 Months</li>
-                            <li><i class="fas fa-times"></i> No Admin Panel / No Database</li>
-                        </ul>
-                    </div>
-                    <div class="pricing-cta">
-                        <a href="#contact" class="btn">Get Started on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <div class="pricing-header">
-                        <h3>Business Website</h3>
-                        <div class="pricing-price">₹5,000 to 8,000</div>
-                        <p style="margin:0;">One-time payment</p>
-                        <p style="margin:0;">Final price depends on requirements</p>    
-                    </div>
-                    <div class="pricing-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> 5-10 Page Custom Website</li>
-                            <li><i class="fas fa-check"></i> Database Integration</li>
-                            <li><i class="fas fa-check"></i> Multiple Contact Forms</li>
-                            <li><i class="fas fa-check"></i> Advanced SEO Optimization</li>
-                            <li><i class="fas fa-check"></i> Free Hosting for 6 Months</li>
-                            <li><i class="fas fa-check"></i> Basic CMS Integration</li>
-                            <li><i class="fas fa-check"></i> 1 Month Support</li>
-                            <li><i class="fas fa-check"></i> Admin Dashboard (Products, Orders, Users)</li>
-                        </ul>
-                    </div>
-                    <div class="pricing-cta">
-                        <a href="#contact" class="btn">Get Started on WhatsApp</a>
-                    </div>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>E-Commerce Website</h3>
-                        <div class="pricing-price">₹10,000 to 15,000</div>
-                        <p style="margin:0;">One-time payment</p>
-                        <p style="margin:0;">Final price depends on requirements</p>
-                    </div>
-                    <div class="pricing-features">
-                        <ul>
-                            <li><i class="fas fa-check"></i> Full E-Commerce Website</li>
-                            <li><i class="fas fa-check"></i> Product Database & Management</li>
-                            <li><i class="fas fa-check"></i> Payment Gateway Integration</li>
-                            <li><i class="fas fa-check"></i> User Account System</li>
-                            <li><i class="fas fa-check"></i> Inventory Management</li>
-                            <li><i class="fas fa-check"></i> Free Hosting for 12 Months</li>
-                            <li><i class="fas fa-check"></i> 3 Months Support</li>
-                        </ul>
-                    </div>
-                    <div class="pricing-cta">
-                        <a href="#contact" class="btn">Get Started on WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Client Testimonials</h2>
-                <p>See what our clients have to say about our services</p>
-                <p>We work with clients across India and internationally. Due to privacy and platform limitations, only selected testimonials are displayed here.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "LocalGrowth Studio created an amazing website for my business. The database integration for my product catalog works perfectly, and the forms capture all the leads I need. Highly recommended!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div>
-                            <h4>Michael</h4>
-                            <p>Github User</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "As a college student, I needed a Python-based Truecaller project for my final year. They delivered excellent code with proper documentation at an affordable price. Will definitely use again!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AG</div>
-                        <div>
-                            <h4>Angela Garland</h4>
-                            <p>Repeated customer</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "As a BCA student, I needed a Car Selling Management System project using PHP and MySQL. LocalGrowth Studio delivered a complete, well-structured system with clean UI and proper functionality. The project worked perfectly on WAMP. Will definitely recommend!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">VP</div>
-                        <div>
-                            <h4>Vrund Patel</h4>
-                            <p>college Student</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "As a BCA student, I needed a professional website project using PHP and MySQL. Discover Gujarat delivered a well-structured website with a clean UI and smooth functionality. The project ran perfectly on WAMP, making it easy to manage and deploy. Highly recommended for anyone looking for a reliable and efficient web solution!!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">VP</div>
-                        <div>
-                            <h4>Vaishnavi Parekh</h4>
-                            <p>college Student</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "As a BCA student, I needed a professional website project using PHP and MySQL. Bloom & Send delivered a well-structured Flower Management System with a clean UI and smooth functionality. The project ran perfectly on WAMP, making it easy to manage and deploy. Highly recommended for anyone looking for a reliable and efficient web solution!!
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">NS</div>
-                        <div>
-                            <h4>Nikki Soni</h4>
-                            <p>college Student</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Ready to get your website or student project? Get in touch today!</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>We're here to help you with your website or academic project. Reach out to us through any of these channels:</p>
-                    
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div>
-                            <h4>WhatsApp</h4>
-                           <p style="margin:0;">Aayush</p>
-                         <!-- <p style="margin:0;">Vaishnavi Parekh</p> -->
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div>
-                            <h4>Instagram</h4>
-                            <p>@thelocalgrowthstudio</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Anand, Gujarat, India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-btns">
-                        <a href="https://wa.me/916355938913" class="btn" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp Now
-                        </a>
-                        <a href="https://instagram.com/thelocalgrowthstudio" class="btn btn-outline" target="_blank">
-                            <i class="fab fa-instagram"></i> Follow on Instagram
-                        </a>
-                    </div>
-                </div>
-                
-              <div class="contact-form">
-    <h3>Request a Quote</h3>
-    <div id="form-status" class="form-status"></div>
-
-    <form id="contactForm" action="https://formspree.io/f/xovpgpnw" method="POST">
-
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="project-cta">
+            <a href="#contact" class="btn btn-secondary">Order Now</a>
+          </div>
         </div>
 
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Intermediate Project</h3>
+            <div class="project-price">₹499 - ₹799</div>
+            <p>Medium complexity</p>
+          </div>
+          <div class="project-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Database connectivity</li>
+              <li><i class="fas fa-check"></i> Multi-page websites</li>
+              <li><i class="fas fa-check"></i> CRUD operations</li>
+              <li><i class="fas fa-check"></i> API integration</li>
+              <li><i class="fas fa-check"></i> 5-7 days delivery</li>
+            </ul>
+          </div>
+          <div class="project-cta">
+            <a href="#contact" class="btn btn-secondary">Order Now</a>
+          </div>
         </div>
 
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Advanced Project</h3>
+            <div class="project-price">₹999 - ₹1499</div>
+            <p>Complex applications</p>
+          </div>
+          <div class="project-features">
+            <ul>
+              <li><i class="fas fa-check"></i> Full-stack applications</li>
+              <li><i class="fas fa-check"></i> User authentication</li>
+              <li><i class="fas fa-check"></i> Complex algorithms</li>
+              <li><i class="fas fa-check"></i> Documentation included</li>
+              <li><i class="fas fa-check"></i> 7-10 days delivery</li>
+            </ul>
+          </div>
+          <div class="project-cta">
+            <a href="#contact" class="btn btn-secondary">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-policy">
+        <h4><i class="fas fa-handshake"></i> Student-Friendly Payment Policy</h4>
+        <p>We understand the importance of money for students. That's why we offer:</p>
+        <p><span class="highlight">First Demo & After Satisfaction Payment!</span></p>
+        <p>See the project working first, then make payment only when you're completely satisfied.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-title">
+        <h2>Website Design Packages</h2>
+        <p>Professional website solutions starting from ₹2,000</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card card">
+          <div class="pricing-header">
+            <h3>Basic Website</h3>
+            <div class="pricing-price">₹2,000 to 5,000</div>
+            <p style="margin:0;">One-time payment</p>
+            <p style="margin:0;">Final price depends on requirements</p>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> 3-5 Page Custom Website</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Mobile Responsive Design</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Contact Form</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Basic SEO Setup</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Free Hosting for 3 Months</li>
+              <li><i class="fas fa-times" style="color:#dc3545"></i> No Admin Panel / No Database</li>
+            </ul>
+          </div>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn">Get Started on WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="pricing-card card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-header">
+            <h3>Business Website</h3>
+            <div class="pricing-price">₹5,000 to 8,000</div>
+            <p style="margin:0;">One-time payment</p>
+            <p style="margin:0;">Final price depends on requirements</p>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> 5-10 Page Custom Website</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Database Integration</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Multiple Contact Forms</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Advanced SEO Optimization</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Free Hosting for 6 Months</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Basic CMS Integration</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> 1 Month Support</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Admin Dashboard (Products, Orders, Users)</li>
+            </ul>
+          </div>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn">Get Started on WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="pricing-card card">
+          <div class="pricing-header">
+            <h3>E-Commerce Website</h3>
+            <div class="pricing-price">₹10,000 to 15,000</div>
+            <p style="margin:0;">One-time payment</p>
+            <p style="margin:0;">Final price depends on requirements</p>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Full E-Commerce Website</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Product Database & Management</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Payment Gateway Integration</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> User Account System</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Inventory Management</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> Free Hosting for 12 Months</li>
+              <li><i class="fas fa-check" style="color:var(--primary)"></i> 3 Months Support</li>
+            </ul>
+          </div>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn">Get Started on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (NEW Slider) -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Client Testimonials</h2>
+        <p>See what our clients have to say about our services</p>
+        <p>We work with clients across India and internationally. Due to privacy and platform limitations, only selected testimonials are displayed here.</p>
+      </div>
+
+      <div class="testimonial-shell">
+        <div class="testimonial-viewport">
+          <div class="testimonial-track" id="t-track">
+            <!-- Slide 1 -->
+            <div class="testimonial-card card">
+              <div class="testimonial-top">
+                <div class="stars" aria-label="5 star rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
+              </div>
+              <div class="testimonial-text">
+                "LocalGrowth Studio created an amazing website for my business. The database integration for my product catalog works perfectly, and the forms capture all the leads I need. Highly recommended!"
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">M</div>
+                <div>
+                  <h4>Michael</h4>
+                  <p>Github User</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testimonial-card card">
+              <div class="testimonial-top">
+                <div class="stars" aria-label="5 star rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
+              </div>
+              <div class="testimonial-text">
+                "As a college student, I needed a Python-based Truecaller project for my final year. They delivered excellent code with proper documentation at an affordable price. Will definitely use again!"
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">AG</div>
+                <div>
+                  <h4>Angela Garland</h4>
+                  <p>Repeated customer</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-card card">
+              <div class="testimonial-top">
+                <div class="stars" aria-label="5 star rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
+              </div>
+              <div class="testimonial-text">
+                "As a BCA student, I needed a Car Selling Management System project using PHP and MySQL. LocalGrowth Studio delivered a complete, well-structured system with clean UI and proper functionality. The project worked perfectly on WAMP. Will definitely recommend!"
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">VP</div>
+                <div>
+                  <h4>Vrund Patel</h4>
+                  <p>College Student</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="testimonial-card card">
+              <div class="testimonial-top">
+                <div class="stars" aria-label="5 star rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
+              </div>
+              <div class="testimonial-text">
+                "As a BCA student, I needed a professional website project using PHP and MySQL. Discover Gujarat delivered a well-structured website with a clean UI and smooth functionality. The project ran perfectly on WAMP, making it easy to manage and deploy. Highly recommended!"
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">VP</div>
+                <div>
+                  <h4>Vaishnavi Parekh</h4>
+                  <p>College Student</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="testimonial-card card">
+              <div class="testimonial-top">
+                <div class="stars" aria-label="5 star rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
+              </div>
+              <div class="testimonial-text">
+                "As a BCA student, I needed a professional website project using PHP and MySQL. Bloom &amp; Send delivered a well-structured Flower Management System with a clean UI and smooth functionality. The project ran perfectly on WAMP, making it easy to manage and deploy. Highly recommended!"
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">NS</div>
+                <div>
+                  <h4>Nikki Soni</h4>
+                  <p>College Student</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- controls -->
+        <div class="t-controls">
+          <button class="t-btn" id="t-prev" aria-label="Previous testimonial">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="t-dots" id="t-dots" aria-label="Testimonials pagination"></div>
+
+          <button class="t-btn" id="t-next" aria-label="Next testimonial">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="faqs" id="faqs">
+    <div class="container">
+      <div class="section-title">
+        <h2>FAQs</h2>
+        <p>Common questions about pricing, delivery, demo, and payment.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            How fast do you deliver?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-a">
+            <p>Basic tasks usually take 2–3 days, intermediate 5–7 days, and advanced 7–10 days (depends on features).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Do you provide a demo before payment?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-a">
+            <p>Yes. We show the working demo first. Payment happens after you’re satisfied.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            What will I receive after completion?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-a">
+            <p>You get source code, documentation, setup steps/video, and basic guidance to run it on your system.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            Can you make a project in any language?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-a">
+            <p>Yes, custom projects are available in many languages. Share requirements and we’ll confirm feasibility.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Ready to get your website or student project? Get in touch today!</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+          <p style="color:var(--muted);font-weight:650;">We're here to help you with your website or academic project. Reach out to us through any of these channels:</p>
+
+          <div class="contact-method">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>Aayush</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+            <div>
+              <h4>Instagram</h4>
+              <p>@thelocalgrowthstudio</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>Anand, Gujarat, India</p>
+            </div>
+          </div>
+
+          <div class="contact-btns">
+            <a href="https://wa.me/916355938913" class="btn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i> WhatsApp Now
+            </a>
+            <a href="https://instagram.com/thelocalgrowthstudio" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i> Follow on Instagram
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>Request a Quote</h3>
+          <div id="form-status" class="form-status"></div>
+
+          <form id="contactForm" action="https://formspree.io/f/xovpgpnw" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
                 type="tel"
                 id="phone"
                 name="phone"
@@ -1638,193 +1372,331 @@ footer {
                 maxlength="10"
                 pattern="[6-9]{1}[0-9]{9}"
                 placeholder="Enter 10-digit mobile number"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-        </div>
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+              />
+            </div>
 
-        <div class="form-group">
-            <label for="service-type">Service Type</label>
-            <select id="service-type" name="service-type" required>
+            <div class="form-group">
+              <label for="service-type">Service Type</label>
+              <select id="service-type" name="service-type" required>
                 <option value="">Select service type</option>
                 <option value="website">Website Design</option>
                 <option value="student-project">Student Project</option>
                 <option value="both">Both</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="budget">Budget (₹)</label>
-            <input type="number" id="budget" name="budget" min="100" placeholder="Enter your budget">
-        </div>
-
-        <div class="form-group">
-            <label for="message">Project Details</label>
-            <textarea id="message" name="message" rows="4"
-                placeholder="Describe your project requirements..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn">Get Free Quote</button>
-    </form>
-</div>
+              </select>
             </div>
+
+            <div class="form-group">
+              <label for="budget">Budget (₹)</label>
+              <input type="number" id="budget" name="budget" min="100" placeholder="Enter your budget" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" rows="4" placeholder="Describe your project requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Get Free Quote</button>
+          </form>
         </div>
-    </section>
-
-    <!-- WhatsApp Button -->
-    <<a href="https://wa.me/916355938913" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-<!-- Footer -->
-<footer class="footer" id="footer">
-    <div class="footer-content">
-        <h3>LocalGrowth Studio</h3>
-        <p class="footer-tagline">Professional Websites & Student Projects</p>
-        <p class="footer-location">Anand, Gujarat, India</p>
-
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#student-projects">Student Projects</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <div class="footer-social">
-            <a href="https://wa.me/916355938913" target="_blank" rel="noopener noreferrer">
-                WhatsApp
-            </a>
-            <a href="https://instagram.com/thelocalgrowthstudio" target="_blank" rel="noopener noreferrer">
-                Instagram
-            </a>
-        </div>
-
-        <p class="footer-copy">
-            © 2025 LocalGrowth Studio. All rights reserved.
- Serving clients even before this website went live.
-        </p>
+      </div>
     </div>
-</footer>
+  </section>
 
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/916355938913" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer-content">
+      <h3>LocalGrowth Studio</h3>
+      <p class="footer-tagline">Professional Websites & Student Projects</p>
+      <p class="footer-location">Anand, Gujarat, India</p>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#student-projects">Student Projects</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://wa.me/916355938913" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://instagram.com/thelocalgrowthstudio" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+
+      <p class="footer-copy">
+        © 2025 LocalGrowth Studio. All rights reserved. Serving clients even before this website went live.
+      </p>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-    // Mobile Menu Toggle
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.toggle('active');
-    });
+  // ----------------------------
+  // ✅ Supabase Auth Guard + Logout
+  // ----------------------------
+  const SUPABASE_URL = "https://mtnuxxrqtfrezrbypqzr.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_DmlEgucOtfmUfu5FBeOUHw_mReGFpR1";
+  const supabaseClient = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // Logout Functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const logoutBtn = document.getElementById('logout-btn');
-        const logoutLi = document.getElementById('logout-li');
-        
-        // Check if user is logged in
-        const isLoggedIn = localStorage.getItem('isLoggedIn') || sessionStorage.getItem('isLoggedIn');
-        
-        if (isLoggedIn === 'true') {
-            logoutLi.style.display = 'block';
+  const header = document.getElementById('site-header');
+  const menuBtn = document.getElementById('menu-btn');
+  const navLinks = document.getElementById('nav-links');
+  const navA = document.querySelectorAll('.nav-link');
+
+  const logoutBtn = document.getElementById('logout-btn');
+  const logoutLi = document.getElementById('logout-li');
+
+  // ✅ Auth Guard: session nahi hai to auth.html
+  async function requireAuth() {
+    if (!supabaseClient) return;
+
+    const { data: { session } } = await supabaseClient.auth.getSession();
+
+    if (!session) {
+      localStorage.removeItem('isLoggedIn');
+      sessionStorage.removeItem('isLoggedIn');
+      window.location.href = 'auth.html';
+      return;
+    }
+
+    // session present => logout visible
+    if (logoutLi) logoutLi.style.display = 'block';
+    localStorage.setItem('isLoggedIn', 'true');
+  }
+
+  // ✅ Proper logout: Supabase signOut + redirect
+  async function doLogout(e) {
+    e.preventDefault();
+    try {
+      if (supabaseClient) await supabaseClient.auth.signOut();
+    } catch (_) {}
+    localStorage.removeItem('isLoggedIn');
+    sessionStorage.removeItem('isLoggedIn');
+    window.location.href = 'index.html';
+  }
+
+  // ----------------------------
+  // 1) Navbar upgrades
+  // ----------------------------
+  const onScrollHeader = () => {
+    if (window.scrollY > 8) header?.classList.add('scrolled');
+    else header?.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScrollHeader);
+  onScrollHeader();
+
+  // mobile menu toggle
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+  }
+
+  // smooth scroll (offset)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+
+      const targetElement = document.querySelector(targetId);
+      if (!targetElement) return;
+
+      e.preventDefault();
+      const y = targetElement.getBoundingClientRect().top + window.pageYOffset - 90;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      navLinks?.classList.remove('active');
+    });
+  });
+
+  // active section highlight
+  const sectionIds = ['home','services','student-projects','pricing','testimonials','contact'];
+  const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+  const setActive = (id) => {
+    navA.forEach(a => {
+      const href = a.getAttribute('href');
+      a.classList.toggle('active', href === `#${id}`);
+    });
+  };
+
+  const secObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(en => en.isIntersecting)
+      .sort((a,b) => (b.intersectionRatio - a.intersectionRatio))[0];
+    if (visible?.target?.id) setActive(visible.target.id);
+  }, { threshold: [0.25, 0.4, 0.55, 0.7], rootMargin: '-20% 0px -55% 0px' });
+
+  sectionEls.forEach(el => secObserver.observe(el));
+  setActive('home');
+
+  // ----------------------------
+  // 4) Testimonials slider
+  // ----------------------------
+  const track = document.getElementById('t-track');
+  const prevBtn = document.getElementById('t-prev');
+  const nextBtn = document.getElementById('t-next');
+  const dotsWrap = document.getElementById('t-dots');
+
+  let index = 0;
+  let autoplayTimer = null;
+
+  function getSlideWidth(){
+    const first = track?.children?.[0];
+    if (!first) return 0;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.columnGap || style.gap || '0') || 0;
+    return first.getBoundingClientRect().width + gap;
+  }
+
+  function slideCount(){ return track ? track.children.length : 0; }
+
+  function buildDots(){
+    if (!dotsWrap) return;
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < slideCount(); i++){
+      const b = document.createElement('button');
+      b.className = 'dot-btn' + (i === index ? ' active' : '');
+      b.type = 'button';
+      b.setAttribute('aria-label', `Go to testimonial ${i+1}`);
+      b.addEventListener('click', () => { goTo(i); restartAutoplay(); });
+      dotsWrap.appendChild(b);
+    }
+  }
+
+  function updateDots(){
+    if (!dotsWrap) return;
+    [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+
+  function goTo(i){
+    const count = slideCount();
+    if (!track || count === 0) return;
+    index = (i + count) % count;
+    const w = getSlideWidth();
+    track.style.transform = `translateX(${-index * w}px)`;
+    updateDots();
+  }
+
+  function next(){ goTo(index + 1); }
+  function prev(){ goTo(index - 1); }
+
+  function startAutoplay(){
+    if (autoplayTimer) return;
+    autoplayTimer = setInterval(() => next(), 3500);
+  }
+  function stopAutoplay(){
+    clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+  function restartAutoplay(){ stopAutoplay(); startAutoplay(); }
+
+  if (track){
+    buildDots();
+    goTo(0);
+    startAutoplay();
+
+    prevBtn?.addEventListener('click', () => { prev(); restartAutoplay(); });
+    nextBtn?.addEventListener('click', () => { next(); restartAutoplay(); });
+
+    const shell = track.closest('.testimonial-shell');
+    shell?.addEventListener('mouseenter', stopAutoplay);
+    shell?.addEventListener('mouseleave', startAutoplay);
+    shell?.addEventListener('touchstart', stopAutoplay, {passive:true});
+    shell?.addEventListener('touchend', startAutoplay, {passive:true});
+
+    window.addEventListener('resize', () => goTo(index));
+  }
+
+  // ----------------------------
+  // FAQs accordion
+  // ----------------------------
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    btn?.addEventListener('click', () => {
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if (openItem !== item) openItem.classList.remove('open');
+      });
+      item.classList.toggle('open');
+    });
+  });
+
+  // ----------------------------
+  // Formspree submit
+  // ----------------------------
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusDiv = document.getElementById('form-status');
+      if (!submitButton || !statusDiv) return;
+
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitButton.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          statusDiv.textContent = 'Thank you for your message! We will get back to you soon.';
+          statusDiv.className = 'form-status success';
+          form.reset();
         } else {
-            logoutLi.style.display = 'none';
+          throw new Error('Form submission failed');
         }
-        
-        if (logoutBtn) {
-            logoutBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Clear login status
-                localStorage.removeItem('isLoggedIn');
-                sessionStorage.removeItem('isLoggedIn');
-                
-                // Redirect to auth page
-                window.location.href = 'auth.html';
-            });
-        }
+      } catch (error) {
+        statusDiv.textContent = 'Oops! There was a problem submitting your form. Please try again or contact us directly.';
+        statusDiv.className = 'form-status error';
+      } finally {
+        submitButton.innerHTML = 'Get Free Quote';
+        submitButton.disabled = false;
+        statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     });
+  }
 
-    // Form Submission with Formspree
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const form = e.target;
-        const formData = new FormData(form);
-        const submitButton = form.querySelector('button[type="submit"]');
-        const statusDiv = document.getElementById('form-status');
-        
-        // Change button text to indicate loading
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitButton.disabled = true;
-        
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (response.ok) {
-                statusDiv.textContent = 'Thank you for your message! We will get back to you soon.';
-                statusDiv.className = 'form-status success';
-                form.reset();
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            statusDiv.textContent = 'Oops! There was a problem submitting your form. Please try again or contact us directly.';
-            statusDiv.className = 'form-status error';
-        } finally {
-            // Reset button
-            submitButton.innerHTML = 'Get Free Quote';
-            submitButton.disabled = false;
-            
-            // Scroll to status message
-            statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+  // ----------------------------
+  // Scroll reveal
+  // ----------------------------
+  const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -60px 0px' };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
     });
+  }, observerOptions);
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                document.querySelector('.nav-links').classList.remove('active');
-            }
-        });
-    });
+  document.querySelectorAll('.card, .project-card, .language-card, .deliver-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity 650ms ease, transform 650ms ease';
+    observer.observe(el);
+  });
 
-    // Add animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for animation
-    document.querySelectorAll('.feature-card, .service-card, .project-card, .pricing-card, .testimonial-card, .language-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+  // ----------------------------
+  // Init
+  // ----------------------------
+  requireAuth();
+  logoutBtn?.addEventListener('click', doLogout);
 </script>
+
 </body>
 </html>
