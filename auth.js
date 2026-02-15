@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const { data: { session } } = await supabaseClient.auth.getSession();
     if (session) {
-      // optional: keep local flag for home.html logout UI
       localStorage.setItem("isLoggedIn", "true");
       window.location.href = "home.html";
       return;
@@ -88,7 +87,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (error) {
       showStatus(registerStatus, "❌ " + error.message, "err");
     } else {
-      showStatus(registerStatus, "✅ Registration successful! Please login.", "ok");
+      showStatus(
+        registerStatus,
+        "✅ Registered! If email confirmation is enabled, check inbox and verify first.",
+        "ok"
+      );
       container.classList.remove("active");
       registerForm.reset();
     }
@@ -116,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (error) {
       showStatus(loginStatus, "❌ " + error.message, "err");
     } else {
-      localStorage.setItem("isLoggedIn", "true"); // so home.html shows logout
+      localStorage.setItem("isLoggedIn", "true");
       window.location.href = "home.html";
     }
   });
