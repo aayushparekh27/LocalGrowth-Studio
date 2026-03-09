@@ -4,86 +4,90 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LocalGrowth Studio | Login</title>
-
   <link rel="stylesheet" href="auth.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 
 <body>
   <main class="page">
     <div class="container" id="auth-container">
+
       <!-- LOGIN -->
       <section class="form-box login" aria-label="Login form">
-        <form id="loginForm" autocomplete="on">
-          <h1>Login</h1>
-          <p class="sub">Access your dashboard & manage your account.</p>
+        <form id="loginForm" autocomplete="on" novalidate>
+          <h1>Welcome Back</h1>
+          <p class="sub">Sign in to access your dashboard.</p>
 
-          <div id="loginStatus" class="status" aria-live="polite"></div>
+          <div id="loginStatus" class="status" role="alert" aria-live="polite"></div>
 
           <div class="input-box">
-            <input id="loginEmail" name="email" type="email" placeholder="Email" autocomplete="email" required />
+            <input id="loginEmail" name="email" type="email" placeholder="Email address"
+              autocomplete="email" required />
             <i class="bx bxs-envelope"></i>
           </div>
 
           <div class="input-box">
-            <input id="loginPassword" name="password" type="password" placeholder="Password" autocomplete="current-password" required />
+            <input id="loginPassword" name="password" type="password" placeholder="Password"
+              autocomplete="current-password" required />
             <i class="bx bxs-lock-alt"></i>
           </div>
 
           <button type="submit" class="btn" id="loginBtn">
-            <span class="btn-text">Login</span>
+            <span class="btn-text">Sign In</span>
             <span class="btn-loader" aria-hidden="true"></span>
           </button>
 
-          <p class="tiny">By continuing, you agree to our basic terms & privacy.</p>
+          <p class="tiny">By continuing, you agree to our terms &amp; privacy policy.</p>
         </form>
       </section>
 
       <!-- REGISTER -->
       <section class="form-box register" aria-label="Register form">
-        <form id="registerForm" autocomplete="on">
-          <h1>Registration</h1>
-          <p class="sub">Create your account in seconds.</p>
+        <form id="registerForm" autocomplete="on" novalidate>
+          <h1>Create Account</h1>
+          <p class="sub">Join us — it only takes a few seconds.</p>
 
-          <div id="registerStatus" class="status" aria-live="polite"></div>
+          <div id="registerStatus" class="status" role="alert" aria-live="polite"></div>
 
           <div class="input-box">
-            <input id="regEmail" name="email" type="email" placeholder="Email" autocomplete="email" required />
+            <input id="regEmail" name="email" type="email" placeholder="Email address"
+              autocomplete="email" required />
             <i class="bx bxs-envelope"></i>
           </div>
 
           <div class="input-box">
-            <input id="regPassword" name="password" type="password" placeholder="Password (min 6 chars)" autocomplete="new-password" minlength="6" required />
+            <input id="regPassword" name="password" type="password" placeholder="Password (min 6 chars)"
+              autocomplete="new-password" minlength="6" required />
             <i class="bx bxs-lock-alt"></i>
           </div>
 
           <button type="submit" class="btn" id="registerBtn">
-            <span class="btn-text">Register</span>
+            <span class="btn-text">Create Account</span>
             <span class="btn-loader" aria-hidden="true"></span>
           </button>
 
-          <p class="tiny">Tip: Use a strong password for better security.</p>
+          <p class="tiny">Use a strong password for better security.</p>
         </form>
       </section>
 
-      <!-- TOGGLE -->
+      <!-- TOGGLE PANELS -->
       <aside class="toggle-box" aria-hidden="true">
         <div class="toggle-panel toggle-left">
           <h1>Hello, Welcome!</h1>
-          <p>Don't have an account?</p>
+          <p>New here? Create your free account.</p>
           <button class="btn ghost register-btn" type="button">Register</button>
         </div>
 
         <div class="toggle-panel toggle-right">
           <h1>Welcome Back!</h1>
           <p>Already have an account?</p>
-          <button class="btn ghost login-btn" type="button">Login</button>
+          <button class="btn ghost login-btn" type="button">Sign In</button>
         </div>
       </aside>
+
     </div>
   </main>
 
-  <!-- Supabase CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="auth.js"></script>
 </body>

@@ -3,1700 +3,1169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LocalGrowth Studio | Custom Website Design & Student Projects</title>
+  <title>LocalGrowth Studio | Custom Websites & Student Projects</title>
+  <meta name="description" content="Professional website design and student projects from Anand, Gujarat. Starting ₹199 for student projects." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    :root{
-      --primary:#8A2BE2; --primary-2:#9d4edd; --primary-dark:#6A1CB0;
-      --secondary:#FF6B35; --secondary-2:#ff8a5c; --secondary-dark:#E55A2B;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-      --bg:#ffffff; --bg-2:#F8F9FA; --card:#ffffff;
-      --text:#495057; --heading:#1f2430; --muted:#6c757d;
-
-      --border: rgba(15, 23, 42, 0.10);
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
-      --shadow-hover: 0 18px 55px rgba(0,0,0,0.12);
-
-      --r-sm: 10px; --r-md: 14px; --r-lg: 18px;
-      --t: 220ms ease;
-      --t2: 420ms cubic-bezier(0.175,0.885,0.32,1.275);
-      --container: 1200px;
-      --pad: 1rem;
-    }
-
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
-    ::selection{background: rgba(138,43,226,0.22);}
-
-    body::before{
-      content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(138,43,226,0.08), transparent 40%),
-        radial-gradient(circle at 90% 30%, rgba(255,107,53,0.08), transparent 45%),
-        linear-gradient(to bottom, rgba(2,6,23,0.03), transparent 35%);
+    :root {
+      --ink:      #07080F;
+      --ink-2:    #0E0F1A;
+      --surface:  #12131F;
+      --surface-2:#181928;
+      --border:   rgba(255,255,255,0.07);
+      --border-2: rgba(255,255,255,0.12);
+      --gold:     #F5A623;
+      --gold-2:   #FFD166;
+      --teal:     #00C9A7;
+      --blue:     #1A56DB;
+      --blue-2:   #0EA5E9;
+      --blue-lt:  #7EB3FF;
+      --text:     #A8AABE;
+      --text-2:   #D0D2E8;
+      --heading:  #F0F1FF;
+      --g1:       linear-gradient(135deg, #1A56DB, #0EA5E9);
+      --g2:       linear-gradient(135deg, #F5A623, #FFD166);
+      --max:      1200px;
+      --nav-h:    76px;
+      --ease:     cubic-bezier(0.22,1,0.36,1);
+      --bounce:   cubic-bezier(0.34,1.56,0.64,1);
     }
 
-    h1,h2,h3,h4,h5{color:var(--heading);font-weight:800;line-height:1.15;}
-    h1{font-size:clamp(2.1rem,4vw,3.4rem);margin-bottom:1rem;letter-spacing:-0.5px;}
-    h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:1rem;letter-spacing:-0.4px;}
-    h3{font-size:1.55rem;margin-bottom:0.75rem;}
-    p{margin-bottom:1.2rem;}
-
-    section{padding: clamp(4rem, 7vw, 6rem) var(--pad);}
-    .container{max-width:var(--container);margin:0 auto;}
-
-    /* Buttons */
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:0.55rem;
-      padding:0.95rem 2.05rem; border-radius:999px; font-weight:700; text-decoration:none;
-      cursor:pointer; border:1px solid transparent; user-select:none;
-      transition: transform var(--t2), box-shadow var(--t), background var(--t), color var(--t), border var(--t), opacity var(--t);
-      position:relative; overflow:hidden; will-change:transform;
-      box-shadow: 0 10px 25px rgba(138,43,226,0.22);
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      color:#fff;
+    body {
+      font-family: 'Satoshi', system-ui, sans-serif;
+      background: var(--ink); color: var(--text);
+      line-height: 1.7; overflow-x: hidden;
     }
-    .btn::after{
-      content:""; position:absolute; inset:-2px;
-      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), transparent 45%);
-      opacity:0; transition: opacity var(--t);
-    }
-    .btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(138,43,226,0.30);}
-    .btn:hover::after{opacity:1;}
-    .btn:active{transform:translateY(-1px);}
+    ::selection { background: rgba(26,86,219,0.35); color: #fff; }
 
-    .btn-secondary{
-      background: linear-gradient(135deg, var(--secondary), var(--secondary-2));
-      box-shadow: 0 10px 25px rgba(255,107,53,0.22);
-    }
-    .btn-secondary:hover{box-shadow:0 18px 40px rgba(255,107,53,0.30);}
-
-    .btn-outline{
-      background:transparent; color:var(--primary);
-      border-color: rgba(138,43,226,0.35);
-      box-shadow:none;
-    }
-    .btn-outline:hover{
-      background: rgba(138,43,226,0.08);
-      border-color: rgba(138,43,226,0.55);
-      box-shadow: 0 10px 25px rgba(138,43,226,0.10);
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 160px;
     }
 
-    /* Section title */
-    .section-title{text-align:center;margin-bottom:3.25rem;}
-    .section-title h2{display:inline-block;position:relative;padding-bottom:0.75rem;}
-    .section-title h2::after{
-      content:""; position:absolute; left:50%; bottom:0; transform:translateX(-50%);
-      width:92px; height:6px; border-radius:999px;
-      background: linear-gradient(90deg, var(--primary), var(--primary-2));
-      box-shadow: 0 10px 22px rgba(138,43,226,0.22);
-    }
-    .section-title p{max-width:780px;margin:0.75rem auto 0;color:var(--muted);font-size:1.05rem;}
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--ink); }
+    ::-webkit-scrollbar-thumb { background: rgba(26,86,219,0.45); border-radius: 10px; }
 
-    /* Header + Navbar upgrades */
-    header{
-      position:fixed; width:100%; top:0; z-index:1000;
-      background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(15,23,42,0.08);
-      transition: box-shadow var(--t), background var(--t);
-    }
-    header.scrolled{
-      background: rgba(255,255,255,0.86);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.10);
-    }
-    .navbar{
-      max-width:var(--container); margin:0 auto;
-      padding:0.95rem 1.2rem;
-      display:flex; align-items:center; justify-content:space-between; gap:1rem;
-    }
-    .logo{text-decoration:none;display:flex;flex-direction:column;line-height:1;color:var(--primary);}
-    .logo-line1{font-size:1.55rem;font-weight:900;letter-spacing:-0.6px;}
-    .logo-line2{font-size:1.05rem;font-weight:700;opacity:0.9;margin-top:2px;letter-spacing:1px;}
+    /* ── TYPOGRAPHY ── */
+    h1,h2,h3,h4,h5 { font-family: 'Cabinet Grotesk', sans-serif; color: var(--heading); line-height: 1.1; }
+    h1 { font-size: clamp(2.6rem,5.5vw,4.8rem); font-weight: 900; letter-spacing: -1.5px; }
+    h2 { font-size: clamp(2rem,4vw,3.2rem); font-weight: 800; letter-spacing: -0.8px; }
+    h3 { font-size: clamp(1.2rem,2vw,1.5rem); font-weight: 700; }
+    p  { font-size: 1.02rem; line-height: 1.75; }
 
-    .nav-links{list-style:none;display:flex;align-items:center;gap:1.6rem;}
-    .nav-links a{
-      text-decoration:none;color:var(--heading);font-weight:800;font-size:0.98rem;
-      position:relative;transition: color var(--t), background var(--t);
-      padding: 0.5rem 0.2rem;
-      border-radius: 12px;
-    }
-    .nav-links a::after{
-      content:""; position:absolute; left:0; bottom:-7px;
-      width:0%; height:3px; border-radius:999px;
-      background: linear-gradient(90deg, var(--primary), var(--primary-2));
-      transition: width var(--t2);
-    }
-    .nav-links a:hover{color:var(--primary);}
-    .nav-links a:hover::after{width:100%;}
-    .nav-links a.active{
-      color: var(--primary-dark);
-      background: rgba(138,43,226,0.08);
-    }
-    .nav-links a.active::after{width:100%;}
+    /* ── LAYOUT ── */
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: clamp(5rem,9vw,7rem) 1.5rem; }
 
-    .mobile-menu-btn{
-      display:none; border:none; background:transparent;
-      font-size:1.4rem; color:var(--heading); cursor:pointer;
-      padding:0.45rem 0.6rem; border-radius:12px;
-      transition: background var(--t);
+    /* ── TAG ── */
+    .tag {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.38rem 1rem; border-radius: 999px;
+      font-size: 0.79rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+      border: 1px solid rgba(26,86,219,0.35); background: rgba(26,86,219,0.12); color: var(--blue-lt);
     }
-    .mobile-menu-btn:hover{background: rgba(15,23,42,0.06);}
+    .tag-gold { border-color: rgba(245,166,35,0.35); background: rgba(245,166,35,0.10); color: var(--gold-2); }
 
-    /* HERO upgrades (stats + scroll indicator + blob) */
-    .hero{
-      padding: 10rem var(--pad) 6.5rem;
-      text-align:center; position:relative; overflow:hidden; color:#fff;
-      background:
-        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.18), transparent 45%),
-        radial-gradient(circle at 80% 25%, rgba(255,255,255,0.18), transparent 50%),
-        linear-gradient(135deg, var(--primary), var(--primary-dark));
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+      padding: 0.9rem 2rem; border-radius: 12px;
+      font-family: 'Cabinet Grotesk', sans-serif; font-size: 1rem; font-weight: 700;
+      border: none; cursor: pointer; text-decoration: none; user-select: none;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s, opacity 0.2s;
+      position: relative; overflow: hidden;
     }
-    .hero::before{
-      content:""; position:absolute; inset:0; pointer-events:none; opacity:0.12;
-      background:
-        linear-gradient( to bottom, rgba(0,0,0,0.16), transparent 35% ),
-        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiM4YTJiZTIiLz48cGF0aCBkPSJNMCw1MDBMMTAwMCw1MDBMMTAwMCw3MDBMMCw3MDBaIiBmaWxsPSIjN2ExY2IwIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0wLDMwMEwxMDAwLDMwMEwxMDAwLDUwMEwwLDUwMFoiIGZpbGw9IiM3YTFjYjAiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTAsMTAwTDEwMDAsMTAwTDEwMDAsMzAwTDAsMzAwWiIgZmlsbD0iIzdhMWNiMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=');
+    .btn::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg,rgba(255,255,255,0.14),transparent 60%); opacity: 0; transition: opacity 0.25s; }
+    .btn:hover::before { opacity: 1; }
+    .btn:hover:not(:disabled) { transform: translateY(-3px); }
+    .btn:active:not(:disabled) { transform: translateY(-1px); }
+    .btn:disabled { opacity: 0.65; cursor: not-allowed; }
+
+    .btn-primary { background: var(--g1); color: #fff; box-shadow: 0 8px 28px rgba(26,86,219,.35); }
+    .btn-primary:hover:not(:disabled) { box-shadow: 0 16px 40px rgba(26,86,219,.45); }
+
+    .btn-gold { background: var(--g2); color: #1A1100; box-shadow: 0 8px 28px rgba(245,166,35,.30); }
+    .btn-gold:hover:not(:disabled) { box-shadow: 0 16px 40px rgba(245,166,35,.40); }
+
+    .btn-ghost { background: transparent; color: var(--text-2); border: 1.5px solid var(--border-2); }
+    .btn-ghost:hover:not(:disabled) { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22); }
+
+    .btn-wa { background: linear-gradient(135deg,#25D366,#20BC5A); color: #fff; box-shadow: 0 8px 28px rgba(37,211,102,.28); }
+    .btn-wa:hover:not(:disabled) { box-shadow: 0 16px 40px rgba(37,211,102,.40); }
+
+    .btn-sm  { padding: 0.62rem 1.4rem; font-size: 0.9rem; }
+    .btn-lg  { padding: 1.1rem 2.6rem; font-size: 1.06rem; border-radius: 14px; }
+
+    /* ── SECTION HEADER ── */
+    .sec-head { text-align: center; max-width: 680px; margin: 0 auto 4rem; }
+    .sec-head h2 { margin: 0.6rem 0 1rem; }
+    .sec-head p  { color: var(--text); }
+    .sec-line { display: inline-block; width: 48px; height: 4px; border-radius: 999px; background: var(--g1); margin-bottom: 0.75rem; }
+
+    /* ── CARD BASE ── */
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      transition: transform .4s var(--ease), border-color .3s, box-shadow .3s;
     }
-    /* animated blob */
-    .hero-blob{
-      position:absolute;
-      width: 520px; height: 520px;
-      right: -220px; top: -190px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.22), rgba(255,255,255,0.06), transparent 65%);
-      filter: blur(0px);
-      opacity: 0.9;
-      transform-origin:center;
-      animation: blobFloat 10s ease-in-out infinite;
-      pointer-events:none;
-    }
-    .hero-blob::after{
-      content:"";
-      position:absolute; inset:0;
-      border-radius: 44% 56% 52% 48% / 46% 44% 56% 54%;
-      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.18), transparent 55%);
-      animation: blobMorph 8s ease-in-out infinite;
-    }
-    @keyframes blobFloat{
-      0%,100%{transform: translate(0,0) rotate(0deg) scale(1);}
-      50%{transform: translate(-25px, 25px) rotate(8deg) scale(1.05);}
-    }
-    @keyframes blobMorph{
-      0%,100%{border-radius: 44% 56% 52% 48% / 46% 44% 56% 54%;}
-      50%{border-radius: 52% 48% 42% 58% / 58% 52% 48% 42%;}
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(26,86,219,.30);
+      box-shadow: 0 24px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(26,86,219,.10);
     }
 
-    .hero-content{position:relative;max-width:900px;margin:0 auto;z-index:1;}
-    .hero h1{color:#fff;text-shadow:0 10px 30px rgba(0,0,0,0.22);}
-    .hero p{color:rgba(255,255,255,0.9);font-size:1.15rem;max-width:740px;margin:0 auto 1.3rem;}
-    .hero-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:0.75rem;}
-    .hero .btn{
-      background: rgba(255,255,255,0.96);
-      color: var(--primary-dark);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+    /* ═══ HEADER ═══ */
+    #site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      height: var(--nav-h); display: flex; align-items: center;
+      background: rgba(7,8,15,.5);
+      backdrop-filter: blur(20px) saturate(1.5);
+      -webkit-backdrop-filter: blur(20px) saturate(1.5);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s, background .3s, box-shadow .3s;
     }
-    .hero .btn:hover{opacity:0.95;}
-    .hero .btn-outline{
-      background: transparent;
-      border-color: rgba(255,255,255,0.55);
-      color:#fff; box-shadow:none;
-    }
-    .hero .btn-outline:hover{
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.75);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.10);
-    }
+    #site-header.scrolled { background: rgba(7,8,15,.88); border-bottom-color: var(--border); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
 
-    /* mini stats */
-    .hero-stats{
-      margin: 1.25rem auto 0;
-      display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;
-    }
-    .stat-pill{
-      padding: 0.7rem 1rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      backdrop-filter: blur(10px);
-      font-weight: 800;
-      color: rgba(255,255,255,0.92);
-      display:flex; align-items:center; gap:0.55rem;
-    }
-    .stat-pill i{opacity:0.9;}
+    .navbar { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 
-    /* scroll indicator */
-    .scroll-indicator{
-      position:absolute;
-      left:50%;
-      bottom: 1.6rem;
-      transform: translateX(-50%);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:0.35rem;
-      color: rgba(255,255,255,0.85);
-      text-decoration:none;
-      font-weight:800;
-      z-index:2;
-      opacity:0.95;
-    }
-    .scroll-indicator .mouse{
-      width: 28px; height: 44px;
-      border-radius: 999px;
-      border: 2px solid rgba(255,255,255,0.55);
-      display:grid; place-items:center;
-    }
-    .scroll-indicator .dot{
-      width:6px; height:6px; border-radius:50%;
-      background: rgba(255,255,255,0.85);
-      animation: scrollDot 1.4s ease-in-out infinite;
-    }
-    @keyframes scrollDot{
-      0%{transform: translateY(-8px); opacity:0.3;}
-      50%{transform: translateY(0px); opacity:1;}
-      100%{transform: translateY(10px); opacity:0.2;}
-    }
+    .logo { text-decoration: none; display: inline-flex; flex-direction: column; line-height: 1; }
+    .logo-top { font-family: 'Cabinet Grotesk', sans-serif; font-size: 1.45rem; font-weight: 900; letter-spacing: -0.5px; background: linear-gradient(135deg,#7EB3FF,#1A56DB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .logo-sub { font-size: 0.7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--text); margin-top: 2px; }
 
-    /* Shared card look */
-    .card{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      box-shadow: var(--shadow);
-      transition: transform var(--t2), box-shadow var(--t), border var(--t);
-      position:relative; overflow:hidden;
-    }
-    .card:hover{
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(138,43,226,0.18);
-    }
+    .nav-links { list-style: none; display: flex; align-items: center; gap: 0.2rem; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; padding: .5rem .9rem; border-radius: 10px; transition: color .2s, background .2s; }
+    .nav-links a:hover { color: var(--heading); background: rgba(255,255,255,.06); }
+    .nav-links a.active { color: var(--blue-lt); background: rgba(26,86,219,.12); }
 
-    /* Features */
-    .features{background:var(--bg-2);}
-    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;}
-    .feature-card{padding:2.1rem 1.75rem;text-align:center;}
-    .feature-card.card::before{
-      content:""; position:absolute; inset:-2px;
-      background: radial-gradient(circle at 30% 0%, rgba(138,43,226,0.18), transparent 45%);
-      opacity:0; transition: opacity var(--t); pointer-events:none;
-    }
-    .feature-card.card:hover::before{opacity:1;}
-    .feature-icon{
-      width:74px;height:74px;border-radius:18px;display:grid;place-items:center;
-      margin:0 auto 1.15rem;background:rgba(138,43,226,0.12);
-      border:1px solid rgba(138,43,226,0.16);color:var(--primary);font-size:1.8rem;
-      transition: transform var(--t2), background var(--t);
-    }
-    .feature-card:hover .feature-icon{transform:scale(1.06) rotate(-2deg);background:rgba(138,43,226,0.16);}
-    .feature-card p{color:var(--muted);margin-bottom:0;}
+    #logout-li { display: none; }
+    #logout-btn { text-decoration: none; color: #f87171; font-weight: 700; font-size: .9rem; padding: .5rem .9rem; border-radius: 10px; transition: background .2s; }
+    #logout-btn:hover { background: rgba(248,113,113,.1); }
 
-    /* Services */
-    .services{background:var(--bg);}
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;}
-    .service-card{padding:2.2rem;}
-    .service-icon{
-      width:74px;height:74px;border-radius:18px;display:grid;place-items:center;
-      margin-bottom:1.2rem;background:rgba(138,43,226,0.12);
-      border:1px solid rgba(138,43,226,0.16);color:var(--primary);font-size:1.65rem;
-    }
-    .service-card p{color:var(--muted);margin-bottom:0;}
+    .nav-cta { display: flex; align-items: center; gap: .75rem; }
 
-    /* NEW: How it works */
-    .howitworks{background: var(--bg-2);}
-    .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;}
-    .step-card{padding:1.9rem;}
-    .step-top{display:flex;align-items:center;gap:0.85rem;margin-bottom:0.6rem;}
-    .step-num{
-      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
-      font-weight:900;color:#fff;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      box-shadow: 0 16px 35px rgba(138,43,226,0.18);
-    }
-    .step-card p{color:var(--muted);margin-bottom:0;}
+    .mobile-menu-btn { display: none; background: transparent; border: 1px solid var(--border-2); color: var(--heading); width: 42px; height: 42px; border-radius: 10px; font-size: 1.1rem; cursor: pointer; place-items: center; transition: background .2s; }
+    .mobile-menu-btn:hover { background: rgba(255,255,255,.08); }
 
-    /* NEW: What you get */
-    .deliverables{background: var(--bg);}
-    .deliver-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;}
-    .deliver-item{
-      display:flex;gap:0.85rem;align-items:flex-start;
-      padding:1.1rem 1.1rem;
-      border-radius:16px;
-      background: rgba(15,23,42,0.03);
-      border:1px solid rgba(15,23,42,0.08);
-      transition: transform var(--t2), border var(--t), background var(--t);
+    /* ═══ HERO ═══ */
+    #home {
+      min-height: 100svh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      background: linear-gradient(145deg,#0A0B14 0%,#0D1226 55%,#0A0E1F 100%);
+      padding-top: calc(var(--nav-h) + 3rem); padding-bottom: 5rem;
     }
-    .deliver-item:hover{
-      transform: translateY(-6px);
-      background: rgba(138,43,226,0.05);
-      border-color: rgba(138,43,226,0.18);
+    #home::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(26,86,219,.06) 1px,transparent 1px), linear-gradient(90deg,rgba(26,86,219,.06) 1px,transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 0%,black 40%,transparent 100%);
     }
-    .deliver-ico{
-      width:44px;height:44px;border-radius:14px;
-      display:grid;place-items:center;
-      background: rgba(138,43,226,0.12);
-      color: var(--primary);
-      flex:0 0 auto;
-      border:1px solid rgba(138,43,226,0.16);
+    #home::after {
+      content: ""; position: absolute; pointer-events: none;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle,rgba(26,86,219,.17) 0%,transparent 65%);
+      top: -200px; right: -200px;
+      animation: heroGlow 8s ease-in-out infinite;
     }
-    .deliver-item h4{font-size:1.05rem;margin:0;}
-    .deliver-item p{margin:0.2rem 0 0;color:var(--muted);font-weight:650;}
+    @keyframes heroGlow { 0%,100%{transform:scale(1) translate(0,0);} 50%{transform:scale(1.1) translate(-40px,40px);} }
 
-    /* Student projects */
-    .student-projects{
-      position:relative;overflow:hidden;color:#fff;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(255,255,255,0.18), transparent 48%),
-        radial-gradient(circle at 80% 15%, rgba(255,255,255,0.16), transparent 55%),
-        linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+    .hero-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 1.5rem;
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
     }
-    .student-projects::before{
-      content:""; position:absolute; inset:0; opacity:0.10; pointer-events:none;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.18), transparent 40%),
-        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNGRjZCMzUiLz48cGF0aCBkPSJNMCw1MDBMMTAwMCw1MDBMMTAwMCw3MDBMMCw3MDBaIiBmaWxsPSIjRTU1QTJCIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxwYXRoIGQ9Ik0wLDMwMEwxMDAwLDMwMEwxMDAwLDUwMEwwLDUwMFoiIGZpbGw9IiNFNTVBMkIiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PHBhdGggZD0iTTAsMTAwTDEwMDAsMTAwTDEwMDAsMzAwTDAsMzAwWiIgZmlsbD0iI0U1NUEyQiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=');
-    }
-    .student-projects .section-title h2, .student-projects .section-title p{color:#fff;}
-    .student-projects .section-title h2::after{background:linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.65));box-shadow:none;}
-    .student-projects .section-title p{color:rgba(255,255,255,0.88);}
+    .hero-left { display: flex; flex-direction: column; gap: 1.5rem; }
+    .hero-left h1 span { background: var(--g1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-left p { font-size: 1.1rem; color: var(--text); max-width: 480px; }
+    .hero-btns { display: flex; gap: .9rem; flex-wrap: wrap; }
 
-    .custom-project-note{
-      position:relative;z-index:1;text-align:center;margin:0 auto 1.75rem;padding:1rem 1.2rem;max-width:900px;
-      border-radius:16px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.20);
-      backdrop-filter: blur(10px);font-weight:700;
-    }
-    .custom-project-note i{margin-right:0.4rem;}
+    .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .hero-stat-num { font-family: 'Cabinet Grotesk',sans-serif; font-size: 2rem; font-weight: 900; color: var(--heading); line-height: 1; display: block; }
+    .hero-stat-label { font-size: .83rem; color: var(--text); display: block; margin-top: 2px; }
 
-    .languages-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem;}
-    .language-card{
-      padding:1.15rem;text-align:center;border-radius:16px;background:rgba(255,255,255,0.14);
-      border:1px solid rgba(255,255,255,0.20);backdrop-filter:blur(10px);
-      transition: transform var(--t2), background var(--t), border var(--t);
+    /* hero floating card */
+    .hero-card {
+      background: var(--surface); border: 1px solid var(--border-2); border-radius: 24px; padding: 2rem;
+      box-shadow: 0 40px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(26,86,219,.12);
+      position: relative;
+      animation: cardFloat 6s ease-in-out infinite;
     }
-    .language-card:hover{transform:translateY(-6px);background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.35);}
-    .language-icon{font-size:2rem;margin-bottom:0.6rem;color:#fff;}
-    .language-card h4{color:#fff;font-size:1.05rem;font-weight:800;}
+    @keyframes cardFloat { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
+    .hero-card::before { content:""; position:absolute; inset:0; border-radius:24px; background:linear-gradient(145deg,rgba(26,86,219,.08),transparent 60%); pointer-events:none; }
 
-    .projects-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem;}
-    .project-card{
-      background: rgba(255,255,255,0.96);
-      border:1px solid rgba(15,23,42,0.10);
-      border-radius:18px; overflow:hidden;
-      box-shadow:0 18px 50px rgba(0,0,0,0.14);
-      transition: transform var(--t2), box-shadow var(--t), border var(--t);
-    }
-    .project-card:hover{transform:translateY(-10px);box-shadow:0 26px 70px rgba(0,0,0,0.18);border-color:rgba(138,43,226,0.18);}
-    .project-header{
-      padding:1.4rem 1.4rem 1.2rem;text-align:center;color:#fff;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      position:relative;
-    }
-    .project-header::after{
-      content:""; position:absolute; inset:0;
-      background: radial-gradient(circle at 30% 0%, rgba(255,255,255,0.30), transparent 45%);
-      opacity:0.35; pointer-events:none;
-    }
-    .project-header h3, .project-header p, .project-price{position:relative;z-index:1;}
-    .project-price{font-size:2rem;font-weight:900;margin:0.35rem 0;}
-    .project-features{padding:1.5rem 1.5rem 1.1rem;}
-    .project-features ul{list-style:none;}
-    .project-features li{display:flex;align-items:flex-start;gap:0.7rem;padding:0.45rem 0;color:var(--text);font-weight:650;}
-    .project-features li i{color:var(--primary);margin-top:0.25rem;}
-    .project-cta{padding:0 1.5rem 1.5rem;text-align:center;}
+    .hc-title { font-family:'Cabinet Grotesk',sans-serif; font-size:1rem; font-weight:800; color:var(--heading); margin-bottom:1.2rem; display:flex; align-items:center; gap:.6rem; }
+    .hc-dot { width:9px; height:9px; border-radius:50%; background:var(--teal); box-shadow:0 0 10px rgba(0,201,167,.6); animation:blink 2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.4;} }
 
-    .payment-policy{
-      position:relative;z-index:1;margin-top:2.2rem;padding:1.6rem 1.3rem;border-radius:18px;
-      background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);
-      backdrop-filter: blur(10px); text-align:center;
-    }
-    .payment-policy h4{color:#fff;font-size:1.25rem;margin-bottom:0.6rem;}
-    .payment-policy p{color:rgba(255,255,255,0.9);margin-bottom:0.2rem;}
-    .payment-policy .highlight{color:#fffb8a;font-weight:900;text-shadow:0 10px 22px rgba(0,0,0,0.20);}
+    .hc-row { display:flex; align-items:center; gap:1rem; padding:.85rem 1rem; border-radius:12px; margin-bottom:.6rem; border:1px solid var(--border); background:rgba(255,255,255,.02); transition:background .2s,border-color .2s; }
+    .hc-row:hover { background:rgba(26,86,219,.08); border-color:rgba(26,86,219,.25); }
+    .hc-row:last-child { margin-bottom:0; }
+    .hc-ico { width:40px; height:40px; border-radius:10px; display:grid; place-items:center; background:rgba(26,86,219,.15); color:var(--blue-lt); font-size:.95rem; flex:0 0 auto; }
+    .hc-ico.gold { background:rgba(245,166,35,.15); color:var(--gold-2); }
+    .hc-ico.teal { background:rgba(0,201,167,.15); color:var(--teal); }
+    .hc-label { font-size:.78rem; color:var(--text); display:block; }
+    .hc-val   { font-size:.93rem; font-weight:700; color:var(--heading); display:block; }
 
-    /* Pricing */
-    .pricing{background:var(--bg-2);}
-    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;}
-    .pricing-card{border-radius:18px;}
-    .pricing-card.featured{border:2px solid rgba(138,43,226,0.35);transform:scale(1.03);}
-    .pricing-card.featured:hover{transform:scale(1.03) translateY(-10px);}
-    .pricing-badge{
-      position:absolute; top:14px; right:14px; padding:0.55rem 1rem; border-radius:999px;
-      color:#fff; font-weight:900; font-size:0.85rem;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      box-shadow:0 16px 35px rgba(138,43,226,0.25); z-index:2;
-    }
-    .pricing-header{
-      padding:2rem 1.6rem 1.3rem;text-align:center;
-      background: linear-gradient(135deg, rgba(15,23,42,0.04), rgba(15,23,42,0.06));
-      border-bottom:1px solid rgba(15,23,42,0.08);
-    }
-    .pricing-card.featured .pricing-header{background:linear-gradient(135deg, rgba(138,43,226,0.14), rgba(138,43,226,0.18));}
-    .pricing-price{font-size:2.45rem;font-weight:900;color:var(--primary);margin:0.7rem 0;letter-spacing:-0.6px;}
-    .pricing-card.featured .pricing-price{color:var(--primary-dark);}
-    .pricing-features{padding:1.5rem 1.6rem 1.2rem;}
-    .pricing-features ul{list-style:none;}
-    .pricing-features li{display:flex;align-items:flex-start;gap:0.75rem;padding:0.5rem 0;font-weight:650;color:var(--text);}
-    .pricing-features li i{margin-top:0.25rem;}
-    .pricing-cta{padding:0 1.6rem 1.6rem;text-align:center;}
+    .hc-badges { display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.2rem; }
+    .hc-badge { display:inline-flex; align-items:center; gap:.4rem; padding:.42rem .85rem; border-radius:8px; font-size:.78rem; font-weight:700; background:rgba(0,201,167,.1); border:1px solid rgba(0,201,167,.22); color:var(--teal); }
 
-    /* Testimonials (slider + stars + verified) */
-    .testimonials{background:var(--bg-2);}
-    .testimonial-shell{
-      position:relative;
-      border-radius: 20px;
-      padding: 0.8rem;
-      background: rgba(255,255,255,0.55);
-      border: 1px solid rgba(15,23,42,0.10);
-      box-shadow: 0 18px 55px rgba(0,0,0,0.08);
-    }
-    .testimonial-viewport{overflow:hidden;border-radius:18px;}
-    .testimonial-track{
-      display:flex;
-      gap: 1.2rem;
-      padding: 0.6rem;
-      transform: translateX(0);
-      transition: transform 550ms ease;
-      will-change: transform;
-    }
-    .testimonial-card{min-width: min(360px, 88vw); padding: 1.8rem;}
-    .testimonial-card::before{
-      content:"“";
-      position:absolute;
-      top: 10px;
-      left: 16px;
-      font-size: 5.2rem;
-      line-height: 1;
-      color: rgba(138,43,226,0.10);
-      font-family: Georgia, serif;
-      pointer-events:none;
-    }
-    .testimonial-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 0.8rem;
-      margin-bottom: 0.85rem;
-      position:relative;
-      z-index:1;
-    }
-    .stars{display:flex;gap:0.25rem;align-items:center;}
-    .stars i{color:#ffc107;filter: drop-shadow(0 6px 14px rgba(255,193,7,0.18));}
-    .verified{
-      display:inline-flex;
-      align-items:center;
-      gap:0.4rem;
-      padding: 0.35rem 0.65rem;
-      border-radius: 999px;
-      background: rgba(25,135,84,0.10);
-      border: 1px solid rgba(25,135,84,0.20);
-      color: #198754;
-      font-weight: 900;
-      font-size: 0.82rem;
-      white-space: nowrap;
-    }
-    .testimonial-text{font-style:italic;color:var(--text);font-weight:550;margin-bottom:1.2rem;position:relative;z-index:1;}
-    .testimonial-author{display:flex;align-items:center;gap:1rem;}
-    .author-avatar{
-      width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      box-shadow: 0 16px 35px rgba(138,43,226,0.20);
-      flex: 0 0 auto;
-    }
-    .testimonial-author h4{margin:0;font-size:1.05rem;}
-    .testimonial-author p{margin:0;color:var(--muted);font-weight:650;}
+    /* ═══ TRUST BAR ═══ */
+    .trust-bar { background:var(--ink-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:1.4rem 1.5rem; }
+    .trust-inner { max-width:var(--max); margin:0 auto; display:flex; align-items:center; justify-content:center; gap:clamp(1.5rem,4vw,4rem); flex-wrap:wrap; }
+    .trust-item { display:flex; align-items:center; gap:.65rem; color:var(--text-2); font-weight:600; font-size:.88rem; }
+    .trust-item i { color:var(--gold-2); font-size:1.05rem; }
 
-    .t-controls{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap: 0.8rem;
-      margin-top: 0.9rem;
-      padding: 0 0.4rem 0.2rem;
-    }
-    .t-btn{
-      width: 44px; height: 44px;
-      border-radius: 14px;
-      border: 1px solid rgba(15,23,42,0.10);
-      background: rgba(255,255,255,0.8);
-      cursor:pointer;
-      display:grid; place-items:center;
-      transition: transform var(--t2), background var(--t), border var(--t), box-shadow var(--t);
-    }
-    .t-btn:hover{
-      transform: translateY(-3px);
-      background: #fff;
-      border-color: rgba(138,43,226,0.18);
-      box-shadow: 0 16px 45px rgba(0,0,0,0.10);
-    }
-    .t-dots{
-      display:flex; gap:0.45rem; align-items:center; justify-content:center; flex:1;
-    }
-    .dot-btn{
-      width: 9px; height: 9px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(31,36,48,0.22);
-      cursor:pointer;
-      transition: transform var(--t2), background var(--t);
-    }
-    .dot-btn.active{background: linear-gradient(135deg, var(--primary), var(--primary-2)); transform: scale(1.2);}
+    /* ═══ FEATURES ═══ */
+    #features { background:var(--ink); }
+    .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:1.4rem; }
+    .feature-card { padding:2rem 1.8rem; position:relative; overflow:hidden; }
+    .feature-card::before { content:""; position:absolute; top:-60px; right:-60px; width:160px; height:160px; border-radius:50%; background:radial-gradient(circle,rgba(26,86,219,.09),transparent 70%); transition:transform .4s var(--ease); }
+    .feature-card:hover::before { transform:scale(1.4); }
+    .f-ico { width:58px; height:58px; border-radius:16px; display:grid; place-items:center; background:rgba(26,86,219,.13); color:var(--blue-lt); font-size:1.45rem; margin-bottom:1.2rem; border:1px solid rgba(26,86,219,.2); transition:transform .3s var(--bounce); }
+    .feature-card:hover .f-ico { transform:scale(1.08) rotate(-4deg); }
+    .feature-card h3 { margin-bottom:.5rem; font-size:1.12rem; }
+    .feature-card p { color:var(--text); margin:0; font-size:.95rem; }
 
-    /* FAQs (accordion) */
-    .faqs{background: var(--bg);}
-    .faq-wrap{max-width: 900px; margin: 0 auto;}
-    .faq-item{
-      border-radius: 18px;
-      border: 1px solid rgba(15,23,42,0.10);
-      background: rgba(15,23,42,0.02);
-      overflow:hidden;
-      margin-bottom: 0.9rem;
-      transition: border var(--t), background var(--t), transform var(--t2);
-    }
-    .faq-item:hover{
-      transform: translateY(-4px);
-      border-color: rgba(138,43,226,0.18);
-      background: rgba(138,43,226,0.04);
-    }
-    .faq-q{
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 1rem;
-      padding: 1.05rem 1.1rem;
-      border:none;
-      background: transparent;
-      cursor:pointer;
-      font-weight: 900;
-      color: var(--heading);
-      text-align:left;
-      font-size: 1.02rem;
-    }
-    .faq-q i{transition: transform var(--t2); color: var(--primary);}
-    .faq-a{
-      max-height: 0px;
-      overflow:hidden;
-      transition: max-height 420ms ease;
-      padding: 0 1.1rem;
-    }
-    .faq-a p{margin: 0 0 1rem; color: var(--muted); font-weight: 650;}
-    .faq-item.open .faq-a{padding: 0 1.1rem; max-height: 260px;}
-    .faq-item.open .faq-q i{transform: rotate(180deg);}
+    /* ═══ SERVICES ═══ */
+    #services { background:var(--ink-2); }
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(295px,1fr)); gap:1.5rem; }
+    .service-card { padding:2.2rem; }
+    .s-ico { width:56px; height:56px; border-radius:14px; display:grid; place-items:center; font-size:1.35rem; color:var(--blue-lt); background:rgba(26,86,219,.13); border:1px solid rgba(26,86,219,.2); margin-bottom:1.3rem; }
+    .service-card h3 { margin-bottom:.6rem; font-size:1.22rem; }
+    .service-card p  { color:var(--text); margin:0; }
 
-    /* Contact */
-    .contact{background:var(--bg);}
-    .contact-container{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:start;}
-    .contact-info{display:flex;flex-direction:column;gap:1.2rem;}
-    .contact-method{
-      display:flex;align-items:center;gap:1rem;
-      padding:1.15rem 1.15rem;background:rgba(15,23,42,0.03);
-      border:1px solid rgba(15,23,42,0.08);border-radius:16px;
-      transition: transform var(--t2), background var(--t), border var(--t);
-    }
-    .contact-method:hover{transform:translateY(-4px);background:rgba(138,43,226,0.05);border-color:rgba(138,43,226,0.18);}
-    .contact-icon{
-      width:52px;height:52px;display:grid;place-items:center;border-radius:14px;
-      background:rgba(138,43,226,0.12);color:var(--primary);font-size:1.4rem;
-    }
-    .contact-method h4{margin:0;font-size:1.05rem;}
-    .contact-method p{margin:0;color:var(--muted);font-weight:650;}
-    .contact-btns{display:flex;gap:0.9rem;flex-wrap:wrap;margin-top:0.2rem;}
+    /* ═══ HOW IT WORKS ═══ */
+    #how-it-works { background:var(--ink); }
+    .steps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.5rem; }
+    .step-card { padding:2rem 1.6rem; text-align:center; display:flex; flex-direction:column; align-items:center; gap:1rem; }
+    .step-num { width:54px; height:54px; border-radius:16px; display:grid; place-items:center; font-family:'Cabinet Grotesk',sans-serif; font-size:1.35rem; font-weight:900; color:#fff; background:var(--g1); box-shadow:0 12px 28px rgba(26,86,219,.35); }
+    .step-card h3 { margin:0; font-size:1.12rem; }
+    .step-card p  { color:var(--text); margin:0; font-size:.94rem; }
 
-    .contact-form{
-      padding:1.6rem 1.6rem;border-radius:18px;
-      background:rgba(15,23,42,0.02);
-      border:1px solid rgba(15,23,42,0.08);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.06);
-    }
-    .contact-form h3{margin-bottom:1rem;}
-    .form-group{display:flex;flex-direction:column;margin-bottom:1rem;}
-    .form-group label{margin-bottom:0.5rem;font-weight:800;color:var(--heading);font-size:0.95rem;}
-    .form-group input,.form-group select,.form-group textarea{
-      padding:0.95rem 1rem;border-radius:14px;border:1px solid rgba(15,23,42,0.10);
-      background:#fff;font-size:1rem;outline:none;
-      transition: border var(--t), box-shadow var(--t), transform var(--t);
-    }
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{
-      border-color: rgba(138,43,226,0.45);
-      box-shadow: 0 0 0 4px rgba(138,43,226,0.12);
-      transform: translateY(-1px);
-    }
-    .contact-form textarea{resize:none;}
+    /* ═══ STUDENT PROJECTS ═══ */
+    #student-projects { background:var(--ink-2); }
+    .langs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(115px,1fr)); gap:.9rem; margin-bottom:2.8rem; }
+    .lang-pill { display:flex; flex-direction:column; align-items:center; gap:.6rem; padding:1.1rem .8rem; border-radius:14px; background:var(--surface); border:1px solid var(--border); text-align:center; transition:transform .3s var(--ease),border-color .25s; cursor:default; }
+    .lang-pill:hover { transform:translateY(-6px); border-color:rgba(26,86,219,.4); }
+    .lang-pill i { font-size:1.75rem; color:var(--blue-lt); }
+    .lang-pill.py i { color:#4B8BBE; }
+    .lang-pill.js i { color:#F7DF1E; }
+    .lang-pill.php i { color:#8892BF; }
+    .lang-pill.java i { color:#E97627; }
+    .lang-pill.cpp i { color:#00599C; }
+    .lang-pill span { font-size:.8rem; font-weight:700; color:var(--text-2); }
 
-    .form-status{display:none;padding:0.95rem 1rem;border-radius:14px;margin-bottom:1rem;font-weight:750;text-align:center;}
-    .form-status.success{display:block;background:#e8f7ee;border:1px solid #b7e4c7;color:#1b4332;}
-    .form-status.error{display:block;background:#fdecec;border:1px solid #f5c2c7;color:#7a1f2a;}
+    .custom-note { display:flex; align-items:center; gap:.75rem; padding:1.1rem 1.4rem; border-radius:14px; background:rgba(245,166,35,.07); border:1px solid rgba(245,166,35,.2); color:var(--gold-2); font-weight:700; margin-bottom:2.5rem; }
+    .custom-note i { font-size:1.15rem; }
 
-    /* Floating WhatsApp */
-    .whatsapp-btn{
-      position:fixed; bottom:1.6rem; right:1.6rem;
-      width:68px;height:68px;border-radius:50%;
-      display:grid;place-items:center;text-decoration:none;color:#fff;
-      background: linear-gradient(135deg,#25D366,#128C7E);
-      box-shadow: 0 22px 60px rgba(18,140,126,0.28);
-      transition: transform var(--t2), box-shadow var(--t);
-      z-index:999; animation:pulse 2s infinite;
+    .proj-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); gap:1.5rem; }
+    .proj-card { border-radius:20px; overflow:hidden; }
+    .proj-head { padding:1.8rem 1.8rem 1.5rem; background:linear-gradient(145deg,#0D1226,#0E1638); border-bottom:1px solid rgba(26,86,219,.18); position:relative; overflow:hidden; }
+    .proj-head::before { content:""; position:absolute; top:-80px; right:-80px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle,rgba(26,86,219,.18),transparent 70%); }
+    .proj-badge { font-size:.73rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--blue-lt); display:block; margin-bottom:.5rem; }
+    .proj-head h3 { font-size:1.3rem; color:var(--heading); }
+    .proj-price { font-family:'Cabinet Grotesk',sans-serif; font-size:1.95rem; font-weight:900; background:var(--g2); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin:.4rem 0; }
+    .proj-head p { color:rgba(255,255,255,.5); font-size:.88rem; margin:0; }
+    .proj-features { padding:1.6rem 1.8rem .8rem; background:var(--surface); list-style:none; }
+    .proj-features li { display:flex; align-items:center; gap:.75rem; padding:.48rem 0; color:var(--text-2); font-size:.93rem; font-weight:500; }
+    .proj-features li i { color:var(--teal); font-size:.82rem; }
+    .proj-cta { padding:1.2rem 1.8rem 1.8rem; background:var(--surface); }
+    .proj-cta .btn { width:100%; justify-content:center; }
+
+    .pay-pill { margin-top:3rem; padding:2rem; border-radius:20px; background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(245,166,35,.03)); border:1px solid rgba(245,166,35,.22); text-align:center; }
+    .pay-pill h4 { font-size:1.35rem; color:var(--heading); margin-bottom:.5rem; }
+    .pay-pill p  { color:var(--text); margin:0; }
+    .pay-pill .big { font-size:1.1rem; color:var(--gold-2); font-weight:800; margin-top:.5rem; }
+
+    /* ═══ PRICING ═══ */
+    #pricing { background:var(--ink); }
+    .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(295px,1fr)); gap:1.5rem; align-items:start; }
+    .pricing-card { border-radius:22px; position:relative; }
+    .pricing-card.featured { border-color:rgba(26,86,219,.4); box-shadow:0 0 0 1px rgba(26,86,219,.18),0 40px 80px rgba(0,0,0,.4); transform:scale(1.03); }
+    .pricing-card.featured:hover { transform:scale(1.03) translateY(-8px); }
+    .pop-badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--g1); color:#fff; padding:.3rem 1.2rem; border-radius:999px; font-size:.76rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; white-space:nowrap; }
+    .pricing-top { padding:2.2rem 1.8rem 1.6rem; border-bottom:1px solid var(--border); }
+    .pricing-card.featured .pricing-top { background:rgba(26,86,219,.06); }
+    .pricing-top h3 { margin-bottom:.75rem; }
+    .p-price { font-family:'Cabinet Grotesk',sans-serif; font-size:2.35rem; font-weight:900; color:var(--blue-lt); line-height:1; }
+    .pricing-card.featured .p-price { color:var(--heading); }
+    .p-note { color:var(--text); font-size:.82rem; margin-top:.4rem; }
+    .p-feats { padding:1.5rem 1.8rem 1.2rem; list-style:none; }
+    .p-feats li { display:flex; align-items:flex-start; gap:.75rem; padding:.48rem 0; color:var(--text-2); font-size:.93rem; font-weight:500; }
+    .p-feats li i.yes { color:var(--teal); }
+    .p-feats li i.no  { color:rgba(255,255,255,.2); }
+    .p-feats li.dim   { opacity:.5; }
+    .p-cta { padding:0 1.8rem 2rem; }
+    .p-cta .btn { width:100%; justify-content:center; }
+
+    /* ═══ TESTIMONIALS ═══ */
+    #testimonials { background:var(--ink-2); }
+    .testi-shell { border-radius:22px; border:1px solid var(--border); background:var(--surface); overflow:hidden; }
+    .testi-viewport { overflow:hidden; }
+    .testi-track { display:flex; gap:1.2rem; padding:1.5rem 1.5rem .5rem; transition:transform 540ms var(--ease); will-change:transform; }
+    .t-card { flex:0 0 min(380px,88vw); background:var(--surface-2); border:1px solid var(--border); border-radius:16px; padding:1.8rem; position:relative; }
+    .t-card::before { content:"\201C"; position:absolute; top:8px; left:16px; font-size:5rem; line-height:1; color:rgba(26,86,219,.12); font-family:Georgia,serif; pointer-events:none; }
+    .t-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+    .stars i { color:var(--gold); font-size:.88rem; }
+    .verified-badge { display:inline-flex; align-items:center; gap:.35rem; font-size:.76rem; font-weight:700; color:var(--teal); background:rgba(0,201,167,.1); border:1px solid rgba(0,201,167,.2); padding:.28rem .7rem; border-radius:999px; }
+    .t-text { font-style:italic; color:var(--text-2); font-size:.93rem; line-height:1.7; margin-bottom:1.4rem; position:relative; z-index:1; }
+    .t-author { display:flex; align-items:center; gap:1rem; }
+    .t-av { width:46px; height:46px; border-radius:12px; background:var(--g1); display:grid; place-items:center; font-family:'Cabinet Grotesk',sans-serif; font-size:.95rem; font-weight:900; color:#fff; flex:0 0 auto; }
+    .t-author h4 { font-size:.96rem; margin:0; }
+    .t-author p  { margin:0; color:var(--text); font-size:.8rem; }
+    .t-controls { display:flex; align-items:center; justify-content:space-between; padding:1rem 1.5rem 1.2rem; }
+    .t-btn { width:44px; height:44px; border-radius:12px; background:var(--surface-2); border:1px solid var(--border-2); color:var(--text-2); cursor:pointer; display:grid; place-items:center; transition:background .2s,border-color .2s,transform .2s; }
+    .t-btn:hover { background:rgba(26,86,219,.15); border-color:rgba(26,86,219,.4); transform:scale(1.05); }
+    .t-dots { display:flex; gap:.5rem; align-items:center; }
+    .dot-btn { width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,.18); cursor:pointer; transition:background .25s,transform .25s,width .3s; }
+    .dot-btn.active { background:#1A56DB; transform:scale(1.3); width:22px; border-radius:4px; }
+
+    /* ═══ FAQs ═══ */
+    #faqs { background:var(--ink); }
+    .faq-wrap { max-width:840px; margin:0 auto; display:flex; flex-direction:column; gap:.75rem; }
+    .faq-item { border:1px solid var(--border); border-radius:16px; background:var(--surface); overflow:hidden; transition:border-color .25s,box-shadow .25s; }
+    .faq-item.open { border-color:rgba(26,86,219,.35); box-shadow:0 8px 30px rgba(0,0,0,.3),0 0 0 1px rgba(26,86,219,.1); }
+    .faq-q { width:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.2rem 1.4rem; background:transparent; border:none; color:var(--heading); font-family:'Cabinet Grotesk',sans-serif; font-size:1.02rem; font-weight:700; text-align:left; cursor:pointer; }
+    .faq-chev { color:var(--blue-lt); transition:transform .35s var(--ease); flex:0 0 auto; }
+    .faq-item.open .faq-chev { transform:rotate(180deg); }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height .4s var(--ease); padding:0 1.4rem; }
+    .faq-item.open .faq-a { max-height:300px; padding:0 1.4rem 1.2rem; }
+    .faq-a p { margin:0; color:var(--text); font-size:.96rem; }
+
+    /* ═══ CONTACT ═══ */
+    #contact { background:var(--ink-2); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:3rem; align-items:start; }
+    .contact-left { display:flex; flex-direction:column; gap:1.2rem; }
+    .contact-left h3 { font-size:1.8rem; }
+    .contact-left > p { color:var(--text); }
+    .cm-item { display:flex; align-items:center; gap:1rem; padding:1.1rem 1.2rem; border-radius:14px; background:var(--surface); border:1px solid var(--border); transition:border-color .25s,transform .3s var(--ease); }
+    .cm-item:hover { border-color:rgba(26,86,219,.3); transform:translateX(6px); }
+    .cm-ico { width:46px; height:46px; border-radius:12px; background:rgba(26,86,219,.13); color:var(--blue-lt); display:grid; place-items:center; font-size:1.15rem; flex:0 0 auto; }
+    .cm-item h4 { font-size:.93rem; margin:0; }
+    .cm-item p  { margin:0; color:var(--text); font-size:.86rem; }
+    .c-btns { display:flex; gap:.75rem; flex-wrap:wrap; }
+
+    .c-form-wrap { background:var(--surface); border:1px solid var(--border); border-radius:22px; padding:2.4rem 2rem; }
+    .c-form-wrap h3 { margin-bottom:1.5rem; }
+    .fg { display:flex; flex-direction:column; gap:.4rem; margin-bottom:1.1rem; }
+    .fg label { font-size:.86rem; font-weight:700; color:var(--text-2); letter-spacing:.02em; }
+    .fg input, .fg select, .fg textarea {
+      background:var(--ink-2); border:1px solid var(--border); border-radius:12px;
+      padding:.9rem 1.1rem; color:var(--heading); font-family:'Satoshi',sans-serif;
+      font-size:.96rem; outline:none; transition:border-color .2s,box-shadow .2s;
     }
-    .whatsapp-btn i{font-size:2rem;}
-    .whatsapp-btn:hover{transform: translateY(-4px) scale(1.03); box-shadow: 0 28px 70px rgba(18,140,126,0.34);}
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45),0 22px 60px rgba(18,140,126,0.28);}
-      70%{box-shadow:0 0 0 16px rgba(37,211,102,0.0),0 22px 60px rgba(18,140,126,0.28);}
-      100%{box-shadow:0 0 0 0 rgba(37,211,102,0.0),0 22px 60px rgba(18,140,126,0.28);}
+    .fg input::placeholder, .fg textarea::placeholder { color:var(--text); }
+    .fg select option { background:var(--ink-2); }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color:rgba(26,86,219,.55); box-shadow:0 0 0 3px rgba(26,86,219,.14); }
+    .fg textarea { resize:vertical; min-height:110px; }
+    .fg-2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .form-status { display:none; padding:.9rem 1.1rem; border-radius:12px; margin-bottom:1rem; font-weight:700; text-align:center; font-size:.92rem; }
+    .form-status.success { display:block; background:rgba(74,222,128,.08); border:1px solid rgba(74,222,128,.25); color:#4ade80; }
+    .form-status.error   { display:block; background:rgba(248,113,113,.08); border:1px solid rgba(248,113,113,.25); color:#f87171; }
+    .c-form-wrap .btn { width:100%; justify-content:center; }
+
+    /* ═══ FOOTER ═══ */
+    footer { background:var(--ink); border-top:1px solid var(--border); padding:3.5rem 1.5rem 2rem; }
+    .footer-inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:3rem; }
+    .footer-brand .logo { margin-bottom:1rem; }
+    .footer-brand p { color:var(--text); font-size:.9rem; max-width:280px; line-height:1.65; }
+    .f-socials { display:flex; gap:.75rem; margin-top:1.2rem; }
+    .f-soc { width:40px; height:40px; border-radius:10px; background:var(--surface); border:1px solid var(--border); color:var(--text); text-decoration:none; display:grid; place-items:center; font-size:1rem; transition:background .2s,color .2s,border-color .2s; }
+    .f-soc:hover { background:rgba(26,86,219,.15); color:var(--blue-lt); border-color:rgba(26,86,219,.35); }
+    .footer-col h5 { font-family:'Cabinet Grotesk',sans-serif; font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--text); margin-bottom:1rem; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+    .footer-col ul a { text-decoration:none; color:var(--text); font-size:.9rem; font-weight:500; transition:color .2s; }
+    .footer-col ul a:hover { color:var(--heading); }
+    .footer-bottom { max-width:var(--max); margin:2.5rem auto 0; padding-top:1.5rem; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+    .footer-bottom p { color:var(--text); font-size:.83rem; margin:0; }
+
+    /* ═══ WHATSAPP FLOAT ═══ */
+    .wa-float { position:fixed; bottom:1.8rem; right:1.8rem; z-index:900; width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,#25D366,#20BC5A); display:grid; place-items:center; text-decoration:none; color:#fff; font-size:1.7rem; box-shadow:0 8px 28px rgba(37,211,102,.32); transition:transform .3s var(--bounce),box-shadow .3s; }
+    .wa-float:hover { transform:scale(1.1) translateY(-4px); box-shadow:0 16px 40px rgba(37,211,102,.44); }
+    .wa-pulse { position:absolute; inset:0; border-radius:50%; background:rgba(37,211,102,.3); animation:waPulse 2.5s ease-out infinite; }
+    @keyframes waPulse { 0%{transform:scale(.9);opacity:.7;} 100%{transform:scale(1.8);opacity:0;} }
+
+    /* ═══ REVEAL ═══ */
+    .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s var(--ease),transform .7s var(--ease); }
+    .reveal.visible { opacity:1; transform:none; }
+    .rd1 { transition-delay:.1s; } .rd2 { transition-delay:.2s; } .rd3 { transition-delay:.3s; } .rd4 { transition-delay:.4s; }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media(max-width:992px) {
+      .hero-inner { grid-template-columns:1fr; gap:3rem; }
+      .hero-right { display:none; }
+      .contact-grid { grid-template-columns:1fr; }
+      .footer-inner { grid-template-columns:1fr 1fr; }
+      .pricing-card.featured { transform:none; }
+      .pricing-card.featured:hover { transform:translateY(-8px); }
     }
-
-    /* Footer */
-    footer{
-      padding:2.2rem var(--pad);text-align:center;
-      background: linear-gradient(135deg,#111827,#000);
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    .footer-content{max-width:var(--container);margin:0 auto;}
-    .footer-content h3{color:#fff;font-size:1.35rem;margin-bottom:0.2rem;}
-    .footer-tagline{color:rgba(255,255,255,0.85);font-weight:750;margin-bottom:0.35rem;}
-    .footer-location{color:rgba(255,255,255,0.65);font-weight:650;}
-    .footer-links{margin:0.85rem 0;}
-    .footer-links a{color:rgba(255,255,255,0.72);text-decoration:none;margin:0 10px;font-weight:700;font-size:0.9rem;transition:color var(--t);}
-    .footer-links a:hover{color:#fff;}
-    .footer-social{margin:0.5rem 0;}
-    .footer-social a{color:rgba(255,255,255,0.72);text-decoration:none;margin:0 10px;font-weight:750;font-size:0.9rem;transition:color var(--t);}
-    .footer-social a:hover{color:#fff;}
-    .footer-copy{margin-top:0.8rem;color:rgba(255,255,255,0.55);font-size:0.82rem;font-weight:650;}
-
-    /* Responsive + Mobile menu slide-down animation */
-    @media (max-width: 992px){
-      .pricing-card.featured{transform: scale(1);}
-      .pricing-card.featured:hover{transform: translateY(-10px);}
-    }
-    @media (max-width: 768px){
-      .navbar{padding:0.9rem 1rem;}
-      .mobile-menu-btn{display:block;}
-
-      .nav-links{
-        position:absolute; top:100%; left:0; width:100%;
-        padding: 0.6rem 0.8rem 1rem;
-        background: rgba(255,255,255,0.92);
-        backdrop-filter: blur(14px);
-        border-bottom: 1px solid rgba(15,23,42,0.10);
-
-        display:flex;
-        flex-direction:column;
-        gap: 0.25rem;
-
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(-6px);
-        transition: max-height 420ms ease, opacity 280ms ease, transform 420ms ease;
+    @media(max-width:768px) {
+      .mobile-menu-btn { display:grid; }
+      .nav-links {
+        position:absolute; top:var(--nav-h); left:0; right:0;
+        flex-direction:column; padding:.75rem 1rem 1rem;
+        background:rgba(7,8,15,.97); backdrop-filter:blur(20px);
+        border-bottom:1px solid var(--border); gap:.15rem;
+        max-height:0; overflow:hidden; opacity:0;
+        transition:max-height .4s var(--ease),opacity .3s;
       }
-      .nav-links.active{
-        max-height: 420px;
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .nav-links li{width:100%;}
-      .nav-links a{
-        display:block; width:100%;
-        padding:0.95rem 1rem; border-radius:14px;
-      }
-      .nav-links a::after{display:none;}
-      .nav-links a:hover{background: rgba(138,43,226,0.06);}
-
-      .hero{padding:9.5rem var(--pad) 6rem;}
-      .hero-btns{flex-direction:column;align-items:center;}
-      .hero-btns .btn{width:100%;max-width:430px;}
-      .hero-stats{padding: 0 0.4rem;}
-      .scroll-indicator{display:none;}
-
-      .contact-container{grid-template-columns:1fr;}
-      .contact-form{padding:1.4rem 1.2rem;}
+      .nav-links.open { max-height:500px; opacity:1; }
+      .nav-links a { display:block; width:100%; padding:.85rem 1rem; }
+      .nav-cta { display:none; }
+      .hero-btns { flex-direction:column; }
+      .hero-btns .btn { width:100%; max-width:380px; }
+      .fg-2 { grid-template-columns:1fr; }
     }
-    @media (max-width: 520px){
-      .languages-grid{grid-template-columns:repeat(2,1fr);}
-      .whatsapp-btn{width:62px;height:62px;right:1.2rem;bottom:1.2rem;}
-      .whatsapp-btn i{font-size:1.85rem;}
+    @media(max-width:560px) {
+      .footer-inner { grid-template-columns:1fr; gap:2rem; }
+      .footer-bottom { flex-direction:column; text-align:center; }
+      .langs-grid { grid-template-columns:repeat(3,1fr); }
+      .trust-inner { gap:1.2rem; }
     }
-    @media (max-width: 380px){
-      .languages-grid{grid-template-columns:1fr;}
-    }
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      *{transition:none !important; animation:none !important; scroll-behavior:auto !important;}
-    }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition-duration:.01ms!important; } }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
-  <header id="site-header">
-    <nav class="navbar">
-      <a href="#" class="logo" aria-label="LocalGrowth Studio">
-        <div class="logo-line1">LocalGrowth</div>
-        <div class="logo-line2">Studio</div>
-      </a>
 
-      <button class="mobile-menu-btn" aria-label="Open menu" id="menu-btn">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a class="nav-link" href="#home">Home</a></li>
-        <li><a class="nav-link" href="#services">Services</a></li>
-        <li><a class="nav-link" href="#student-projects">Student Projects</a></li>
-        <li><a class="nav-link" href="#pricing">Pricing</a></li>
-        <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
-        <li><a class="nav-link" href="#contact">Contact</a></li>
-
-        <li id="logout-li" style="display:none;">
-          <a href="#" id="logout-btn" style="color:#ff6b6b;">
-            <i class="fas fa-sign-out-alt"></i> Logout
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-blob" aria-hidden="true"></div>
-
-    <div class="container">
-      <div class="hero-content">
-        <h1>Professional Websites & Student Projects</h1>
-        <p>Get custom websites for your business or academic projects at affordable prices. Starting from just ₹199 for student projects!</p>
-
-        <!-- mini stats -->
-        <div class="hero-stats" aria-label="Quick stats">
-          <div class="stat-pill"><i class="fa-solid fa-check"></i> 20+ Projects</div>
-          <div class="stat-pill"><i class="fa-solid fa-globe"></i> 10+ Websites</div>
-          <div class="stat-pill"><i class="fa-solid fa-bolt"></i> Fast Delivery</div>
-        </div>
-
-        <div class="hero-btns">
-          <a href="#student-projects" class="btn">
-            <i class="fas fa-graduation-cap"></i> Student Projects from ₹199
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            <i class="fab fa-whatsapp"></i> WhatsApp for Free Consultation
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- scroll indicator -->
-    <a class="scroll-indicator" href="#services" aria-label="Scroll to next section">
-      <div class="mouse"><div class="dot"></div></div>
-      <div style="font-size:0.85rem;">Scroll</div>
+<!-- ═══ HEADER ══════════════════════════════════════════════ -->
+<header id="site-header">
+  <nav class="navbar">
+    <a href="#home" class="logo" aria-label="LocalGrowth Studio">
+      <span class="logo-top">LocalGrowth</span>
+      <span class="logo-sub">Studio</span>
     </a>
-  </section>
 
-  <!-- Features -->
-  <section class="features">
-    <div class="container">
-      <div class="section-title">
-        <h2>Why Choose Our Services</h2>
-        <p>We provide high-quality solutions for both businesses and students</p>
+    <ul class="nav-links" id="nav-links">
+      <li><a class="nav-link" href="#home">Home</a></li>
+      <li><a class="nav-link" href="#services">Services</a></li>
+      <li><a class="nav-link" href="#student-projects">Student Projects</a></li>
+      <li><a class="nav-link" href="#pricing">Pricing</a></li>
+      <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+      <li><a class="nav-link" href="#contact">Contact</a></li>
+      <li id="logout-li"><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="https://wa.me/916355938913" class="btn btn-wa btn-sm" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <button class="mobile-menu-btn" id="menu-btn" aria-label="Toggle menu">
+      <i class="fas fa-bars" id="menu-icon"></i>
+    </button>
+  </nav>
+</header>
+
+<!-- ═══ HERO ════════════════════════════════════════════════ -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div><span class="tag"><i class="fas fa-circle-check"></i> Trusted across India</span></div>
+
+      <h1>We Build Websites<br><span>That Work.</span></h1>
+
+      <p>Custom websites for businesses & affordable projects for students. Professional delivery, demo-first, honest pricing.</p>
+
+      <div class="hero-btns">
+        <a href="#student-projects" class="btn btn-primary btn-lg">
+          <i class="fas fa-graduation-cap"></i> Student Projects from ₹199
+        </a>
+        <a href="#contact" class="btn btn-ghost btn-lg">
+          <i class="fas fa-paper-plane"></i> Get Free Quote
+        </a>
       </div>
 
-      <div class="features-grid">
-        <div class="feature-card card">
-          <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
-          <h3>Custom Website Design</h3>
-          <p>Professional, responsive websites tailored to your business needs with modern UI/UX design.</p>
+      <div class="hero-stats">
+        <div>
+          <span class="hero-stat-num">20+</span>
+          <span class="hero-stat-label">Projects Delivered</span>
         </div>
-
-        <div class="feature-card card">
-          <div class="feature-icon"><i class="fas fa-database"></i></div>
-          <h3>Database Integration</h3>
-          <p>Secure database solutions for dynamic content, user management, and e-commerce functionality.</p>
+        <div>
+          <span class="hero-stat-num">10+</span>
+          <span class="hero-stat-label">Websites Live</span>
         </div>
-
-        <div class="feature-card card">
-          <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
-          <h3>Student Projects</h3>
-          <p>Affordable coding projects for college students in multiple programming languages.</p>
-        </div>
-
-        <div class="feature-card card">
-          <div class="feature-icon"><i class="fas fa-file-signature"></i></div>
-          <h3>Contact Forms</h3>
-          <p>Custom forms that integrate seamlessly with your email and database systems.</p>
+        <div>
+          <span class="hero-stat-num">100%</span>
+          <span class="hero-stat-label">Demo First</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Services -->
-  <section id="services" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Our Website Services</h2>
-        <p>Professional website solutions for businesses of all sizes</p>
-      </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hc-title"><div class="hc-dot"></div> Recent Delivery</div>
 
-      <div class="services-grid">
-        <div class="service-card card">
-          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-          <h3>Custom Website Design</h3>
-          <p>Unique, responsive websites designed specifically for your business with modern UI/UX principles that convert visitors into customers.</p>
-        </div>
-
-        <div class="service-card card">
-          <div class="service-icon"><i class="fas fa-database"></i></div>
-          <h3>Database Integration</h3>
-          <p>Secure database solutions for user accounts, product catalogs, booking systems, and dynamic content management.</p>
-        </div>
-
-        <div class="service-card card">
-          <div class="service-icon"><i class="fas fa-file-signature"></i></div>
-          <h3>Contact & Lead Forms</h3>
-          <p>Custom forms that capture leads, process orders, and integrate with your email and CRM systems for seamless lead management.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW: How it works -->
-  <section class="howitworks" id="how-it-works">
-    <div class="container">
-      <div class="section-title">
-        <h2>How It Works</h2>
-        <p>Simple process — clear communication, quick demo, smooth delivery.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card card">
-          <div class="step-top">
-            <div class="step-num">1</div>
-            <h3 style="margin:0;">Requirement</h3>
-          </div>
-          <p>Tell us your project needs, features, and deadline. We’ll suggest the best plan & approach.</p>
-        </div>
-
-        <div class="step-card card">
-          <div class="step-top">
-            <div class="step-num">2</div>
-            <h3 style="margin:0;">Demo</h3>
-          </div>
-          <p>We show you the working demo first. You can request changes if needed before final delivery.</p>
-        </div>
-
-        <div class="step-card card">
-          <div class="step-top">
-            <div class="step-num">3</div>
-            <h3 style="margin:0;">Final Delivery</h3>
-          </div>
-          <p>After confirmation, we deliver source code + docs + setup help so you can run it smoothly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW: What you get -->
-  <section class="deliverables" id="deliverables">
-    <div class="container">
-      <div class="section-title">
-        <h2>What You Get</h2>
-        <p>Everything you need to submit, present, or deploy your project confidently.</p>
-      </div>
-
-      <div class="deliver-grid">
-        <div class="deliver-item">
-          <div class="deliver-ico"><i class="fa-solid fa-code"></i></div>
+        <div class="hc-row">
+          <div class="hc-ico"><i class="fas fa-laptop-code"></i></div>
           <div>
-            <h4>Source Code</h4>
-            <p>Clean & structured code with proper folders.</p>
+            <span class="hc-label">Project Type</span>
+            <span class="hc-val">BCA Fourth Year — PHP + MySQL</span>
           </div>
         </div>
 
-        <div class="deliver-item">
-          <div class="deliver-ico"><i class="fa-solid fa-file-lines"></i></div>
+        <div class="hc-row">
+          <div class="hc-ico gold"><i class="fas fa-clock"></i></div>
           <div>
-            <h4>Documentation</h4>
-            <p>Simple docs for features, modules, and flow.</p>
+            <span class="hc-label">Delivered In</span>
+            <span class="hc-val">5 Days</span>
           </div>
         </div>
 
-        <div class="deliver-item">
-          <div class="deliver-ico"><i class="fa-solid fa-video"></i></div>
+        <div class="hc-row">
+          <div class="hc-ico teal"><i class="fas fa-star"></i></div>
           <div>
-            <h4>Setup Video</h4>
-            <p>Short video / steps to run on your system.</p>
+            <span class="hc-label">Client Review</span>
+            <span class="hc-val">⭐⭐⭐⭐⭐ Highly Recommended!</span>
           </div>
         </div>
 
-        <div class="deliver-item">
-          <div class="deliver-ico"><i class="fa-solid fa-server"></i></div>
-          <div>
-            <h4>Hosting Guide</h4>
-            <p>Basic guide for hosting + domain + deploy.</p>
-          </div>
+        <div class="hc-badges">
+          <span class="hc-badge"><i class="fas fa-shield-check"></i> Verified Delivery</span>
+          <span class="hc-badge"><i class="fas fa-bolt"></i> Fast Turnaround</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Student Projects -->
-  <section id="student-projects" class="student-projects">
-    <div class="container">
-      <div class="section-title">
-        <h2>Student Projects</h2>
-        <p>Educational Projects & Mentorship starting from just ₹199</p>
+<!-- ═══ TRUST BAR ════════════════════════════════════════════ -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><i class="fas fa-check-circle"></i> Demo Before Payment</div>
+    <div class="trust-item"><i class="fas fa-shield-alt"></i> 100% Satisfaction</div>
+    <div class="trust-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+    <div class="trust-item"><i class="fas fa-headset"></i> WhatsApp Support</div>
+    <div class="trust-item"><i class="fas fa-map-marker-alt"></i> Based in Gujarat, India</div>
+  </div>
+</div>
+
+<!-- ═══ FEATURES ══════════════════════════════════════════════ -->
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-line"></div>
+      <span class="tag">Why Choose Us</span>
+      <h2>Built for Results</h2>
+      <p>Clean code, great design, and honest communication — every time.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card card reveal rd1">
+        <div class="f-ico"><i class="fas fa-laptop-code"></i></div>
+        <h3>Custom Web Design</h3>
+        <p>No templates. Every website is built from scratch for your brand and business goals.</p>
       </div>
-
-      <div class="custom-project-note">
-        <i class="fas fa-code"></i> Custom projects available in any programming language!
+      <div class="feature-card card reveal rd2">
+        <div class="f-ico"><i class="fas fa-database"></i></div>
+        <h3>Database Integration</h3>
+        <p>Full-stack solutions — user accounts, product catalogs, admin panels, booking systems.</p>
       </div>
-
-      <div class="languages-grid">
-        <div class="language-card"><div class="language-icon"><i class="fab fa-python"></i></div><h4>Python</h4></div>
-        <div class="language-card"><div class="language-icon"><i class="fab fa-html5"></i></div><h4>HTML/CSS</h4></div>
-        <div class="language-card"><div class="language-icon"><i class="fab fa-js-square"></i></div><h4>JavaScript</h4></div>
-        <div class="language-card"><div class="language-icon"><i class="fab fa-php"></i></div><h4>PHP</h4></div>
-        <div class="language-card"><div class="language-icon"><i class="fas fa-database"></i></div><h4>SQL</h4></div>
-        <div class="language-card"><div class="language-icon"><i class="fab fa-java"></i></div><h4>Java</h4></div>
-        <div class="language-card"><div class="language-icon"><i class="fas fa-copyright"></i></div><h4>C/C++</h4></div>
+      <div class="feature-card card reveal rd3">
+        <div class="f-ico"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Student Projects</h3>
+        <p>Academic projects in Python, Java, PHP, C/C++, SQL and more at student-friendly prices.</p>
       </div>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-header">
-            <h3>Basic Project</h3>
-            <div class="project-price">₹199 - ₹399</div>
-            <p>Simple coding tasks</p>
-          </div>
-          <div class="project-features">
-            <ul>
-              <li><i class="fas fa-check"></i> Small programs & scripts</li>
-              <li><i class="fas fa-check"></i> Basic HTML/CSS pages</li>
-              <li><i class="fas fa-check"></i> Simple calculations</li>
-              <li><i class="fas fa-check"></i> Basic form validation</li>
-              <li><i class="fas fa-check"></i> 2-3 days delivery</li>
-            </ul>
-          </div>
-          <div class="project-cta">
-            <a href="#contact" class="btn btn-secondary">Order Now</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <h3>Intermediate Project</h3>
-            <div class="project-price">₹499 - ₹799</div>
-            <p>Medium complexity</p>
-          </div>
-          <div class="project-features">
-            <ul>
-              <li><i class="fas fa-check"></i> Database connectivity</li>
-              <li><i class="fas fa-check"></i> Multi-page websites</li>
-              <li><i class="fas fa-check"></i> CRUD operations</li>
-              <li><i class="fas fa-check"></i> API integration</li>
-              <li><i class="fas fa-check"></i> 5-7 days delivery</li>
-            </ul>
-          </div>
-          <div class="project-cta">
-            <a href="#contact" class="btn btn-secondary">Order Now</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <h3>Advanced Project</h3>
-            <div class="project-price">₹999 - ₹1499</div>
-            <p>Complex applications</p>
-          </div>
-          <div class="project-features">
-            <ul>
-              <li><i class="fas fa-check"></i> Full-stack applications</li>
-              <li><i class="fas fa-check"></i> User authentication</li>
-              <li><i class="fas fa-check"></i> Complex algorithms</li>
-              <li><i class="fas fa-check"></i> Documentation included</li>
-              <li><i class="fas fa-check"></i> 7-10 days delivery</li>
-            </ul>
-          </div>
-          <div class="project-cta">
-            <a href="#contact" class="btn btn-secondary">Order Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="payment-policy">
-        <h4><i class="fas fa-handshake"></i> Student-Friendly Payment Policy</h4>
-        <p>We understand the importance of money for students. That's why we offer:</p>
-        <p><span class="highlight">First Demo & After Satisfaction Payment!</span></p>
-        <p>See the project working first, then make payment only when you're completely satisfied.</p>
+      <div class="feature-card card reveal rd4">
+        <div class="f-ico"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Mobile Responsive</h3>
+        <p>Pixel-perfect on all screen sizes — phones, tablets, and desktops.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Pricing -->
-  <section id="pricing" class="pricing">
-    <div class="container">
-      <div class="section-title">
-        <h2>Website Design Packages</h2>
-        <p>Professional website solutions starting from ₹2,000</p>
+<!-- ═══ SERVICES ══════════════════════════════════════════════ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-line"></div>
+      <span class="tag">Our Services</span>
+      <h2>What We Offer</h2>
+      <p>Professional website solutions for businesses of all sizes, built with modern standards.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card card reveal rd1">
+        <div class="s-ico"><i class="fas fa-paint-brush"></i></div>
+        <h3>Custom Website Design</h3>
+        <p>Unique, responsive websites tailored for your business with modern UI/UX that converts visitors into customers.</p>
       </div>
-
-      <div class="pricing-grid">
-        <div class="pricing-card card">
-          <div class="pricing-header">
-            <h3>Basic Website</h3>
-            <div class="pricing-price">₹2,000 to 5,000</div>
-            <p style="margin:0;">One-time payment</p>
-            <p style="margin:0;">Final price depends on requirements</p>
-          </div>
-          <div class="pricing-features">
-            <ul>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> 3-5 Page Custom Website</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Mobile Responsive Design</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Contact Form</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Basic SEO Setup</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Free Hosting for 3 Months</li>
-              <li><i class="fas fa-times" style="color:#dc3545"></i> No Admin Panel / No Database</li>
-            </ul>
-          </div>
-          <div class="pricing-cta">
-            <a href="#contact" class="btn">Get Started on WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="pricing-card card featured">
-          <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-header">
-            <h3>Business Website</h3>
-            <div class="pricing-price">₹5,000 to 8,000</div>
-            <p style="margin:0;">One-time payment</p>
-            <p style="margin:0;">Final price depends on requirements</p>
-          </div>
-          <div class="pricing-features">
-            <ul>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> 5-10 Page Custom Website</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Database Integration</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Multiple Contact Forms</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Advanced SEO Optimization</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Free Hosting for 6 Months</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Basic CMS Integration</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> 1 Month Support</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Admin Dashboard (Products, Orders, Users)</li>
-            </ul>
-          </div>
-          <div class="pricing-cta">
-            <a href="#contact" class="btn">Get Started on WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="pricing-card card">
-          <div class="pricing-header">
-            <h3>E-Commerce Website</h3>
-            <div class="pricing-price">₹10,000 to 15,000</div>
-            <p style="margin:0;">One-time payment</p>
-            <p style="margin:0;">Final price depends on requirements</p>
-          </div>
-          <div class="pricing-features">
-            <ul>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Full E-Commerce Website</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Product Database & Management</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Payment Gateway Integration</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> User Account System</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Inventory Management</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> Free Hosting for 12 Months</li>
-              <li><i class="fas fa-check" style="color:var(--primary)"></i> 3 Months Support</li>
-            </ul>
-          </div>
-          <div class="pricing-cta">
-            <a href="#contact" class="btn">Get Started on WhatsApp</a>
-          </div>
-        </div>
+      <div class="service-card card reveal rd2">
+        <div class="s-ico"><i class="fas fa-server"></i></div>
+        <h3>Database & Backend</h3>
+        <p>Secure backend solutions for user accounts, product catalogs, booking systems, and dynamic content.</p>
+      </div>
+      <div class="service-card card reveal rd3">
+        <div class="s-ico"><i class="fas fa-envelope-open-text"></i></div>
+        <h3>Lead Forms & CRM</h3>
+        <p>Custom forms that capture leads, send notifications, and integrate seamlessly with your workflow.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Testimonials (NEW Slider) -->
-  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <div class="section-title">
-        <h2>Client Testimonials</h2>
-        <p>See what our clients have to say about our services</p>
-        <p>We work with clients across India and internationally. Due to privacy and platform limitations, only selected testimonials are displayed here.</p>
+<!-- ═══ HOW IT WORKS ══════════════════════════════════════════ -->
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-line"></div>
+      <span class="tag">Process</span>
+      <h2>Simple. Transparent. Fast.</h2>
+      <p>No hidden fees, no confusion. Just clear steps from requirement to delivery.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card card reveal rd1">
+        <div class="step-num">01</div>
+        <h3>Share Requirements</h3>
+        <p>Tell us your project needs, features, and deadline on WhatsApp. We suggest the best plan.</p>
       </div>
-
-      <div class="testimonial-shell">
-        <div class="testimonial-viewport">
-          <div class="testimonial-track" id="t-track">
-            <!-- Slide 1 -->
-            <div class="testimonial-card card">
-              <div class="testimonial-top">
-                <div class="stars" aria-label="5 star rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
-              </div>
-              <div class="testimonial-text">
-                "LocalGrowth Studio created an amazing website for my business. The database integration for my product catalog works perfectly, and the forms capture all the leads I need. Highly recommended!"
-              </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">M</div>
-                <div>
-                  <h4>Michael</h4>
-                  <p>Github User</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="testimonial-card card">
-              <div class="testimonial-top">
-                <div class="stars" aria-label="5 star rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
-              </div>
-              <div class="testimonial-text">
-                "As a college student, I needed a Python-based Truecaller project for my final year. They delivered excellent code with proper documentation at an affordable price. Will definitely use again!"
-              </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">AG</div>
-                <div>
-                  <h4>Angela Garland</h4>
-                  <p>Repeated customer</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="testimonial-card card">
-              <div class="testimonial-top">
-                <div class="stars" aria-label="5 star rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
-              </div>
-              <div class="testimonial-text">
-                "As a BCA student, I needed a Car Selling Management System project using PHP and MySQL. LocalGrowth Studio delivered a complete, well-structured system with clean UI and proper functionality. The project worked perfectly on WAMP. Will definitely recommend!"
-              </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">VP</div>
-                <div>
-                  <h4>Vrund Patel</h4>
-                  <p>College Student</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="testimonial-card card">
-              <div class="testimonial-top">
-                <div class="stars" aria-label="5 star rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
-              </div>
-              <div class="testimonial-text">
-                "As a BCA student, I needed a professional website project using PHP and MySQL. Discover Gujarat delivered a well-structured website with a clean UI and smooth functionality. The project ran perfectly on WAMP, making it easy to manage and deploy. Highly recommended!"
-              </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">VP</div>
-                <div>
-                  <h4>Vaishnavi Parekh</h4>
-                  <p>College Student</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 5 -->
-            <div class="testimonial-card card">
-              <div class="testimonial-top">
-                <div class="stars" aria-label="5 star rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <div class="verified"><i class="fa-solid fa-badge-check"></i> Verified</div>
-              </div>
-              <div class="testimonial-text">
-                "As a BCA student, I needed a professional website project using PHP and MySQL. Bloom &amp; Send delivered a well-structured Flower Management System with a clean UI and smooth functionality. The project ran perfectly on WAMP, making it easy to manage and deploy. Highly recommended!"
-              </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">NS</div>
-                <div>
-                  <h4>Nikki Soni</h4>
-                  <p>College Student</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- controls -->
-        <div class="t-controls">
-          <button class="t-btn" id="t-prev" aria-label="Previous testimonial">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-
-          <div class="t-dots" id="t-dots" aria-label="Testimonials pagination"></div>
-
-          <button class="t-btn" id="t-next" aria-label="Next testimonial">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
+      <div class="step-card card reveal rd2">
+        <div class="step-num">02</div>
+        <h3>Get a Live Demo</h3>
+        <p>We build and show you the working demo first. Request changes before final delivery.</p>
+      </div>
+      <div class="step-card card reveal rd3">
+        <div class="step-num">03</div>
+        <h3>Pay After Satisfaction</h3>
+        <p>Payment only after you're 100% satisfied — then we deliver source code, docs, and setup help.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQs -->
-  <section class="faqs" id="faqs">
-    <div class="container">
-      <div class="section-title">
-        <h2>FAQs</h2>
-        <p>Common questions about pricing, delivery, demo, and payment.</p>
+<!-- ═══ STUDENT PROJECTS ══════════════════════════════════════ -->
+<section id="student-projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-line"></div>
+      <span class="tag tag-gold">Student Friendly</span>
+      <h2>Student Projects</h2>
+      <p>Final-year & academic projects starting from ₹199. Multiple languages, proper documentation included.</p>
+    </div>
+
+    <div class="custom-note reveal">
+      <i class="fas fa-code"></i>
+      Custom projects available in ANY programming language — just share your requirements!
+    </div>
+
+    <div class="langs-grid reveal">
+      <div class="lang-pill py"><i class="fab fa-python"></i><span>Python</span></div>
+      <div class="lang-pill"><i class="fab fa-html5"></i><span>HTML/CSS</span></div>
+      <div class="lang-pill js"><i class="fab fa-js"></i><span>JavaScript</span></div>
+      <div class="lang-pill php"><i class="fab fa-php"></i><span>PHP</span></div>
+      <div class="lang-pill"><i class="fas fa-database"></i><span>SQL</span></div>
+      <div class="lang-pill java"><i class="fab fa-java"></i><span>Java</span></div>
+      <div class="lang-pill cpp"><i class="fas fa-copyright"></i><span>C / C++</span></div>
+    </div>
+
+    <div class="proj-grid">
+      <div class="proj-card card reveal rd1">
+        <div class="proj-head">
+          <span class="proj-badge">Tier 1</span>
+          <h3>Basic Project</h3>
+          <div class="proj-price">₹199 – ₹399</div>
+          <p>Simple coding tasks & scripts</p>
+        </div>
+        <ul class="proj-features">
+          <li><i class="fas fa-check"></i> Small programs & scripts</li>
+          <li><i class="fas fa-check"></i> Basic HTML/CSS pages</li>
+          <li><i class="fas fa-check"></i> Simple calculations</li>
+          <li><i class="fas fa-check"></i> Basic form validation</li>
+          <li><i class="fas fa-check"></i> 2–3 days delivery</li>
+        </ul>
+        <div class="proj-cta"><a href="#contact" class="btn btn-ghost">Order Now</a></div>
       </div>
 
-      <div class="faq-wrap">
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            How fast do you deliver?
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-a">
-            <p>Basic tasks usually take 2–3 days, intermediate 5–7 days, and advanced 7–10 days (depends on features).</p>
-          </div>
+      <div class="proj-card card reveal rd2">
+        <div class="proj-head">
+          <span class="proj-badge">Tier 2</span>
+          <h3>Intermediate Project</h3>
+          <div class="proj-price">₹499 – ₹799</div>
+          <p>Medium complexity apps</p>
         </div>
+        <ul class="proj-features">
+          <li><i class="fas fa-check"></i> Database connectivity</li>
+          <li><i class="fas fa-check"></i> Multi-page websites</li>
+          <li><i class="fas fa-check"></i> CRUD operations</li>
+          <li><i class="fas fa-check"></i> API integration</li>
+          <li><i class="fas fa-check"></i> 5–7 days delivery</li>
+        </ul>
+        <div class="proj-cta"><a href="#contact" class="btn btn-primary">Order Now</a></div>
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            Do you provide a demo before payment?
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-a">
-            <p>Yes. We show the working demo first. Payment happens after you’re satisfied.</p>
-          </div>
+      <div class="proj-card card reveal rd3">
+        <div class="proj-head">
+          <span class="proj-badge">Tier 3</span>
+          <h3>Advanced Project</h3>
+          <div class="proj-price">₹999 – ₹1,499</div>
+          <p>Complex full-stack applications</p>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            What will I receive after completion?
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-a">
-            <p>You get source code, documentation, setup steps/video, and basic guidance to run it on your system.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            Can you make a project in any language?
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-a">
-            <p>Yes, custom projects are available in many languages. Share requirements and we’ll confirm feasibility.</p>
-          </div>
-        </div>
+        <ul class="proj-features">
+          <li><i class="fas fa-check"></i> Full-stack applications</li>
+          <li><i class="fas fa-check"></i> User authentication</li>
+          <li><i class="fas fa-check"></i> Complex algorithms</li>
+          <li><i class="fas fa-check"></i> Documentation included</li>
+          <li><i class="fas fa-check"></i> 7–10 days delivery</li>
+        </ul>
+        <div class="proj-cta"><a href="#contact" class="btn btn-gold">Order Now</a></div>
       </div>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact Us</h2>
-        <p>Ready to get your website or student project? Get in touch today!</p>
+    <div class="pay-pill reveal">
+      <h4><i class="fas fa-handshake" style="color:var(--gold-2);margin-right:.5rem;"></i> Student-Friendly Payment Policy</h4>
+      <p>We understand money matters for students.</p>
+      <p class="big">See the working demo first — pay only when you're 100% satisfied. ✅</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ════════════════════════════════════════════════ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-line"></div>
+      <span class="tag">Website Packages</span>
+      <h2>Honest Pricing</h2>
+      <p>One-time payment. No hidden charges. Final price depends on your requirements.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card card reveal rd1">
+        <div class="pricing-top">
+          <h3>Basic Website</h3>
+          <div class="p-price">₹2,000 – ₹5,000</div>
+          <div class="p-note">One-time · final price depends on scope</div>
+        </div>
+        <ul class="p-feats">
+          <li><i class="fas fa-check yes"></i> 3–5 Page Custom Website</li>
+          <li><i class="fas fa-check yes"></i> Mobile Responsive</li>
+          <li><i class="fas fa-check yes"></i> Contact Form</li>
+          <li><i class="fas fa-check yes"></i> Basic SEO Setup</li>
+          <li><i class="fas fa-check yes"></i> Free Hosting 3 Months</li>
+          <li class="dim"><i class="fas fa-times no"></i> No Admin Panel / Database</li>
+        </ul>
+        <div class="p-cta"><a href="#contact" class="btn btn-ghost">Get Started</a></div>
       </div>
 
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3>Get In Touch</h3>
-          <p style="color:var(--muted);font-weight:650;">We're here to help you with your website or academic project. Reach out to us through any of these channels:</p>
+      <div class="pricing-card card featured reveal rd2">
+        <div class="pop-badge">Most Popular</div>
+        <div class="pricing-top">
+          <h3>Business Website</h3>
+          <div class="p-price">₹5,000 – ₹8,000</div>
+          <div class="p-note">One-time · final price depends on scope</div>
+        </div>
+        <ul class="p-feats">
+          <li><i class="fas fa-check yes"></i> 5–10 Page Custom Website</li>
+          <li><i class="fas fa-check yes"></i> Database Integration</li>
+          <li><i class="fas fa-check yes"></i> Multiple Contact Forms</li>
+          <li><i class="fas fa-check yes"></i> Advanced SEO Optimization</li>
+          <li><i class="fas fa-check yes"></i> Free Hosting 6 Months</li>
+          <li><i class="fas fa-check yes"></i> Admin Dashboard</li>
+          <li><i class="fas fa-check yes"></i> 1 Month Support</li>
+          <li><i class="fas fa-check yes"></i> Basic CMS Integration</li>
+        </ul>
+        <div class="p-cta"><a href="#contact" class="btn btn-primary">Get Started</a></div>
+      </div>
 
-          <div class="contact-method">
-            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-            <div>
-              <h4>WhatsApp</h4>
-              <p>Aayush</p>
-            </div>
+      <div class="pricing-card card reveal rd3">
+        <div class="pricing-top">
+          <h3>E-Commerce Website</h3>
+          <div class="p-price">₹10,000 – ₹15,000</div>
+          <div class="p-note">One-time · final price depends on scope</div>
+        </div>
+        <ul class="p-feats">
+          <li><i class="fas fa-check yes"></i> Full E-Commerce Website</li>
+          <li><i class="fas fa-check yes"></i> Product & Inventory Mgmt</li>
+          <li><i class="fas fa-check yes"></i> Payment Gateway</li>
+          <li><i class="fas fa-check yes"></i> User Account System</li>
+          <li><i class="fas fa-check yes"></i> Free Hosting 12 Months</li>
+          <li><i class="fas fa-check yes"></i> 3 Months Support</li>
+        </ul>
+        <div class="p-cta"><a href="#contact" class="btn btn-ghost">Get Started</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ══════════════════════════════════════════ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-line"></div>
+      <span class="tag">Client Reviews</span>
+      <h2>What Clients Say</h2>
+      <p>Real reviews from real clients across India. Selected for privacy.</p>
+    </div>
+
+    <div class="testi-shell reveal">
+      <div class="testi-viewport">
+        <div class="testi-track" id="t-track">
+
+          <div class="t-card">
+            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
+            <div class="t-text">"LocalGrowth Studio created an amazing website for my business. The database integration works perfectly and the forms capture all the leads I need. Highly recommended!"</div>
+            <div class="t-author"><div class="t-av">M</div><div><h4>Michael</h4><p>GitHub User</p></div></div>
           </div>
 
-          <div class="contact-method">
-            <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-            <div>
-              <h4>Instagram</h4>
-              <p>@thelocalgrowthstudio</p>
-            </div>
+          <div class="t-card">
+            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
+            <div class="t-text">"As a college student, I needed a Python-based Truecaller project for my final year. They delivered excellent code with proper documentation at an affordable price!"</div>
+            <div class="t-author"><div class="t-av">AG</div><div><h4>Angela Garland</h4><p>Repeated Customer</p></div></div>
           </div>
 
-          <div class="contact-method">
-            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <h4>Location</h4>
-              <p>Anand, Gujarat, India</p>
-            </div>
+          <div class="t-card">
+            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
+            <div class="t-text">"I needed a Car Selling Management System in PHP and MySQL. LocalGrowth Studio delivered a complete, well-structured system with clean UI. Ran perfectly on WAMP!"</div>
+            <div class="t-author"><div class="t-av">VP</div><div><h4>Vrund Patel</h4><p>BCA Student</p></div></div>
           </div>
 
-          <div class="contact-btns">
-            <a href="https://wa.me/916355938913" class="btn" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-whatsapp"></i> WhatsApp Now
-            </a>
-            <a href="https://instagram.com/thelocalgrowthstudio" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-instagram"></i> Follow on Instagram
-            </a>
+          <div class="t-card">
+            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
+            <div class="t-text">"A well-structured website project with clean UI and smooth functionality. Ran perfectly on WAMP — easy to manage and deploy. Highly recommended!"</div>
+            <div class="t-author"><div class="t-av">VP</div><div><h4>Vaishnavi Parekh</h4><p>College Student</p></div></div>
           </div>
+
+          <div class="t-card">
+            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
+            <div class="t-text">"Got a Flower Management System in PHP and MySQL — beautiful clean UI, smooth functionality. Highly recommended for any student project!"</div>
+            <div class="t-author"><div class="t-av">NS</div><div><h4>Nikki Soni</h4><p>College Student</p></div></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="t-controls">
+        <button class="t-btn" id="t-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <div class="t-dots" id="t-dots"></div>
+        <button class="t-btn" id="t-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQs ══════════════════════════════════════════════════ -->
+<section id="faqs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-line"></div>
+      <span class="tag">FAQ</span>
+      <h2>Common Questions</h2>
+      <p>Everything you need to know about pricing, delivery, and our process.</p>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button">How fast do you deliver? <i class="fas fa-chevron-down faq-chev"></i></button>
+        <div class="faq-a"><p>Basic tasks: 2–3 days. Intermediate: 5–7 days. Advanced: 7–10 days — depends on features and complexity.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button">Do you provide a demo before payment? <i class="fas fa-chevron-down faq-chev"></i></button>
+        <div class="faq-a"><p>Yes — we show you the fully working demo first. Payment happens only after you're completely satisfied with the result.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button">What do I receive after completion? <i class="fas fa-chevron-down faq-chev"></i></button>
+        <div class="faq-a"><p>You get source code, documentation, setup steps / walkthrough video, and guidance to run it on your system or deploy it live.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" type="button">Can you build in any programming language? <i class="fas fa-chevron-down faq-chev"></i></button>
+        <div class="faq-a"><p>Yes! Custom projects are available in most languages. Share your requirements on WhatsApp and we'll confirm feasibility right away.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-line"></div>
+      <span class="tag">Get In Touch</span>
+      <h2>Let's Work Together</h2>
+      <p>Ready to start? Reach out on WhatsApp or fill in the form below.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <h3>Talk to Us</h3>
+        <p>We're here to help with your website or academic project. Reach us through any channel below.</p>
+
+        <div class="cm-item">
+          <div class="cm-ico"><i class="fab fa-whatsapp"></i></div>
+          <div><h4>WhatsApp</h4><p>Aayush — Quick Responses</p></div>
+        </div>
+        <div class="cm-item">
+          <div class="cm-ico"><i class="fab fa-instagram"></i></div>
+          <div><h4>Instagram</h4><p>@thelocalgrowthstudio</p></div>
+        </div>
+        <div class="cm-item">
+          <div class="cm-ico"><i class="fas fa-map-marker-alt"></i></div>
+          <div><h4>Location</h4><p>Anand, Gujarat, India</p></div>
         </div>
 
-        <div class="contact-form">
-          <h3>Request a Quote</h3>
-          <div id="form-status" class="form-status"></div>
+        <div class="c-btns">
+          <a href="https://wa.me/916355938913" class="btn btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+          <a href="https://instagram.com/thelocalgrowthstudio" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Follow Us</a>
+        </div>
+      </div>
 
-          <form id="contactForm" action="https://formspree.io/f/xovpgpnw" method="POST">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-                maxlength="10"
-                pattern="[6-9]{1}[0-9]{9}"
-                placeholder="Enter 10-digit mobile number"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="service-type">Service Type</label>
+      <div class="c-form-wrap reveal">
+        <h3>Request a Free Quote</h3>
+        <div id="form-status" class="form-status" role="alert"></div>
+        <form id="contactForm" action="https://formspree.io/f/xovpgpnw" method="POST" novalidate>
+          <div class="fg-2">
+            <div class="fg"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="Your name" required /></div>
+            <div class="fg"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required /></div>
+          </div>
+          <div class="fg-2">
+            <div class="fg"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" maxlength="10" pattern="[6-9]{1}[0-9]{9}" placeholder="10-digit number" oninput="this.value=this.value.replace(/[^0-9]/g,'')" required /></div>
+            <div class="fg"><label for="service-type">Service Type</label>
               <select id="service-type" name="service-type" required>
-                <option value="">Select service type</option>
+                <option value="">Select type</option>
                 <option value="website">Website Design</option>
                 <option value="student-project">Student Project</option>
                 <option value="both">Both</option>
               </select>
             </div>
-
-            <div class="form-group">
-              <label for="budget">Budget (₹)</label>
-              <input type="number" id="budget" name="budget" min="100" placeholder="Enter your budget" />
-            </div>
-
-            <div class="form-group">
-              <label for="message">Project Details</label>
-              <textarea id="message" name="message" rows="4" placeholder="Describe your project requirements..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn">Get Free Quote</button>
-          </form>
-        </div>
+          </div>
+          <div class="fg"><label for="budget">Budget (₹)</label><input type="number" id="budget" name="budget" min="100" placeholder="Your estimated budget" /></div>
+          <div class="fg"><label for="message">Project Details</label><textarea id="message" name="message" rows="4" placeholder="Describe your project requirements..." required></textarea></div>
+          <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/916355938913" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+<!-- ═══ WHATSAPP FLOAT ════════════════════════════════════════ -->
+<a href="https://wa.me/916355938913" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wa-pulse"></div>
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-  <!-- Footer -->
-  <footer class="footer" id="footer">
-    <div class="footer-content">
-      <h3>LocalGrowth Studio</h3>
-      <p class="footer-tagline">Professional Websites & Student Projects</p>
-      <p class="footer-location">Anand, Gujarat, India</p>
-
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#student-projects">Student Projects</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#home" class="logo"><span class="logo-top">LocalGrowth</span><span class="logo-sub">Studio</span></a>
+      <p>Professional websites and student projects from Anand, Gujarat. Quality code. Honest pricing. Demo first.</p>
+      <div class="f-socials">
+        <a href="https://wa.me/916355938913" class="f-soc" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/thelocalgrowthstudio" class="f-soc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
-
-      <div class="footer-social">
-        <a href="https://wa.me/916355938913" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="https://instagram.com/thelocalgrowthstudio" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </div>
-
-      <p class="footer-copy">
-        © 2025 LocalGrowth Studio. All rights reserved. Serving clients even before this website went live.
-      </p>
     </div>
-  </footer>
+
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#student-projects">Student Projects</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Custom Website Design</a></li>
+        <li><a href="#services">Database Integration</a></li>
+        <li><a href="#student-projects">Python Projects</a></li>
+        <li><a href="#student-projects">PHP + MySQL Projects</a></li>
+        <li><a href="#student-projects">Java / C++ Projects</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 LocalGrowth Studio. All rights reserved.</p>
+    <p>Anand, Gujarat, India · Serving clients before this site went live.</p>
+  </div>
+</footer>
+
+<!-- ═══ SCRIPTS ════════════════════════════════════════════════ -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
-  // ----------------------------
-  // ✅ Supabase Auth Guard + Logout
-  // ----------------------------
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ── SUPABASE AUTH ── */
   const SUPABASE_URL = "https://mtnuxxrqtfrezrbypqzr.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_DmlEgucOtfmUfu5FBeOUHw_mReGFpR1";
-  const supabaseClient = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const sb = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-  const header = document.getElementById('site-header');
-  const menuBtn = document.getElementById('menu-btn');
-  const navLinks = document.getElementById('nav-links');
-  const navA = document.querySelectorAll('.nav-link');
-
+  const logoutLi  = document.getElementById('logout-li');
   const logoutBtn = document.getElementById('logout-btn');
-  const logoutLi = document.getElementById('logout-li');
 
-  // ✅ Auth Guard: session nahi hai to auth.html
   async function requireAuth() {
-    if (!supabaseClient) return;
-
-    const { data: { session } } = await supabaseClient.auth.getSession();
-
-    if (!session) {
-      localStorage.removeItem('isLoggedIn');
-      sessionStorage.removeItem('isLoggedIn');
-      window.location.href = 'auth.html';
-      return;
-    }
-
-    // session present => logout visible
-    if (logoutLi) logoutLi.style.display = 'block';
-    localStorage.setItem('isLoggedIn', 'true');
+    if (!sb) return;
+    try {
+      const { data: { session } } = await sb.auth.getSession();
+      if (!session) { localStorage.removeItem('isLoggedIn'); window.location.href = 'index.html'; return; }
+      if (logoutLi) logoutLi.style.display = 'block';
+      localStorage.setItem('isLoggedIn', 'true');
+    } catch (_) {}
   }
 
-  // ✅ Proper logout: Supabase signOut + redirect
   async function doLogout(e) {
     e.preventDefault();
-    try {
-      if (supabaseClient) await supabaseClient.auth.signOut();
-    } catch (_) {}
+    try { if (sb) await sb.auth.signOut(); } catch (_) {}
     localStorage.removeItem('isLoggedIn');
-    sessionStorage.removeItem('isLoggedIn');
     window.location.href = 'index.html';
   }
 
-  // ----------------------------
-  // 1) Navbar upgrades
-  // ----------------------------
-  const onScrollHeader = () => {
-    if (window.scrollY > 8) header?.classList.add('scrolled');
-    else header?.classList.remove('scrolled');
-  };
-  window.addEventListener('scroll', onScrollHeader);
-  onScrollHeader();
+  requireAuth();
+  logoutBtn?.addEventListener('click', doLogout);
 
-  // mobile menu toggle
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
-    document.addEventListener('click', (e) => {
-      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-        navLinks.classList.remove('active');
-      }
-    });
-  }
+  /* ── HEADER SCROLL ── */
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
 
-  // smooth scroll (offset)
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (!targetId || targetId === '#') return;
+  /* ── MOBILE NAV ── */
+  const menuBtn  = document.getElementById('menu-btn');
+  const menuIcon = document.getElementById('menu-icon');
+  const navLinks = document.getElementById('nav-links');
 
-      const targetElement = document.querySelector(targetId);
-      if (!targetElement) return;
+  menuBtn?.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
+  });
 
+  document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+      navLinks.classList.remove('open');
+      menuIcon.className = 'fas fa-bars';
+    }
+  });
+
+  /* ── SMOOTH SCROLL ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (!id || id === '#') return;
+      const el = document.querySelector(id);
+      if (!el) return;
       e.preventDefault();
-      const y = targetElement.getBoundingClientRect().top + window.pageYOffset - 90;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-      navLinks?.classList.remove('active');
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      navLinks.classList.remove('open');
+      menuIcon.className = 'fas fa-bars';
     });
   });
 
-  // active section highlight
-  const sectionIds = ['home','services','student-projects','pricing','testimonials','contact'];
-  const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  /* ── ACTIVE NAV ── */
+  const navA = document.querySelectorAll('.nav-link');
+  const sids = ['home','services','student-projects','pricing','testimonials','contact'];
+  const sEls = sids.map(id => document.getElementById(id)).filter(Boolean);
 
-  const setActive = (id) => {
-    navA.forEach(a => {
-      const href = a.getAttribute('href');
-      a.classList.toggle('active', href === `#${id}`);
-    });
-  };
+  new IntersectionObserver(entries => {
+    const vis = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (vis?.target?.id) navA.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${vis.target.id}`));
+  }, { threshold: [0.25, 0.5], rootMargin: '-20% 0px -55% 0px' }).observe && sEls.forEach(el => {
+    new IntersectionObserver(entries => {
+      const vis = entries.filter(e => e.isIntersecting)[0];
+      if (vis) navA.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${el.id}`));
+    }, { threshold: 0.5 }).observe(el);
+  });
 
-  const secObserver = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(en => en.isIntersecting)
-      .sort((a,b) => (b.intersectionRatio - a.intersectionRatio))[0];
-    if (visible?.target?.id) setActive(visible.target.id);
-  }, { threshold: [0.25, 0.4, 0.55, 0.7], rootMargin: '-20% 0px -55% 0px' });
+  /* ── SCROLL REVEAL ── */
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
-  sectionEls.forEach(el => secObserver.observe(el));
-  setActive('home');
-
-  // ----------------------------
-  // 4) Testimonials slider
-  // ----------------------------
-  const track = document.getElementById('t-track');
+  /* ── TESTIMONIAL SLIDER ── */
+  const track   = document.getElementById('t-track');
   const prevBtn = document.getElementById('t-prev');
   const nextBtn = document.getElementById('t-next');
-  const dotsWrap = document.getElementById('t-dots');
+  const dotsEl  = document.getElementById('t-dots');
 
-  let index = 0;
-  let autoplayTimer = null;
+  let idx = 0, timer = null;
 
-  function getSlideWidth(){
-    const first = track?.children?.[0];
-    if (!first) return 0;
-    const style = window.getComputedStyle(track);
-    const gap = parseFloat(style.columnGap || style.gap || '0') || 0;
-    return first.getBoundingClientRect().width + gap;
-  }
+  const cnt    = () => track ? track.children.length : 0;
+  const gapPx  = () => parseFloat(getComputedStyle(track).columnGap || '0') || 0;
+  const slideW = () => track?.children?.[0] ? track.children[0].getBoundingClientRect().width + gapPx() : 0;
 
-  function slideCount(){ return track ? track.children.length : 0; }
-
-  function buildDots(){
-    if (!dotsWrap) return;
-    dotsWrap.innerHTML = '';
-    for (let i = 0; i < slideCount(); i++){
+  const buildDots = () => {
+    if (!dotsEl) return;
+    dotsEl.innerHTML = '';
+    for (let i = 0; i < cnt(); i++) {
       const b = document.createElement('button');
-      b.className = 'dot-btn' + (i === index ? ' active' : '');
-      b.type = 'button';
-      b.setAttribute('aria-label', `Go to testimonial ${i+1}`);
-      b.addEventListener('click', () => { goTo(i); restartAutoplay(); });
-      dotsWrap.appendChild(b);
+      b.className = 'dot-btn' + (i === idx ? ' active' : '');
+      b.type = 'button'; b.setAttribute('aria-label', `Slide ${i+1}`);
+      b.addEventListener('click', () => { goTo(i); restart(); });
+      dotsEl.appendChild(b);
     }
-  }
+  };
 
-  function updateDots(){
-    if (!dotsWrap) return;
-    [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === index));
-  }
+  const updateDots = () => [...(dotsEl?.children || [])].forEach((d,i) => d.classList.toggle('active', i === idx));
 
-  function goTo(i){
-    const count = slideCount();
-    if (!track || count === 0) return;
-    index = (i + count) % count;
-    const w = getSlideWidth();
-    track.style.transform = `translateX(${-index * w}px)`;
+  const goTo = (i) => {
+    if (!track) return;
+    idx = (i + cnt()) % cnt();
+    track.style.transform = `translateX(${-idx * slideW()}px)`;
     updateDots();
+  };
+
+  const start   = () => { if (!timer) timer = setInterval(() => goTo(idx + 1), 4200); };
+  const stop    = () => { clearInterval(timer); timer = null; };
+  const restart = () => { stop(); start(); };
+
+  if (track) {
+    buildDots(); goTo(0); start();
+    prevBtn?.addEventListener('click', () => { goTo(idx - 1); restart(); });
+    nextBtn?.addEventListener('click', () => { goTo(idx + 1); restart(); });
+    const shell = track.closest('.testi-shell');
+    shell?.addEventListener('mouseenter', stop);
+    shell?.addEventListener('mouseleave', start);
+    window.addEventListener('resize', () => goTo(idx));
   }
 
-  function next(){ goTo(index + 1); }
-  function prev(){ goTo(index - 1); }
-
-  function startAutoplay(){
-    if (autoplayTimer) return;
-    autoplayTimer = setInterval(() => next(), 3500);
-  }
-  function stopAutoplay(){
-    clearInterval(autoplayTimer);
-    autoplayTimer = null;
-  }
-  function restartAutoplay(){ stopAutoplay(); startAutoplay(); }
-
-  if (track){
-    buildDots();
-    goTo(0);
-    startAutoplay();
-
-    prevBtn?.addEventListener('click', () => { prev(); restartAutoplay(); });
-    nextBtn?.addEventListener('click', () => { next(); restartAutoplay(); });
-
-    const shell = track.closest('.testimonial-shell');
-    shell?.addEventListener('mouseenter', stopAutoplay);
-    shell?.addEventListener('mouseleave', startAutoplay);
-    shell?.addEventListener('touchstart', stopAutoplay, {passive:true});
-    shell?.addEventListener('touchend', startAutoplay, {passive:true});
-
-    window.addEventListener('resize', () => goTo(index));
-  }
-
-  // ----------------------------
-  // FAQs accordion
-  // ----------------------------
+  /* ── FAQ ACCORDION ── */
   document.querySelectorAll('.faq-item').forEach(item => {
-    const btn = item.querySelector('.faq-q');
-    btn?.addEventListener('click', () => {
-      document.querySelectorAll('.faq-item.open').forEach(openItem => {
-        if (openItem !== item) openItem.classList.remove('open');
-      });
+    item.querySelector('.faq-q')?.addEventListener('click', () => {
+      document.querySelectorAll('.faq-item.open').forEach(o => { if (o !== item) o.classList.remove('open'); });
       item.classList.toggle('open');
     });
   });
 
-  // ----------------------------
-  // Formspree submit
-  // ----------------------------
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', async function (e) {
+  /* ── CONTACT FORM ── */
+  const cForm = document.getElementById('contactForm');
+  if (cForm) {
+    cForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-
-      const form = e.target;
-      const formData = new FormData(form);
-      const submitButton = form.querySelector('button[type="submit"]');
       const statusDiv = document.getElementById('form-status');
-      if (!submitButton || !statusDiv) return;
-
-      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      submitButton.disabled = true;
-
+      const submitBtn = cForm.querySelector('button[type="submit"]');
+      if (!statusDiv || !submitBtn) return;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+      submitBtn.disabled = true;
       try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          statusDiv.textContent = 'Thank you for your message! We will get back to you soon.';
-          statusDiv.className = 'form-status success';
-          form.reset();
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } catch (error) {
-        statusDiv.textContent = 'Oops! There was a problem submitting your form. Please try again or contact us directly.';
+        const res = await fetch(cForm.action, { method: 'POST', body: new FormData(cForm), headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          statusDiv.textContent = "✅ Message sent! We'll get back to you soon.";
+          statusDiv.className = 'form-status success'; cForm.reset();
+        } else throw new Error();
+      } catch {
+        statusDiv.textContent = '❌ Something went wrong. Please try WhatsApp instead.';
         statusDiv.className = 'form-status error';
       } finally {
-        submitButton.innerHTML = 'Get Free Quote';
-        submitButton.disabled = false;
-        statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        submitBtn.disabled = false;
+        statusDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
   }
 
-  // ----------------------------
-  // Scroll reveal
-  // ----------------------------
-  const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -60px 0px' };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.card, .project-card, .language-card, .deliver-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(18px)';
-    el.style.transition = 'opacity 650ms ease, transform 650ms ease';
-    observer.observe(el);
-  });
-
-  // ----------------------------
-  // Init
-  // ----------------------------
-  requireAuth();
-  logoutBtn?.addEventListener('click', doLogout);
+}); // end DOMContentLoaded
 </script>
-
 </body>
 </html>

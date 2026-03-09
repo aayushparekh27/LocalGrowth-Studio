@@ -2,22 +2,26 @@ document.addEventListener("DOMContentLoaded", async () => {
   const SUPABASE_URL = "https://mtnuxxrqtfrezrbypqzr.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_DmlEgucOtfmUfu5FBeOUHw_mReGFpR1";
 
+  // Guard: Supabase CDN load check
+  if (!window.supabase) {
+    console.error("Supabase SDK not loaded.");
+    return;
+  }
+
   const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
   // Elements
-  const container = document.getElementById("auth-container");
-  const registerBtn = document.querySelector(".register-btn");
-  const loginBtn = document.querySelector(".login-btn");
-
-  const loginForm = document.getElementById("loginForm");
+  const container    = document.getElementById("auth-container");
+  const registerBtn  = document.querySelector(".register-btn");
+  const loginBtn     = document.querySelector(".login-btn");
+  const loginForm    = document.getElementById("loginForm");
   const registerForm = document.getElementById("registerForm");
-
-  const loginStatus = document.getElementById("loginStatus");
+  const loginStatus  = document.getElementById("loginStatus");
   const registerStatus = document.getElementById("registerStatus");
-
-  const loginBtnEl = document.getElementById("loginBtn");
+  const loginBtnEl   = document.getElementById("loginBtn");
   const registerBtnEl = document.getElementById("registerBtn");
 
+  // ── Helpers ──────────────────────────────────────────────────────────────
   const showStatus = (el, msg, type = "ok") => {
     if (!el) return;
     el.textContent = msg;
@@ -36,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     btn.classList.toggle("loading", isLoading);
   };
 
-  // Already logged in?
+  // ── Already logged in? ────────────────────────────────────────────────────
   try {
     const { data: { session } } = await supabaseClient.auth.getSession();
     if (session) {
@@ -45,10 +49,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
   } catch (e) {
-    // ignore
+    console.warn("Session check failed:", e);
   }
 
-  // Toggle panels
+  // ── Toggle panels ─────────────────────────────────────────────────────────
   registerBtn?.addEventListener("click", () => {
     clearStatus(loginStatus);
     clearStatus(registerStatus);
@@ -61,12 +65,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     container.classList.remove("active");
   });
 
-  // REGISTER
+  // ── REGISTER ──────────────────────────────────────────────────────────────
   registerForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     clearStatus(registerStatus);
 
-    const email = document.getElementById("regEmail")?.value?.trim();
+    const email    = document.getElementById("regEmail")?.value?.trim();
     const password = document.getElementById("regPassword")?.value;
 
     if (!email || !password) {
@@ -80,29 +84,32 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     setLoading(registerBtnEl, true);
 
-    const { error } = await supabaseClient.auth.signUp({ email, password });
-
-    setLoading(registerBtnEl, false);
-
-    if (error) {
-      showStatus(registerStatus, "❌ " + error.message, "err");
-    } else {
-      showStatus(
-        registerStatus,
-        "✅ Registered! If email confirmation is enabled, check inbox and verify first.",
-        "ok"
-      );
-      container.classList.remove("active");
-      registerForm.reset();
+    try {
+      const { error } = await supabaseClient.auth.signUp({ email, password });
+      if (error) {
+        showStatus(registerStatus, "❌ " + error.message, "err");
+      } else {
+        showStatus(
+          registerStatus,
+          "✅ Registered! Check your inbox and verify your email first.",
+          "ok"
+        );
+        container.classList.remove("active");
+        registerForm.reset();
+      }
+    } catch (err) {
+      showStatus(registerStatus, "❌ Something went wrong. Try again.", "err");
+    } finally {
+      setLoading(registerBtnEl, false);
     }
   });
 
-  // LOGIN
+  // ── LOGIN ─────────────────────────────────────────────────────────────────
   loginForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     clearStatus(loginStatus);
 
-    const email = document.getElementById("loginEmail")?.value?.trim();
+    const email    = document.getElementById("loginEmail")?.value?.trim();
     const password = document.getElementById("loginPassword")?.value;
 
     if (!email || !password) {
@@ -112,15 +119,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     setLoading(loginBtnEl, true);
 
-    const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
-
-    setLoading(loginBtnEl, false);
-
-    if (error) {
-      showStatus(loginStatus, "❌ " + error.message, "err");
-    } else {
-      localStorage.setItem("isLoggedIn", "true");
-      window.location.href = "home.html";
+    try {
+      const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+      if (error) {
+        showStatus(loginStatus, "❌ " + error.message, "err");
+      } else {
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = "home.html";
+      }
+    } catch (err) {
+      showStatus(loginStatus, "❌ Something went wrong. Try again.", "err");
+    } finally {
+      setLoading(loginBtnEl, false);
     }
   });
 });
