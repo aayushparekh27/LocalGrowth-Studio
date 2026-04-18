@@ -1,1171 +1,2710 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LocalGrowth Studio | Custom Websites & Student Projects</title>
-  <meta name="description" content="Professional website design and student projects from Anand, Gujarat. Starting ₹199 for student projects." />
+  <meta name="description"
+    content="Professional website design and student projects from Anand, Gujarat. Starting ₹199 for student projects." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700;900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     :root {
-      --ink:      #07080F;
-      --ink-2:    #0E0F1A;
-      --surface:  #12131F;
-      --surface-2:#181928;
-      --border:   rgba(255,255,255,0.07);
-      --border-2: rgba(255,255,255,0.12);
-      --gold:     #F5A623;
-      --gold-2:   #FFD166;
-      --teal:     #00C9A7;
-      --blue:     #1A56DB;
-      --blue-2:   #0EA5E9;
-      --blue-lt:  #7EB3FF;
-      --text:     #A8AABE;
-      --text-2:   #D0D2E8;
-      --heading:  #F0F1FF;
-      --g1:       linear-gradient(135deg, #1A56DB, #0EA5E9);
-      --g2:       linear-gradient(135deg, #F5A623, #FFD166);
-      --max:      1200px;
-      --nav-h:    76px;
-      --ease:     cubic-bezier(0.22,1,0.36,1);
-      --bounce:   cubic-bezier(0.34,1.56,0.64,1);
+      --ink: #040509;
+      --ink-2: #0A0C14;
+      --surface: rgba(18, 19, 31, 0.7);
+      --surface-2: rgba(24, 25, 40, 0.8);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-2: rgba(255, 255, 255, 0.15);
+      --gold: #FFB800;
+      --gold-2: #FFD166;
+      --teal: #00F0FF;
+      --blue: #3B82F6;
+      --blue-2: #06B6D4;
+      --blue-lt: #93C5FD;
+      --text: #A1A1AA;
+      --text-2: #D4D4D8;
+      --heading: #FAFAFA;
+      --g1: linear-gradient(135deg, #6366F1, #3B82F6, #06B6D4);
+      --g2: linear-gradient(135deg, #F59E0B, #FCD34D);
+      --max: 1200px;
+      --nav-h: 80px;
+      --ease: cubic-bezier(0.25, 1, 0.5, 1);
+      --bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     body {
       font-family: 'Satoshi', system-ui, sans-serif;
-      background: var(--ink); color: var(--text);
-      line-height: 1.7; overflow-x: hidden;
+      background: var(--ink);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
-    ::selection { background: rgba(26,86,219,0.35); color: #fff; }
+
+    ::selection {
+      background: rgba(26, 86, 219, 0.35);
+      color: #fff;
+    }
 
     body::before {
-      content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.028;
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.028;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       background-size: 160px;
     }
 
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--ink); }
-    ::-webkit-scrollbar-thumb { background: rgba(26,86,219,0.45); border-radius: 10px; }
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--ink);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(26, 86, 219, 0.45);
+      border-radius: 10px;
+    }
 
     /* ── TYPOGRAPHY ── */
-    h1,h2,h3,h4,h5 { font-family: 'Cabinet Grotesk', sans-serif; color: var(--heading); line-height: 1.1; }
-    h1 { font-size: clamp(2.6rem,5.5vw,4.8rem); font-weight: 900; letter-spacing: -1.5px; }
-    h2 { font-size: clamp(2rem,4vw,3.2rem); font-weight: 800; letter-spacing: -0.8px; }
-    h3 { font-size: clamp(1.2rem,2vw,1.5rem); font-weight: 700; }
-    p  { font-size: 1.02rem; line-height: 1.75; }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      color: var(--heading);
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
 
     /* ── LAYOUT ── */
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
-    section { padding: clamp(5rem,9vw,7rem) 1.5rem; }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: clamp(5rem, 9vw, 7rem) 1.5rem;
+    }
 
     /* ── TAG ── */
     .tag {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      padding: 0.38rem 1rem; border-radius: 999px;
-      font-size: 0.79rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
-      border: 1px solid rgba(26,86,219,0.35); background: rgba(26,86,219,0.12); color: var(--blue-lt);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.38rem 1rem;
+      border-radius: 999px;
+      font-size: 0.79rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--heading);
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.2) inset;
     }
-    .tag-gold { border-color: rgba(245,166,35,0.35); background: rgba(245,166,35,0.10); color: var(--gold-2); }
+
+    .tag-gold {
+      border-color: rgba(245, 166, 35, 0.35);
+      background: rgba(245, 166, 35, 0.10);
+      color: var(--gold-2);
+    }
 
     /* ── BUTTONS ── */
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
-      padding: 0.9rem 2rem; border-radius: 12px;
-      font-family: 'Cabinet Grotesk', sans-serif; font-size: 1rem; font-weight: 700;
-      border: none; cursor: pointer; text-decoration: none; user-select: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.9rem 2rem;
+      border-radius: 12px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
       transition: transform 0.3s var(--ease), box-shadow 0.3s, opacity 0.2s;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
-    .btn::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg,rgba(255,255,255,0.14),transparent 60%); opacity: 0; transition: opacity 0.25s; }
-    .btn:hover::before { opacity: 1; }
-    .btn:hover:not(:disabled) { transform: translateY(-3px); }
-    .btn:active:not(:disabled) { transform: translateY(-1px); }
-    .btn:disabled { opacity: 0.65; cursor: not-allowed; }
 
-    .btn-primary { background: var(--g1); color: #fff; box-shadow: 0 8px 28px rgba(26,86,219,.35); }
-    .btn-primary:hover:not(:disabled) { box-shadow: 0 16px 40px rgba(26,86,219,.45); }
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
 
-    .btn-gold { background: var(--g2); color: #1A1100; box-shadow: 0 8px 28px rgba(245,166,35,.30); }
-    .btn-gold:hover:not(:disabled) { box-shadow: 0 16px 40px rgba(245,166,35,.40); }
+    .btn:hover::before {
+      opacity: 1;
+    }
 
-    .btn-ghost { background: transparent; color: var(--text-2); border: 1.5px solid var(--border-2); }
-    .btn-ghost:hover:not(:disabled) { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22); }
+    .btn:hover:not(:disabled) {
+      transform: translateY(-3px);
+    }
 
-    .btn-wa { background: linear-gradient(135deg,#25D366,#20BC5A); color: #fff; box-shadow: 0 8px 28px rgba(37,211,102,.28); }
-    .btn-wa:hover:not(:disabled) { box-shadow: 0 16px 40px rgba(37,211,102,.40); }
+    .btn:active:not(:disabled) {
+      transform: translateY(-1px);
+    }
 
-    .btn-sm  { padding: 0.62rem 1.4rem; font-size: 0.9rem; }
-    .btn-lg  { padding: 1.1rem 2.6rem; font-size: 1.06rem; border-radius: 14px; }
+    .btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background: var(--g1);
+      color: #fff;
+      background-size: 200% auto;
+      box-shadow: 0 8px 28px rgba(99, 102, 241, 0.4);
+      transition: transform 0.3s var(--bounce), box-shadow 0.3s, background-position 0.4s;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background-position: right center;
+      box-shadow: 0 16px 40px rgba(59, 130, 246, 0.6);
+    }
+
+    .btn-gold {
+      background: var(--g2);
+      color: #1A1100;
+      box-shadow: 0 8px 28px rgba(245, 166, 35, .30);
+    }
+
+    .btn-gold:hover:not(:disabled) {
+      box-shadow: 0 16px 40px rgba(245, 166, 35, .40);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-2);
+      border: 1.5px solid var(--border-2);
+    }
+
+    .btn-ghost:hover:not(:disabled) {
+      background: rgba(255, 255, 255, .06);
+      border-color: rgba(255, 255, 255, .22);
+    }
+
+    .btn-wa {
+      background: linear-gradient(135deg, #25D366, #20BC5A);
+      color: #fff;
+      box-shadow: 0 8px 28px rgba(37, 211, 102, .28);
+    }
+
+    .btn-wa:hover:not(:disabled) {
+      box-shadow: 0 16px 40px rgba(37, 211, 102, .40);
+    }
+
+    .btn-sm {
+      padding: 0.62rem 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .btn-lg {
+      padding: 1.1rem 2.6rem;
+      font-size: 1.06rem;
+      border-radius: 14px;
+    }
 
     /* ── SECTION HEADER ── */
-    .sec-head { text-align: center; max-width: 680px; margin: 0 auto 4rem; }
-    .sec-head h2 { margin: 0.6rem 0 1rem; }
-    .sec-head p  { color: var(--text); }
-    .sec-line { display: inline-block; width: 48px; height: 4px; border-radius: 999px; background: var(--g1); margin-bottom: 0.75rem; }
+    .sec-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 4rem;
+    }
+
+    .sec-head h2 {
+      margin: 0.6rem 0 1rem;
+    }
+
+    .sec-head p {
+      color: var(--text);
+    }
+
+    .sec-line {
+      display: inline-block;
+      width: 48px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--g1);
+      margin-bottom: 0.75rem;
+    }
 
     /* ── CARD BASE ── */
     .card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-      transition: transform .4s var(--ease), border-color .3s, box-shadow .3s;
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: transform .4s var(--bounce), border-color .3s, box-shadow .3s, background .3s;
     }
+
     .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(26,86,219,.30);
-      box-shadow: 0 24px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(26,86,219,.10);
+      transform: translateY(-10px) scale(1.02);
+      background: var(--surface-2);
+      border-color: rgba(99, 102, 241, 0.35);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .6), 0 0 0 1px rgba(99, 102, 241, 0.15);
     }
 
     /* ═══ HEADER ═══ */
     #site-header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      height: var(--nav-h); display: flex; align-items: center;
-      background: rgba(7,8,15,.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      background: rgba(7, 8, 15, .5);
       backdrop-filter: blur(20px) saturate(1.5);
       -webkit-backdrop-filter: blur(20px) saturate(1.5);
       border-bottom: 1px solid transparent;
       transition: border-color .3s, background .3s, box-shadow .3s;
     }
-    #site-header.scrolled { background: rgba(7,8,15,.88); border-bottom-color: var(--border); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
 
-    .navbar { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    #site-header.scrolled {
+      background: rgba(7, 8, 15, .88);
+      border-bottom-color: var(--border);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+    }
 
-    .logo { text-decoration: none; display: inline-flex; flex-direction: column; line-height: 1; }
-    .logo-top { font-family: 'Cabinet Grotesk', sans-serif; font-size: 1.45rem; font-weight: 900; letter-spacing: -0.5px; background: linear-gradient(135deg,#7EB3FF,#1A56DB); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .logo-sub { font-size: 0.7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--text); margin-top: 2px; }
+    .navbar {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
 
-    .nav-links { list-style: none; display: flex; align-items: center; gap: 0.2rem; }
-    .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; padding: .5rem .9rem; border-radius: 10px; transition: color .2s, background .2s; }
-    .nav-links a:hover { color: var(--heading); background: rgba(255,255,255,.06); }
-    .nav-links a.active { color: var(--blue-lt); background: rgba(26,86,219,.12); }
+    .logo {
+      text-decoration: none;
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1;
+    }
 
-    #logout-li { display: none; }
-    #logout-btn { text-decoration: none; color: #f87171; font-weight: 700; font-size: .9rem; padding: .5rem .9rem; border-radius: 10px; transition: background .2s; }
-    #logout-btn:hover { background: rgba(248,113,113,.1); }
+    .logo-top {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #7EB3FF, #1A56DB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-    .nav-cta { display: flex; align-items: center; gap: .75rem; }
+    .logo-sub {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-top: 2px;
+    }
 
-    .mobile-menu-btn { display: none; background: transparent; border: 1px solid var(--border-2); color: var(--heading); width: 42px; height: 42px; border-radius: 10px; font-size: 1.1rem; cursor: pointer; place-items: center; transition: background .2s; }
-    .mobile-menu-btn:hover { background: rgba(255,255,255,.08); }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: .5rem .9rem;
+      border-radius: 10px;
+      transition: color .2s, background .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--heading);
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .nav-links a.active {
+      color: var(--blue-lt);
+      background: rgba(26, 86, 219, .12);
+    }
+
+    #logout-li {
+      display: none;
+    }
+
+    #logout-btn {
+      text-decoration: none;
+      color: #f87171;
+      font-weight: 700;
+      font-size: .9rem;
+      padding: .5rem .9rem;
+      border-radius: 10px;
+      transition: background .2s;
+    }
+
+    #logout-btn:hover {
+      background: rgba(248, 113, 113, .1);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-2);
+      color: var(--heading);
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      place-items: center;
+      transition: background .2s;
+    }
+
+    .mobile-menu-btn:hover {
+      background: rgba(255, 255, 255, .08);
+    }
 
     /* ═══ HERO ═══ */
     #home {
-      min-height: 100svh; display: flex; align-items: center;
-      position: relative; overflow: hidden;
-      background: linear-gradient(145deg,#0A0B14 0%,#0D1226 55%,#0A0E1F 100%);
-      padding-top: calc(var(--nav-h) + 3rem); padding-bottom: 5rem;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0A0B14 0%, #0D1226 55%, #0A0E1F 100%);
+      padding-top: calc(var(--nav-h) + 3rem);
+      padding-bottom: 5rem;
     }
+
     #home::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background-image: linear-gradient(rgba(26,86,219,.06) 1px,transparent 1px), linear-gradient(90deg,rgba(26,86,219,.06) 1px,transparent 1px);
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(26, 86, 219, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 86, 219, .06) 1px, transparent 1px);
       background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 70% at 50% 0%,black 40%,transparent 100%);
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 40%, transparent 100%);
     }
+
     #home::after {
-      content: ""; position: absolute; pointer-events: none;
-      width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle,rgba(26,86,219,.17) 0%,transparent 65%);
-      top: -200px; right: -200px;
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(6, 182, 212, 0.15) 35%, transparent 70%);
+      top: -200px;
+      right: -200px;
       animation: heroGlow 8s ease-in-out infinite;
+      mix-blend-mode: screen;
     }
-    @keyframes heroGlow { 0%,100%{transform:scale(1) translate(0,0);} 50%{transform:scale(1.1) translate(-40px,40px);} }
+
+    @keyframes heroGlow {
+
+      0%,
+      100% {
+        transform: scale(1) translate(0, 0);
+      }
+
+      50% {
+        transform: scale(1.1) translate(-40px, 40px);
+      }
+    }
 
     .hero-inner {
-      max-width: var(--max); margin: 0 auto; padding: 0 1.5rem;
-      position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
     }
-    .hero-left { display: flex; flex-direction: column; gap: 1.5rem; }
-    .hero-left h1 span { background: var(--g1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-left p { font-size: 1.1rem; color: var(--text); max-width: 480px; }
-    .hero-btns { display: flex; gap: .9rem; flex-wrap: wrap; }
 
-    .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border); }
-    .hero-stat-num { font-family: 'Cabinet Grotesk',sans-serif; font-size: 2rem; font-weight: 900; color: var(--heading); line-height: 1; display: block; }
-    .hero-stat-label { font-size: .83rem; color: var(--text); display: block; margin-top: 2px; }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-left h1 span {
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-left p {
+      font-size: 1.1rem;
+      color: var(--text);
+      max-width: 480px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: .9rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-stat-num {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--heading);
+      line-height: 1;
+      display: block;
+    }
+
+    .hero-stat-label {
+      font-size: .83rem;
+      color: var(--text);
+      display: block;
+      margin-top: 2px;
+    }
 
     /* hero floating card */
     .hero-card {
-      background: var(--surface); border: 1px solid var(--border-2); border-radius: 24px; padding: 2rem;
-      box-shadow: 0 40px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(26,86,219,.12);
+      background: var(--surface);
+      border: 1px solid var(--border-2);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, .5), 0 0 0 1px rgba(26, 86, 219, .12);
       position: relative;
       animation: cardFloat 6s ease-in-out infinite;
     }
-    @keyframes cardFloat { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
-    .hero-card::before { content:""; position:absolute; inset:0; border-radius:24px; background:linear-gradient(145deg,rgba(26,86,219,.08),transparent 60%); pointer-events:none; }
 
-    .hc-title { font-family:'Cabinet Grotesk',sans-serif; font-size:1rem; font-weight:800; color:var(--heading); margin-bottom:1.2rem; display:flex; align-items:center; gap:.6rem; }
-    .hc-dot { width:9px; height:9px; border-radius:50%; background:var(--teal); box-shadow:0 0 10px rgba(0,201,167,.6); animation:blink 2s ease-in-out infinite; }
-    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.4;} }
+    @keyframes cardFloat {
 
-    .hc-row { display:flex; align-items:center; gap:1rem; padding:.85rem 1rem; border-radius:12px; margin-bottom:.6rem; border:1px solid var(--border); background:rgba(255,255,255,.02); transition:background .2s,border-color .2s; }
-    .hc-row:hover { background:rgba(26,86,219,.08); border-color:rgba(26,86,219,.25); }
-    .hc-row:last-child { margin-bottom:0; }
-    .hc-ico { width:40px; height:40px; border-radius:10px; display:grid; place-items:center; background:rgba(26,86,219,.15); color:var(--blue-lt); font-size:.95rem; flex:0 0 auto; }
-    .hc-ico.gold { background:rgba(245,166,35,.15); color:var(--gold-2); }
-    .hc-ico.teal { background:rgba(0,201,167,.15); color:var(--teal); }
-    .hc-label { font-size:.78rem; color:var(--text); display:block; }
-    .hc-val   { font-size:.93rem; font-weight:700; color:var(--heading); display:block; }
+      0%,
+      100% {
+        transform: translateY(0);
+      }
 
-    .hc-badges { display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.2rem; }
-    .hc-badge { display:inline-flex; align-items:center; gap:.4rem; padding:.42rem .85rem; border-radius:8px; font-size:.78rem; font-weight:700; background:rgba(0,201,167,.1); border:1px solid rgba(0,201,167,.22); color:var(--teal); }
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(26, 86, 219, .08), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hc-title {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--heading);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .hc-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 10px rgba(0, 201, 167, .6);
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .4;
+      }
+    }
+
+    .hc-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .85rem 1rem;
+      border-radius: 12px;
+      margin-bottom: .6rem;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .02);
+      transition: background .2s, border-color .2s;
+    }
+
+    .hc-row:hover {
+      background: rgba(26, 86, 219, .08);
+      border-color: rgba(26, 86, 219, .25);
+    }
+
+    .hc-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .hc-ico {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: rgba(26, 86, 219, .15);
+      color: var(--blue-lt);
+      font-size: .95rem;
+      flex: 0 0 auto;
+    }
+
+    .hc-ico.gold {
+      background: rgba(245, 166, 35, .15);
+      color: var(--gold-2);
+    }
+
+    .hc-ico.teal {
+      background: rgba(0, 201, 167, .15);
+      color: var(--teal);
+    }
+
+    .hc-label {
+      font-size: .78rem;
+      color: var(--text);
+      display: block;
+    }
+
+    .hc-val {
+      font-size: .93rem;
+      font-weight: 700;
+      color: var(--heading);
+      display: block;
+    }
+
+    .hc-badges {
+      display: flex;
+      gap: .7rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .hc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .42rem .85rem;
+      border-radius: 8px;
+      font-size: .78rem;
+      font-weight: 700;
+      background: rgba(0, 201, 167, .1);
+      border: 1px solid rgba(0, 201, 167, .22);
+      color: var(--teal);
+    }
 
     /* ═══ TRUST BAR ═══ */
-    .trust-bar { background:var(--ink-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:1.4rem 1.5rem; }
-    .trust-inner { max-width:var(--max); margin:0 auto; display:flex; align-items:center; justify-content:center; gap:clamp(1.5rem,4vw,4rem); flex-wrap:wrap; }
-    .trust-item { display:flex; align-items:center; gap:.65rem; color:var(--text-2); font-weight:600; font-size:.88rem; }
-    .trust-item i { color:var(--gold-2); font-size:1.05rem; }
+    .trust-bar {
+      background: var(--ink-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.4rem 1.5rem;
+    }
+
+    .trust-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1.5rem, 4vw, 4rem);
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      color: var(--text-2);
+      font-weight: 600;
+      font-size: .88rem;
+    }
+
+    .trust-item i {
+      color: var(--gold-2);
+      font-size: 1.05rem;
+    }
 
     /* ═══ FEATURES ═══ */
-    #features { background:var(--ink); }
-    .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:1.4rem; }
-    .feature-card { padding:2rem 1.8rem; position:relative; overflow:hidden; }
-    .feature-card::before { content:""; position:absolute; top:-60px; right:-60px; width:160px; height:160px; border-radius:50%; background:radial-gradient(circle,rgba(26,86,219,.09),transparent 70%); transition:transform .4s var(--ease); }
-    .feature-card:hover::before { transform:scale(1.4); }
-    .f-ico { width:58px; height:58px; border-radius:16px; display:grid; place-items:center; background:rgba(26,86,219,.13); color:var(--blue-lt); font-size:1.45rem; margin-bottom:1.2rem; border:1px solid rgba(26,86,219,.2); transition:transform .3s var(--bounce); }
-    .feature-card:hover .f-ico { transform:scale(1.08) rotate(-4deg); }
-    .feature-card h3 { margin-bottom:.5rem; font-size:1.12rem; }
-    .feature-card p { color:var(--text); margin:0; font-size:.95rem; }
+    #features {
+      background: var(--ink);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .feature-card {
+      padding: 2rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26, 86, 219, .09), transparent 70%);
+      transition: transform .4s var(--ease);
+    }
+
+    .feature-card:hover::before {
+      transform: scale(1.4);
+    }
+
+    .f-ico {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(26, 86, 219, .13);
+      color: var(--blue-lt);
+      font-size: 1.45rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(26, 86, 219, .2);
+      transition: transform .3s var(--bounce);
+    }
+
+    .feature-card:hover .f-ico {
+      transform: scale(1.08) rotate(-4deg);
+    }
+
+    .feature-card h3 {
+      margin-bottom: .5rem;
+      font-size: 1.12rem;
+    }
+
+    .feature-card p {
+      color: var(--text);
+      margin: 0;
+      font-size: .95rem;
+    }
 
     /* ═══ SERVICES ═══ */
-    #services { background:var(--ink-2); }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(295px,1fr)); gap:1.5rem; }
-    .service-card { padding:2.2rem; }
-    .s-ico { width:56px; height:56px; border-radius:14px; display:grid; place-items:center; font-size:1.35rem; color:var(--blue-lt); background:rgba(26,86,219,.13); border:1px solid rgba(26,86,219,.2); margin-bottom:1.3rem; }
-    .service-card h3 { margin-bottom:.6rem; font-size:1.22rem; }
-    .service-card p  { color:var(--text); margin:0; }
+    #services {
+      background: var(--ink-2);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      padding: 2.2rem;
+    }
+
+    .s-ico {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      color: var(--blue-lt);
+      background: rgba(26, 86, 219, .13);
+      border: 1px solid rgba(26, 86, 219, .2);
+      margin-bottom: 1.3rem;
+    }
+
+    .service-card h3 {
+      margin-bottom: .6rem;
+      font-size: 1.22rem;
+    }
+
+    .service-card p {
+      color: var(--text);
+      margin: 0;
+    }
 
     /* ═══ HOW IT WORKS ═══ */
-    #how-it-works { background:var(--ink); }
-    .steps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.5rem; }
-    .step-card { padding:2rem 1.6rem; text-align:center; display:flex; flex-direction:column; align-items:center; gap:1rem; }
-    .step-num { width:54px; height:54px; border-radius:16px; display:grid; place-items:center; font-family:'Cabinet Grotesk',sans-serif; font-size:1.35rem; font-weight:900; color:#fff; background:var(--g1); box-shadow:0 12px 28px rgba(26,86,219,.35); }
-    .step-card h3 { margin:0; font-size:1.12rem; }
-    .step-card p  { color:var(--text); margin:0; font-size:.94rem; }
+    #how-it-works {
+      background: var(--ink);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      padding: 2rem 1.6rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step-num {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #fff;
+      background: var(--g1);
+      box-shadow: 0 12px 28px rgba(26, 86, 219, .35);
+    }
+
+    .step-card h3 {
+      margin: 0;
+      font-size: 1.12rem;
+    }
+
+    .step-card p {
+      color: var(--text);
+      margin: 0;
+      font-size: .94rem;
+    }
 
     /* ═══ STUDENT PROJECTS ═══ */
-    #student-projects { background:var(--ink-2); }
-    .langs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(115px,1fr)); gap:.9rem; margin-bottom:2.8rem; }
-    .lang-pill { display:flex; flex-direction:column; align-items:center; gap:.6rem; padding:1.1rem .8rem; border-radius:14px; background:var(--surface); border:1px solid var(--border); text-align:center; transition:transform .3s var(--ease),border-color .25s; cursor:default; }
-    .lang-pill:hover { transform:translateY(-6px); border-color:rgba(26,86,219,.4); }
-    .lang-pill i { font-size:1.75rem; color:var(--blue-lt); }
-    .lang-pill.py i { color:#4B8BBE; }
-    .lang-pill.js i { color:#F7DF1E; }
-    .lang-pill.php i { color:#8892BF; }
-    .lang-pill.java i { color:#E97627; }
-    .lang-pill.cpp i { color:#00599C; }
-    .lang-pill span { font-size:.8rem; font-weight:700; color:var(--text-2); }
+    #student-projects {
+      background: var(--ink-2);
+    }
 
-    .custom-note { display:flex; align-items:center; gap:.75rem; padding:1.1rem 1.4rem; border-radius:14px; background:rgba(245,166,35,.07); border:1px solid rgba(245,166,35,.2); color:var(--gold-2); font-weight:700; margin-bottom:2.5rem; }
-    .custom-note i { font-size:1.15rem; }
+    .langs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+      gap: .9rem;
+      margin-bottom: 2.8rem;
+    }
 
-    .proj-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); gap:1.5rem; }
-    .proj-card { border-radius:20px; overflow:hidden; }
-    .proj-head { padding:1.8rem 1.8rem 1.5rem; background:linear-gradient(145deg,#0D1226,#0E1638); border-bottom:1px solid rgba(26,86,219,.18); position:relative; overflow:hidden; }
-    .proj-head::before { content:""; position:absolute; top:-80px; right:-80px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle,rgba(26,86,219,.18),transparent 70%); }
-    .proj-badge { font-size:.73rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--blue-lt); display:block; margin-bottom:.5rem; }
-    .proj-head h3 { font-size:1.3rem; color:var(--heading); }
-    .proj-price { font-family:'Cabinet Grotesk',sans-serif; font-size:1.95rem; font-weight:900; background:var(--g2); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin:.4rem 0; }
-    .proj-head p { color:rgba(255,255,255,.5); font-size:.88rem; margin:0; }
-    .proj-features { padding:1.6rem 1.8rem .8rem; background:var(--surface); list-style:none; }
-    .proj-features li { display:flex; align-items:center; gap:.75rem; padding:.48rem 0; color:var(--text-2); font-size:.93rem; font-weight:500; }
-    .proj-features li i { color:var(--teal); font-size:.82rem; }
-    .proj-cta { padding:1.2rem 1.8rem 1.8rem; background:var(--surface); }
-    .proj-cta .btn { width:100%; justify-content:center; }
+    .lang-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .6rem;
+      padding: 1.1rem .8rem;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: transform .3s var(--ease), border-color .25s;
+      cursor: default;
+    }
 
-    .pay-pill { margin-top:3rem; padding:2rem; border-radius:20px; background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(245,166,35,.03)); border:1px solid rgba(245,166,35,.22); text-align:center; }
-    .pay-pill h4 { font-size:1.35rem; color:var(--heading); margin-bottom:.5rem; }
-    .pay-pill p  { color:var(--text); margin:0; }
-    .pay-pill .big { font-size:1.1rem; color:var(--gold-2); font-weight:800; margin-top:.5rem; }
+    .lang-pill:hover {
+      transform: translateY(-6px);
+      border-color: rgba(26, 86, 219, .4);
+    }
+
+    .lang-pill i {
+      font-size: 1.75rem;
+      color: var(--blue-lt);
+    }
+
+    .lang-pill.py i {
+      color: #4B8BBE;
+    }
+
+    .lang-pill.js i {
+      color: #F7DF1E;
+    }
+
+    .lang-pill.php i {
+      color: #8892BF;
+    }
+
+    .lang-pill.java i {
+      color: #E97627;
+    }
+
+    .lang-pill.cpp i {
+      color: #00599C;
+    }
+
+    .lang-pill.react i {
+      color: #61DAFB;
+    }
+
+    .lang-pill.node i {
+      color: #339933;
+    }
+
+    .lang-pill.ejs i {
+      color: #A91E50;
+    }
+
+    .lang-pill span {
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--text-2);
+    }
+
+    .custom-note {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: 1.1rem 1.4rem;
+      border-radius: 14px;
+      background: rgba(245, 166, 35, .07);
+      border: 1px solid rgba(245, 166, 35, .2);
+      color: var(--gold-2);
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+    }
+
+    .custom-note i {
+      font-size: 1.15rem;
+    }
+
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .proj-card {
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .proj-head {
+      padding: 1.8rem 1.8rem 1.5rem;
+      background: linear-gradient(145deg, #0D1226, #0E1638);
+      border-bottom: 1px solid rgba(26, 86, 219, .18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-head::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26, 86, 219, .18), transparent 70%);
+    }
+
+    .proj-badge {
+      font-size: .73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--blue-lt);
+      display: block;
+      margin-bottom: .5rem;
+    }
+
+    .proj-head h3 {
+      font-size: 1.3rem;
+      color: var(--heading);
+    }
+
+    .proj-price {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.95rem;
+      font-weight: 900;
+      background: var(--g2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: .4rem 0;
+    }
+
+    .proj-head p {
+      color: rgba(255, 255, 255, .5);
+      font-size: .88rem;
+      margin: 0;
+    }
+
+    .proj-features {
+      padding: 1.6rem 1.8rem .8rem;
+      background: var(--surface);
+      list-style: none;
+    }
+
+    .proj-features li {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .48rem 0;
+      color: var(--text-2);
+      font-size: .93rem;
+      font-weight: 500;
+    }
+
+    .proj-features li i {
+      color: var(--teal);
+      font-size: .82rem;
+    }
+
+    .proj-cta {
+      padding: 1.2rem 1.8rem 1.8rem;
+      background: var(--surface);
+    }
+
+    .proj-cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .pay-pill {
+      margin-top: 3rem;
+      padding: 2rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(245, 166, 35, .08), rgba(245, 166, 35, .03));
+      border: 1px solid rgba(245, 166, 35, .22);
+      text-align: center;
+    }
+
+    .pay-pill h4 {
+      font-size: 1.35rem;
+      color: var(--heading);
+      margin-bottom: .5rem;
+    }
+
+    .pay-pill p {
+      color: var(--text);
+      margin: 0;
+    }
+
+    .pay-pill .big {
+      font-size: 1.1rem;
+      color: var(--gold-2);
+      font-weight: 800;
+      margin-top: .5rem;
+    }
 
     /* ═══ PRICING ═══ */
-    #pricing { background:var(--ink); }
-    .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(295px,1fr)); gap:1.5rem; align-items:start; }
-    .pricing-card { border-radius:22px; position:relative; }
-    .pricing-card.featured { border-color:rgba(26,86,219,.4); box-shadow:0 0 0 1px rgba(26,86,219,.18),0 40px 80px rgba(0,0,0,.4); transform:scale(1.03); }
-    .pricing-card.featured:hover { transform:scale(1.03) translateY(-8px); }
-    .pop-badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--g1); color:#fff; padding:.3rem 1.2rem; border-radius:999px; font-size:.76rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; white-space:nowrap; }
-    .pricing-top { padding:2.2rem 1.8rem 1.6rem; border-bottom:1px solid var(--border); }
-    .pricing-card.featured .pricing-top { background:rgba(26,86,219,.06); }
-    .pricing-top h3 { margin-bottom:.75rem; }
-    .p-price { font-family:'Cabinet Grotesk',sans-serif; font-size:2.35rem; font-weight:900; color:var(--blue-lt); line-height:1; }
-    .pricing-card.featured .p-price { color:var(--heading); }
-    .p-note { color:var(--text); font-size:.82rem; margin-top:.4rem; }
-    .p-feats { padding:1.5rem 1.8rem 1.2rem; list-style:none; }
-    .p-feats li { display:flex; align-items:flex-start; gap:.75rem; padding:.48rem 0; color:var(--text-2); font-size:.93rem; font-weight:500; }
-    .p-feats li i.yes { color:var(--teal); }
-    .p-feats li i.no  { color:rgba(255,255,255,.2); }
-    .p-feats li.dim   { opacity:.5; }
-    .p-cta { padding:0 1.8rem 2rem; }
-    .p-cta .btn { width:100%; justify-content:center; }
+    #pricing {
+      background: var(--ink);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .pricing-card {
+      border-radius: 22px;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(26, 86, 219, .4);
+      box-shadow: 0 0 0 1px rgba(26, 86, 219, .18), 0 40px 80px rgba(0, 0, 0, .4);
+      transform: scale(1.03);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.03) translateY(-8px);
+    }
+
+    .pop-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--g1);
+      color: #fff;
+      padding: .3rem 1.2rem;
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+
+    .pricing-top {
+      padding: 2.2rem 1.8rem 1.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pricing-card.featured .pricing-top {
+      background: rgba(26, 86, 219, .06);
+    }
+
+    .pricing-top h3 {
+      margin-bottom: .75rem;
+    }
+
+    .p-price {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 900;
+      color: var(--blue-lt);
+      line-height: 1;
+    }
+
+    .pricing-card.featured .p-price {
+      color: var(--heading);
+    }
+
+    .p-note {
+      color: var(--text);
+      font-size: .82rem;
+      margin-top: .4rem;
+    }
+
+    .p-feats {
+      padding: 1.5rem 1.8rem 1.2rem;
+      list-style: none;
+    }
+
+    .p-feats li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .48rem 0;
+      color: var(--text-2);
+      font-size: .93rem;
+      font-weight: 500;
+    }
+
+    .p-feats li i.yes {
+      color: var(--teal);
+    }
+
+    .p-feats li i.no {
+      color: rgba(255, 255, 255, .2);
+    }
+
+    .p-feats li.dim {
+      opacity: .5;
+    }
+
+    .p-cta {
+      padding: 0 1.8rem 2rem;
+    }
+
+    .p-cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
 
     /* ═══ TESTIMONIALS ═══ */
-    #testimonials { background:var(--ink-2); }
-    .testi-shell { border-radius:22px; border:1px solid var(--border); background:var(--surface); overflow:hidden; }
-    .testi-viewport { overflow:hidden; }
-    .testi-track { display:flex; gap:1.2rem; padding:1.5rem 1.5rem .5rem; transition:transform 540ms var(--ease); will-change:transform; }
-    .t-card { flex:0 0 min(380px,88vw); background:var(--surface-2); border:1px solid var(--border); border-radius:16px; padding:1.8rem; position:relative; }
-    .t-card::before { content:"\201C"; position:absolute; top:8px; left:16px; font-size:5rem; line-height:1; color:rgba(26,86,219,.12); font-family:Georgia,serif; pointer-events:none; }
-    .t-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
-    .stars i { color:var(--gold); font-size:.88rem; }
-    .verified-badge { display:inline-flex; align-items:center; gap:.35rem; font-size:.76rem; font-weight:700; color:var(--teal); background:rgba(0,201,167,.1); border:1px solid rgba(0,201,167,.2); padding:.28rem .7rem; border-radius:999px; }
-    .t-text { font-style:italic; color:var(--text-2); font-size:.93rem; line-height:1.7; margin-bottom:1.4rem; position:relative; z-index:1; }
-    .t-author { display:flex; align-items:center; gap:1rem; }
-    .t-av { width:46px; height:46px; border-radius:12px; background:var(--g1); display:grid; place-items:center; font-family:'Cabinet Grotesk',sans-serif; font-size:.95rem; font-weight:900; color:#fff; flex:0 0 auto; }
-    .t-author h4 { font-size:.96rem; margin:0; }
-    .t-author p  { margin:0; color:var(--text); font-size:.8rem; }
-    .t-controls { display:flex; align-items:center; justify-content:space-between; padding:1rem 1.5rem 1.2rem; }
-    .t-btn { width:44px; height:44px; border-radius:12px; background:var(--surface-2); border:1px solid var(--border-2); color:var(--text-2); cursor:pointer; display:grid; place-items:center; transition:background .2s,border-color .2s,transform .2s; }
-    .t-btn:hover { background:rgba(26,86,219,.15); border-color:rgba(26,86,219,.4); transform:scale(1.05); }
-    .t-dots { display:flex; gap:.5rem; align-items:center; }
-    .dot-btn { width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,.18); cursor:pointer; transition:background .25s,transform .25s,width .3s; }
-    .dot-btn.active { background:#1A56DB; transform:scale(1.3); width:22px; border-radius:4px; }
+    #testimonials {
+      background: var(--ink-2);
+    }
+
+    .testi-shell {
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .testi-viewport {
+      overflow: hidden;
+    }
+
+    .testi-track {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1.5rem 1.5rem .5rem;
+      transition: transform 540ms var(--ease);
+      will-change: transform;
+    }
+
+    .t-card {
+      flex: 0 0 min(380px, 88vw);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      position: relative;
+    }
+
+    .t-card::before {
+      content: "\201C";
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(26, 86, 219, .12);
+      font-family: Georgia, serif;
+      pointer-events: none;
+    }
+
+    .t-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .stars i {
+      color: var(--gold);
+      font-size: .88rem;
+    }
+
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .76rem;
+      font-weight: 700;
+      color: var(--teal);
+      background: rgba(0, 201, 167, .1);
+      border: 1px solid rgba(0, 201, 167, .2);
+      padding: .28rem .7rem;
+      border-radius: 999px;
+    }
+
+    .t-text {
+      font-style: italic;
+      color: var(--text-2);
+      font-size: .93rem;
+      line-height: 1.7;
+      margin-bottom: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .t-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .t-av {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--g1);
+      display: grid;
+      place-items: center;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: .95rem;
+      font-weight: 900;
+      color: #fff;
+      flex: 0 0 auto;
+    }
+
+    .t-author h4 {
+      font-size: .96rem;
+      margin: 0;
+    }
+
+    .t-author p {
+      margin: 0;
+      color: var(--text);
+      font-size: .8rem;
+    }
+
+    .t-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem 1.2rem;
+    }
+
+    .t-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-2);
+      color: var(--text-2);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background .2s, border-color .2s, transform .2s;
+    }
+
+    .t-btn:hover {
+      background: rgba(26, 86, 219, .15);
+      border-color: rgba(26, 86, 219, .4);
+      transform: scale(1.05);
+    }
+
+    .t-dots {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+    }
+
+    .dot-btn {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, .18);
+      cursor: pointer;
+      transition: background .25s, transform .25s, width .3s;
+    }
+
+    .dot-btn.active {
+      background: #1A56DB;
+      transform: scale(1.3);
+      width: 22px;
+      border-radius: 4px;
+    }
 
     /* ═══ FAQs ═══ */
-    #faqs { background:var(--ink); }
-    .faq-wrap { max-width:840px; margin:0 auto; display:flex; flex-direction:column; gap:.75rem; }
-    .faq-item { border:1px solid var(--border); border-radius:16px; background:var(--surface); overflow:hidden; transition:border-color .25s,box-shadow .25s; }
-    .faq-item.open { border-color:rgba(26,86,219,.35); box-shadow:0 8px 30px rgba(0,0,0,.3),0 0 0 1px rgba(26,86,219,.1); }
-    .faq-q { width:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.2rem 1.4rem; background:transparent; border:none; color:var(--heading); font-family:'Cabinet Grotesk',sans-serif; font-size:1.02rem; font-weight:700; text-align:left; cursor:pointer; }
-    .faq-chev { color:var(--blue-lt); transition:transform .35s var(--ease); flex:0 0 auto; }
-    .faq-item.open .faq-chev { transform:rotate(180deg); }
-    .faq-a { max-height:0; overflow:hidden; transition:max-height .4s var(--ease); padding:0 1.4rem; }
-    .faq-item.open .faq-a { max-height:300px; padding:0 1.4rem 1.2rem; }
-    .faq-a p { margin:0; color:var(--text); font-size:.96rem; }
+    #faqs {
+      background: var(--ink);
+    }
+
+    .faq-wrap {
+      max-width: 840px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      overflow: hidden;
+      transition: border-color .25s, box-shadow .25s;
+    }
+
+    .faq-item.open {
+      border-color: rgba(26, 86, 219, .35);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .3), 0 0 0 1px rgba(26, 86, 219, .1);
+    }
+
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      background: transparent;
+      border: none;
+      color: var(--heading);
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .faq-chev {
+      color: var(--blue-lt);
+      transition: transform .35s var(--ease);
+      flex: 0 0 auto;
+    }
+
+    .faq-item.open .faq-chev {
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s var(--ease);
+      padding: 0 1.4rem;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding: 0 1.4rem 1.2rem;
+    }
+
+    .faq-a p {
+      margin: 0;
+      color: var(--text);
+      font-size: .96rem;
+    }
 
     /* ═══ CONTACT ═══ */
-    #contact { background:var(--ink-2); }
-    .contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:3rem; align-items:start; }
-    .contact-left { display:flex; flex-direction:column; gap:1.2rem; }
-    .contact-left h3 { font-size:1.8rem; }
-    .contact-left > p { color:var(--text); }
-    .cm-item { display:flex; align-items:center; gap:1rem; padding:1.1rem 1.2rem; border-radius:14px; background:var(--surface); border:1px solid var(--border); transition:border-color .25s,transform .3s var(--ease); }
-    .cm-item:hover { border-color:rgba(26,86,219,.3); transform:translateX(6px); }
-    .cm-ico { width:46px; height:46px; border-radius:12px; background:rgba(26,86,219,.13); color:var(--blue-lt); display:grid; place-items:center; font-size:1.15rem; flex:0 0 auto; }
-    .cm-item h4 { font-size:.93rem; margin:0; }
-    .cm-item p  { margin:0; color:var(--text); font-size:.86rem; }
-    .c-btns { display:flex; gap:.75rem; flex-wrap:wrap; }
-
-    .c-form-wrap { background:var(--surface); border:1px solid var(--border); border-radius:22px; padding:2.4rem 2rem; }
-    .c-form-wrap h3 { margin-bottom:1.5rem; }
-    .fg { display:flex; flex-direction:column; gap:.4rem; margin-bottom:1.1rem; }
-    .fg label { font-size:.86rem; font-weight:700; color:var(--text-2); letter-spacing:.02em; }
-    .fg input, .fg select, .fg textarea {
-      background:var(--ink-2); border:1px solid var(--border); border-radius:12px;
-      padding:.9rem 1.1rem; color:var(--heading); font-family:'Satoshi',sans-serif;
-      font-size:.96rem; outline:none; transition:border-color .2s,box-shadow .2s;
+    #contact {
+      background: var(--ink-2);
     }
-    .fg input::placeholder, .fg textarea::placeholder { color:var(--text); }
-    .fg select option { background:var(--ink-2); }
-    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color:rgba(26,86,219,.55); box-shadow:0 0 0 3px rgba(26,86,219,.14); }
-    .fg textarea { resize:vertical; min-height:110px; }
-    .fg-2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-    .form-status { display:none; padding:.9rem 1.1rem; border-radius:12px; margin-bottom:1rem; font-weight:700; text-align:center; font-size:.92rem; }
-    .form-status.success { display:block; background:rgba(74,222,128,.08); border:1px solid rgba(74,222,128,.25); color:#4ade80; }
-    .form-status.error   { display:block; background:rgba(248,113,113,.08); border:1px solid rgba(248,113,113,.25); color:#f87171; }
-    .c-form-wrap .btn { width:100%; justify-content:center; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-left h3 {
+      font-size: 1.8rem;
+    }
+
+    .contact-left>p {
+      color: var(--text);
+    }
+
+    .cm-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.2rem;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: border-color .25s, transform .3s var(--ease);
+    }
+
+    .cm-item:hover {
+      border-color: rgba(26, 86, 219, .3);
+      transform: translateX(6px);
+    }
+
+    .cm-ico {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(26, 86, 219, .13);
+      color: var(--blue-lt);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      flex: 0 0 auto;
+    }
+
+    .cm-item h4 {
+      font-size: .93rem;
+      margin: 0;
+    }
+
+    .cm-item p {
+      margin: 0;
+      color: var(--text);
+      font-size: .86rem;
+    }
+
+    .c-btns {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+
+    .c-form-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 2.4rem 2rem;
+    }
+
+    .c-form-wrap h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    .fg {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .fg label {
+      font-size: .86rem;
+      font-weight: 700;
+      color: var(--text-2);
+      letter-spacing: .02em;
+    }
+
+    .fg input,
+    .fg select,
+    .fg textarea {
+      background: var(--ink-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: .9rem 1.1rem;
+      color: var(--heading);
+      font-family: 'Satoshi', sans-serif;
+      font-size: .96rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .fg input::placeholder,
+    .fg textarea::placeholder {
+      color: var(--text);
+    }
+
+    .fg select option {
+      background: var(--ink-2);
+    }
+
+    .fg input:focus,
+    .fg select:focus,
+    .fg textarea:focus {
+      border-color: rgba(26, 86, 219, .55);
+      box-shadow: 0 0 0 3px rgba(26, 86, 219, .14);
+    }
+
+    .fg textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .fg-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-status {
+      display: none;
+      padding: .9rem 1.1rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-align: center;
+      font-size: .92rem;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(74, 222, 128, .08);
+      border: 1px solid rgba(74, 222, 128, .25);
+      color: #4ade80;
+    }
+
+    .form-status.error {
+      display: block;
+      background: rgba(248, 113, 113, .08);
+      border: 1px solid rgba(248, 113, 113, .25);
+      color: #f87171;
+    }
+
+    .c-form-wrap .btn {
+      width: 100%;
+      justify-content: center;
+    }
 
     /* ═══ FOOTER ═══ */
-    footer { background:var(--ink); border-top:1px solid var(--border); padding:3.5rem 1.5rem 2rem; }
-    .footer-inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:3rem; }
-    .footer-brand .logo { margin-bottom:1rem; }
-    .footer-brand p { color:var(--text); font-size:.9rem; max-width:280px; line-height:1.65; }
-    .f-socials { display:flex; gap:.75rem; margin-top:1.2rem; }
-    .f-soc { width:40px; height:40px; border-radius:10px; background:var(--surface); border:1px solid var(--border); color:var(--text); text-decoration:none; display:grid; place-items:center; font-size:1rem; transition:background .2s,color .2s,border-color .2s; }
-    .f-soc:hover { background:rgba(26,86,219,.15); color:var(--blue-lt); border-color:rgba(26,86,219,.35); }
-    .footer-col h5 { font-family:'Cabinet Grotesk',sans-serif; font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--text); margin-bottom:1rem; }
-    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
-    .footer-col ul a { text-decoration:none; color:var(--text); font-size:.9rem; font-weight:500; transition:color .2s; }
-    .footer-col ul a:hover { color:var(--heading); }
-    .footer-bottom { max-width:var(--max); margin:2.5rem auto 0; padding-top:1.5rem; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
-    .footer-bottom p { color:var(--text); font-size:.83rem; margin:0; }
+    footer {
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      padding: 3.5rem 1.5rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      color: var(--text);
+      font-size: .9rem;
+      max-width: 280px;
+      line-height: 1.65;
+    }
+
+    .f-socials {
+      display: flex;
+      gap: .75rem;
+      margin-top: 1.2rem;
+    }
+
+    .f-soc {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+
+    .f-soc:hover {
+      background: rgba(26, 86, 219, .15);
+      color: var(--blue-lt);
+      border-color: rgba(26, 86, 219, .35);
+    }
+
+    .footer-col h5 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .footer-col ul a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--heading);
+    }
+
+    .footer-bottom {
+      max-width: var(--max);
+      margin: 2.5rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      color: var(--text);
+      font-size: .83rem;
+      margin: 0;
+    }
 
     /* ═══ WHATSAPP FLOAT ═══ */
-    .wa-float { position:fixed; bottom:1.8rem; right:1.8rem; z-index:900; width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,#25D366,#20BC5A); display:grid; place-items:center; text-decoration:none; color:#fff; font-size:1.7rem; box-shadow:0 8px 28px rgba(37,211,102,.32); transition:transform .3s var(--bounce),box-shadow .3s; }
-    .wa-float:hover { transform:scale(1.1) translateY(-4px); box-shadow:0 16px 40px rgba(37,211,102,.44); }
-    .wa-pulse { position:absolute; inset:0; border-radius:50%; background:rgba(37,211,102,.3); animation:waPulse 2.5s ease-out infinite; }
-    @keyframes waPulse { 0%{transform:scale(.9);opacity:.7;} 100%{transform:scale(1.8);opacity:0;} }
+    .wa-float {
+      position: fixed;
+      bottom: 1.8rem;
+      right: 1.8rem;
+      z-index: 900;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366, #20BC5A);
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.7rem;
+      box-shadow: 0 8px 28px rgba(37, 211, 102, .32);
+      transition: transform .3s var(--bounce), box-shadow .3s;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1) translateY(-4px);
+      box-shadow: 0 16px 40px rgba(37, 211, 102, .44);
+    }
+
+    .wa-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, .3);
+      animation: waPulse 2.5s ease-out infinite;
+    }
+
+    @keyframes waPulse {
+      0% {
+        transform: scale(.9);
+        opacity: .7;
+      }
+
+      100% {
+        transform: scale(1.8);
+        opacity: 0;
+      }
+    }
 
     /* ═══ REVEAL ═══ */
-    .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s var(--ease),transform .7s var(--ease); }
-    .reveal.visible { opacity:1; transform:none; }
-    .rd1 { transition-delay:.1s; } .rd2 { transition-delay:.2s; } .rd3 { transition-delay:.3s; } .rd4 { transition-delay:.4s; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .rd1 {
+      transition-delay: .1s;
+    }
+
+    .rd2 {
+      transition-delay: .2s;
+    }
+
+    .rd3 {
+      transition-delay: .3s;
+    }
+
+    .rd4 {
+      transition-delay: .4s;
+    }
 
     /* ═══ RESPONSIVE ═══ */
     @media(max-width:992px) {
-      .hero-inner { grid-template-columns:1fr; gap:3rem; }
-      .hero-right { display:none; }
-      .contact-grid { grid-template-columns:1fr; }
-      .footer-inner { grid-template-columns:1fr 1fr; }
-      .pricing-card.featured { transform:none; }
-      .pricing-card.featured:hover { transform:translateY(-8px); }
-    }
-    @media(max-width:768px) {
-      .mobile-menu-btn { display:grid; }
-      .nav-links {
-        position:absolute; top:var(--nav-h); left:0; right:0;
-        flex-direction:column; padding:.75rem 1rem 1rem;
-        background:rgba(7,8,15,.97); backdrop-filter:blur(20px);
-        border-bottom:1px solid var(--border); gap:.15rem;
-        max-height:0; overflow:hidden; opacity:0;
-        transition:max-height .4s var(--ease),opacity .3s;
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        text-align: center;
       }
-      .nav-links.open { max-height:500px; opacity:1; }
-      .nav-links a { display:block; width:100%; padding:.85rem 1rem; }
-      .nav-cta { display:none; }
-      .hero-btns { flex-direction:column; }
-      .hero-btns .btn { width:100%; max-width:380px; }
-      .fg-2 { grid-template-columns:1fr; }
+
+      .hero-left {
+        align-items: center;
+      }
+
+      .hero-left p {
+        margin: 0 auto;
+      }
+
+      .hero-btns {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-right {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+
+      .pricing-card.featured:hover {
+        transform: translateY(-8px);
+      }
     }
+
+    @media(max-width:768px) {
+      .mobile-menu-btn {
+        display: grid;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        padding: 0 1rem;
+        background: rgba(4, 5, 9, 0.95);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-bottom: 1px solid var(--border);
+        gap: 0.15rem;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height .4s var(--ease), opacity .3s, padding .4s, visibility .4s;
+      }
+
+      .nav-links.open {
+        max-height: 500px;
+        padding: 1rem 1rem 1.5rem;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: .85rem 1rem;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+      }
+
+      .hero-btns .btn {
+        width: 100%;
+        max-width: 380px;
+      }
+
+      .fg-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media(max-width:560px) {
-      .footer-inner { grid-template-columns:1fr; gap:2rem; }
-      .footer-bottom { flex-direction:column; text-align:center; }
-      .langs-grid { grid-template-columns:repeat(3,1fr); }
-      .trust-inner { gap:1.2rem; }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .langs-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .trust-inner {
+        gap: 1.2rem;
+      }
     }
-    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition-duration:.01ms!important; } }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- ═══ HEADER ══════════════════════════════════════════════ -->
-<header id="site-header">
-  <nav class="navbar">
-    <a href="#home" class="logo" aria-label="LocalGrowth Studio">
-      <span class="logo-top">LocalGrowth</span>
-      <span class="logo-sub">Studio</span>
-    </a>
-
-    <ul class="nav-links" id="nav-links">
-      <li><a class="nav-link" href="#home">Home</a></li>
-      <li><a class="nav-link" href="#services">Services</a></li>
-      <li><a class="nav-link" href="#student-projects">Student Projects</a></li>
-      <li><a class="nav-link" href="#pricing">Pricing</a></li>
-      <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
-      <li><a class="nav-link" href="#contact">Contact</a></li>
-      <li id="logout-li"><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-    </ul>
-
-    <div class="nav-cta">
-      <a href="https://wa.me/916355938913" class="btn btn-wa btn-sm" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i> WhatsApp
+  <!-- ═══ HEADER ══════════════════════════════════════════════ -->
+  <header id="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo" aria-label="LocalGrowth Studio">
+        <span class="logo-top">The LocalGrowth</span>
+        <span class="logo-sub">Studio</span>
       </a>
-    </div>
 
-    <button class="mobile-menu-btn" id="menu-btn" aria-label="Toggle menu">
-      <i class="fas fa-bars" id="menu-icon"></i>
-    </button>
-  </nav>
-</header>
+      <ul class="nav-links" id="nav-links">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#student-projects">Student Projects</a></li>
+        <li><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+        <li id="logout-li"><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
 
-<!-- ═══ HERO ════════════════════════════════════════════════ -->
-<section id="home">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div><span class="tag"><i class="fas fa-circle-check"></i> Trusted across India</span></div>
-
-      <h1>We Build Websites<br><span>That Work.</span></h1>
-
-      <p>Custom websites for businesses & affordable projects for students. Professional delivery, demo-first, honest pricing.</p>
-
-      <div class="hero-btns">
-        <a href="#student-projects" class="btn btn-primary btn-lg">
-          <i class="fas fa-graduation-cap"></i> Student Projects from ₹199
-        </a>
-        <a href="#contact" class="btn btn-ghost btn-lg">
-          <i class="fas fa-paper-plane"></i> Get Free Quote
+      <div class="nav-cta">
+        <a href="https://wa.me/916355938913" class="btn btn-wa btn-sm" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </div>
 
-      <div class="hero-stats">
-        <div>
-          <span class="hero-stat-num">20+</span>
-          <span class="hero-stat-label">Projects Delivered</span>
-        </div>
-        <div>
-          <span class="hero-stat-num">10+</span>
-          <span class="hero-stat-label">Websites Live</span>
-        </div>
-        <div>
-          <span class="hero-stat-num">100%</span>
-          <span class="hero-stat-label">Demo First</span>
-        </div>
-      </div>
-    </div>
+      <button class="mobile-menu-btn" id="menu-btn" aria-label="Toggle menu">
+        <i class="fas fa-bars" id="menu-icon"></i>
+      </button>
+    </nav>
+  </header>
 
-    <div class="hero-right">
-      <div class="hero-card">
-        <div class="hc-title"><div class="hc-dot"></div> Recent Delivery</div>
+  <!-- ═══ HERO ════════════════════════════════════════════════ -->
+  <section id="home">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div><span class="tag"><i class="fas fa-circle-check"></i> Trusted across India</span></div>
 
-        <div class="hc-row">
-          <div class="hc-ico"><i class="fas fa-laptop-code"></i></div>
+        <h1>We Build Websites<br><span>That Work.</span></h1>
+
+        <p>Custom websites for businesses & affordable projects for students. Professional delivery, demo-first, honest
+          pricing.</p>
+
+        <div class="hero-btns">
+          <a href="#student-projects" class="btn btn-primary btn-lg">
+            <i class="fas fa-graduation-cap"></i> Explore Student Projects
+          </a>
+          <a href="#contact" class="btn btn-ghost btn-lg">
+            <i class="fas fa-paper-plane"></i> Get Free Quote
+          </a>
+        </div>
+
+        <div class="hero-stats">
           <div>
-            <span class="hc-label">Project Type</span>
-            <span class="hc-val">BCA Fourth Year — PHP + MySQL</span>
+            <span class="hero-stat-num">20+</span>
+            <span class="hero-stat-label">Projects Delivered</span>
           </div>
-        </div>
-
-        <div class="hc-row">
-          <div class="hc-ico gold"><i class="fas fa-clock"></i></div>
           <div>
-            <span class="hc-label">Delivered In</span>
-            <span class="hc-val">5 Days</span>
+            <span class="hero-stat-num">10+</span>
+            <span class="hero-stat-label">Websites Live</span>
           </div>
-        </div>
-
-        <div class="hc-row">
-          <div class="hc-ico teal"><i class="fas fa-star"></i></div>
           <div>
-            <span class="hc-label">Client Review</span>
-            <span class="hc-val">⭐⭐⭐⭐⭐ Highly Recommended!</span>
+            <span class="hero-stat-num">100%</span>
+            <span class="hero-stat-label">Demo First</span>
           </div>
         </div>
-
-        <div class="hc-badges">
-          <span class="hc-badge"><i class="fas fa-shield-check"></i> Verified Delivery</span>
-          <span class="hc-badge"><i class="fas fa-bolt"></i> Fast Turnaround</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ TRUST BAR ════════════════════════════════════════════ -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item"><i class="fas fa-check-circle"></i> Demo Before Payment</div>
-    <div class="trust-item"><i class="fas fa-shield-alt"></i> 100% Satisfaction</div>
-    <div class="trust-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
-    <div class="trust-item"><i class="fas fa-headset"></i> WhatsApp Support</div>
-    <div class="trust-item"><i class="fas fa-map-marker-alt"></i> Based in Gujarat, India</div>
-  </div>
-</div>
-
-<!-- ═══ FEATURES ══════════════════════════════════════════════ -->
-<section id="features">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-line"></div>
-      <span class="tag">Why Choose Us</span>
-      <h2>Built for Results</h2>
-      <p>Clean code, great design, and honest communication — every time.</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card card reveal rd1">
-        <div class="f-ico"><i class="fas fa-laptop-code"></i></div>
-        <h3>Custom Web Design</h3>
-        <p>No templates. Every website is built from scratch for your brand and business goals.</p>
-      </div>
-      <div class="feature-card card reveal rd2">
-        <div class="f-ico"><i class="fas fa-database"></i></div>
-        <h3>Database Integration</h3>
-        <p>Full-stack solutions — user accounts, product catalogs, admin panels, booking systems.</p>
-      </div>
-      <div class="feature-card card reveal rd3">
-        <div class="f-ico"><i class="fas fa-graduation-cap"></i></div>
-        <h3>Student Projects</h3>
-        <p>Academic projects in Python, Java, PHP, C/C++, SQL and more at student-friendly prices.</p>
-      </div>
-      <div class="feature-card card reveal rd4">
-        <div class="f-ico"><i class="fas fa-mobile-alt"></i></div>
-        <h3>Mobile Responsive</h3>
-        <p>Pixel-perfect on all screen sizes — phones, tablets, and desktops.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SERVICES ══════════════════════════════════════════════ -->
-<section id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-line"></div>
-      <span class="tag">Our Services</span>
-      <h2>What We Offer</h2>
-      <p>Professional website solutions for businesses of all sizes, built with modern standards.</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card card reveal rd1">
-        <div class="s-ico"><i class="fas fa-paint-brush"></i></div>
-        <h3>Custom Website Design</h3>
-        <p>Unique, responsive websites tailored for your business with modern UI/UX that converts visitors into customers.</p>
-      </div>
-      <div class="service-card card reveal rd2">
-        <div class="s-ico"><i class="fas fa-server"></i></div>
-        <h3>Database & Backend</h3>
-        <p>Secure backend solutions for user accounts, product catalogs, booking systems, and dynamic content.</p>
-      </div>
-      <div class="service-card card reveal rd3">
-        <div class="s-ico"><i class="fas fa-envelope-open-text"></i></div>
-        <h3>Lead Forms & CRM</h3>
-        <p>Custom forms that capture leads, send notifications, and integrate seamlessly with your workflow.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ HOW IT WORKS ══════════════════════════════════════════ -->
-<section id="how-it-works">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-line"></div>
-      <span class="tag">Process</span>
-      <h2>Simple. Transparent. Fast.</h2>
-      <p>No hidden fees, no confusion. Just clear steps from requirement to delivery.</p>
-    </div>
-
-    <div class="steps-grid">
-      <div class="step-card card reveal rd1">
-        <div class="step-num">01</div>
-        <h3>Share Requirements</h3>
-        <p>Tell us your project needs, features, and deadline on WhatsApp. We suggest the best plan.</p>
-      </div>
-      <div class="step-card card reveal rd2">
-        <div class="step-num">02</div>
-        <h3>Get a Live Demo</h3>
-        <p>We build and show you the working demo first. Request changes before final delivery.</p>
-      </div>
-      <div class="step-card card reveal rd3">
-        <div class="step-num">03</div>
-        <h3>Pay After Satisfaction</h3>
-        <p>Payment only after you're 100% satisfied — then we deliver source code, docs, and setup help.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ STUDENT PROJECTS ══════════════════════════════════════ -->
-<section id="student-projects">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-line"></div>
-      <span class="tag tag-gold">Student Friendly</span>
-      <h2>Student Projects</h2>
-      <p>Final-year & academic projects starting from ₹199. Multiple languages, proper documentation included.</p>
-    </div>
-
-    <div class="custom-note reveal">
-      <i class="fas fa-code"></i>
-      Custom projects available in ANY programming language — just share your requirements!
-    </div>
-
-    <div class="langs-grid reveal">
-      <div class="lang-pill py"><i class="fab fa-python"></i><span>Python</span></div>
-      <div class="lang-pill"><i class="fab fa-html5"></i><span>HTML/CSS</span></div>
-      <div class="lang-pill js"><i class="fab fa-js"></i><span>JavaScript</span></div>
-      <div class="lang-pill php"><i class="fab fa-php"></i><span>PHP</span></div>
-      <div class="lang-pill"><i class="fas fa-database"></i><span>SQL</span></div>
-      <div class="lang-pill java"><i class="fab fa-java"></i><span>Java</span></div>
-      <div class="lang-pill cpp"><i class="fas fa-copyright"></i><span>C / C++</span></div>
-    </div>
-
-    <div class="proj-grid">
-      <div class="proj-card card reveal rd1">
-        <div class="proj-head">
-          <span class="proj-badge">Tier 1</span>
-          <h3>Basic Project</h3>
-          <div class="proj-price">₹199 – ₹399</div>
-          <p>Simple coding tasks & scripts</p>
-        </div>
-        <ul class="proj-features">
-          <li><i class="fas fa-check"></i> Small programs & scripts</li>
-          <li><i class="fas fa-check"></i> Basic HTML/CSS pages</li>
-          <li><i class="fas fa-check"></i> Simple calculations</li>
-          <li><i class="fas fa-check"></i> Basic form validation</li>
-          <li><i class="fas fa-check"></i> 2–3 days delivery</li>
-        </ul>
-        <div class="proj-cta"><a href="#contact" class="btn btn-ghost">Order Now</a></div>
       </div>
 
-      <div class="proj-card card reveal rd2">
-        <div class="proj-head">
-          <span class="proj-badge">Tier 2</span>
-          <h3>Intermediate Project</h3>
-          <div class="proj-price">₹499 – ₹799</div>
-          <p>Medium complexity apps</p>
-        </div>
-        <ul class="proj-features">
-          <li><i class="fas fa-check"></i> Database connectivity</li>
-          <li><i class="fas fa-check"></i> Multi-page websites</li>
-          <li><i class="fas fa-check"></i> CRUD operations</li>
-          <li><i class="fas fa-check"></i> API integration</li>
-          <li><i class="fas fa-check"></i> 5–7 days delivery</li>
-        </ul>
-        <div class="proj-cta"><a href="#contact" class="btn btn-primary">Order Now</a></div>
-      </div>
-
-      <div class="proj-card card reveal rd3">
-        <div class="proj-head">
-          <span class="proj-badge">Tier 3</span>
-          <h3>Advanced Project</h3>
-          <div class="proj-price">₹999 – ₹1,499</div>
-          <p>Complex full-stack applications</p>
-        </div>
-        <ul class="proj-features">
-          <li><i class="fas fa-check"></i> Full-stack applications</li>
-          <li><i class="fas fa-check"></i> User authentication</li>
-          <li><i class="fas fa-check"></i> Complex algorithms</li>
-          <li><i class="fas fa-check"></i> Documentation included</li>
-          <li><i class="fas fa-check"></i> 7–10 days delivery</li>
-        </ul>
-        <div class="proj-cta"><a href="#contact" class="btn btn-gold">Order Now</a></div>
-      </div>
-    </div>
-
-    <div class="pay-pill reveal">
-      <h4><i class="fas fa-handshake" style="color:var(--gold-2);margin-right:.5rem;"></i> Student-Friendly Payment Policy</h4>
-      <p>We understand money matters for students.</p>
-      <p class="big">See the working demo first — pay only when you're 100% satisfied. ✅</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ PRICING ════════════════════════════════════════════════ -->
-<section id="pricing">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-line"></div>
-      <span class="tag">Website Packages</span>
-      <h2>Honest Pricing</h2>
-      <p>One-time payment. No hidden charges. Final price depends on your requirements.</p>
-    </div>
-
-    <div class="pricing-grid">
-      <div class="pricing-card card reveal rd1">
-        <div class="pricing-top">
-          <h3>Basic Website</h3>
-          <div class="p-price">₹2,000 – ₹5,000</div>
-          <div class="p-note">One-time · final price depends on scope</div>
-        </div>
-        <ul class="p-feats">
-          <li><i class="fas fa-check yes"></i> 3–5 Page Custom Website</li>
-          <li><i class="fas fa-check yes"></i> Mobile Responsive</li>
-          <li><i class="fas fa-check yes"></i> Contact Form</li>
-          <li><i class="fas fa-check yes"></i> Basic SEO Setup</li>
-          <li><i class="fas fa-check yes"></i> Free Hosting 3 Months</li>
-          <li class="dim"><i class="fas fa-times no"></i> No Admin Panel / Database</li>
-        </ul>
-        <div class="p-cta"><a href="#contact" class="btn btn-ghost">Get Started</a></div>
-      </div>
-
-      <div class="pricing-card card featured reveal rd2">
-        <div class="pop-badge">Most Popular</div>
-        <div class="pricing-top">
-          <h3>Business Website</h3>
-          <div class="p-price">₹5,000 – ₹8,000</div>
-          <div class="p-note">One-time · final price depends on scope</div>
-        </div>
-        <ul class="p-feats">
-          <li><i class="fas fa-check yes"></i> 5–10 Page Custom Website</li>
-          <li><i class="fas fa-check yes"></i> Database Integration</li>
-          <li><i class="fas fa-check yes"></i> Multiple Contact Forms</li>
-          <li><i class="fas fa-check yes"></i> Advanced SEO Optimization</li>
-          <li><i class="fas fa-check yes"></i> Free Hosting 6 Months</li>
-          <li><i class="fas fa-check yes"></i> Admin Dashboard</li>
-          <li><i class="fas fa-check yes"></i> 1 Month Support</li>
-          <li><i class="fas fa-check yes"></i> Basic CMS Integration</li>
-        </ul>
-        <div class="p-cta"><a href="#contact" class="btn btn-primary">Get Started</a></div>
-      </div>
-
-      <div class="pricing-card card reveal rd3">
-        <div class="pricing-top">
-          <h3>E-Commerce Website</h3>
-          <div class="p-price">₹10,000 – ₹15,000</div>
-          <div class="p-note">One-time · final price depends on scope</div>
-        </div>
-        <ul class="p-feats">
-          <li><i class="fas fa-check yes"></i> Full E-Commerce Website</li>
-          <li><i class="fas fa-check yes"></i> Product & Inventory Mgmt</li>
-          <li><i class="fas fa-check yes"></i> Payment Gateway</li>
-          <li><i class="fas fa-check yes"></i> User Account System</li>
-          <li><i class="fas fa-check yes"></i> Free Hosting 12 Months</li>
-          <li><i class="fas fa-check yes"></i> 3 Months Support</li>
-        </ul>
-        <div class="p-cta"><a href="#contact" class="btn btn-ghost">Get Started</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ TESTIMONIALS ══════════════════════════════════════════ -->
-<section id="testimonials">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-line"></div>
-      <span class="tag">Client Reviews</span>
-      <h2>What Clients Say</h2>
-      <p>Real reviews from real clients across India. Selected for privacy.</p>
-    </div>
-
-    <div class="testi-shell reveal">
-      <div class="testi-viewport">
-        <div class="testi-track" id="t-track">
-
-          <div class="t-card">
-            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
-            <div class="t-text">"LocalGrowth Studio created an amazing website for my business. The database integration works perfectly and the forms capture all the leads I need. Highly recommended!"</div>
-            <div class="t-author"><div class="t-av">M</div><div><h4>Michael</h4><p>GitHub User</p></div></div>
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hc-title">
+            <div class="hc-dot"></div> Recent Delivery
           </div>
 
-          <div class="t-card">
-            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
-            <div class="t-text">"As a college student, I needed a Python-based Truecaller project for my final year. They delivered excellent code with proper documentation at an affordable price!"</div>
-            <div class="t-author"><div class="t-av">AG</div><div><h4>Angela Garland</h4><p>Repeated Customer</p></div></div>
-          </div>
-
-          <div class="t-card">
-            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
-            <div class="t-text">"I needed a Car Selling Management System in PHP and MySQL. LocalGrowth Studio delivered a complete, well-structured system with clean UI. Ran perfectly on WAMP!"</div>
-            <div class="t-author"><div class="t-av">VP</div><div><h4>Vrund Patel</h4><p>BCA Student</p></div></div>
-          </div>
-
-          <div class="t-card">
-            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
-            <div class="t-text">"A well-structured website project with clean UI and smooth functionality. Ran perfectly on WAMP — easy to manage and deploy. Highly recommended!"</div>
-            <div class="t-author"><div class="t-av">VP</div><div><h4>Vaishnavi Parekh</h4><p>College Student</p></div></div>
-          </div>
-
-          <div class="t-card">
-            <div class="t-top"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span></div>
-            <div class="t-text">"Got a Flower Management System in PHP and MySQL — beautiful clean UI, smooth functionality. Highly recommended for any student project!"</div>
-            <div class="t-author"><div class="t-av">NS</div><div><h4>Nikki Soni</h4><p>College Student</p></div></div>
-          </div>
-
-        </div>
-      </div>
-      <div class="t-controls">
-        <button class="t-btn" id="t-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-        <div class="t-dots" id="t-dots"></div>
-        <button class="t-btn" id="t-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FAQs ══════════════════════════════════════════════════ -->
-<section id="faqs">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-line"></div>
-      <span class="tag">FAQ</span>
-      <h2>Common Questions</h2>
-      <p>Everything you need to know about pricing, delivery, and our process.</p>
-    </div>
-
-    <div class="faq-wrap">
-      <div class="faq-item reveal">
-        <button class="faq-q" type="button">How fast do you deliver? <i class="fas fa-chevron-down faq-chev"></i></button>
-        <div class="faq-a"><p>Basic tasks: 2–3 days. Intermediate: 5–7 days. Advanced: 7–10 days — depends on features and complexity.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" type="button">Do you provide a demo before payment? <i class="fas fa-chevron-down faq-chev"></i></button>
-        <div class="faq-a"><p>Yes — we show you the fully working demo first. Payment happens only after you're completely satisfied with the result.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" type="button">What do I receive after completion? <i class="fas fa-chevron-down faq-chev"></i></button>
-        <div class="faq-a"><p>You get source code, documentation, setup steps / walkthrough video, and guidance to run it on your system or deploy it live.</p></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q" type="button">Can you build in any programming language? <i class="fas fa-chevron-down faq-chev"></i></button>
-        <div class="faq-a"><p>Yes! Custom projects are available in most languages. Share your requirements on WhatsApp and we'll confirm feasibility right away.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CONTACT ════════════════════════════════════════════════ -->
-<section id="contact">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-line"></div>
-      <span class="tag">Get In Touch</span>
-      <h2>Let's Work Together</h2>
-      <p>Ready to start? Reach out on WhatsApp or fill in the form below.</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-left reveal">
-        <h3>Talk to Us</h3>
-        <p>We're here to help with your website or academic project. Reach us through any channel below.</p>
-
-        <div class="cm-item">
-          <div class="cm-ico"><i class="fab fa-whatsapp"></i></div>
-          <div><h4>WhatsApp</h4><p>Aayush — Quick Responses</p></div>
-        </div>
-        <div class="cm-item">
-          <div class="cm-ico"><i class="fab fa-instagram"></i></div>
-          <div><h4>Instagram</h4><p>@thelocalgrowthstudio</p></div>
-        </div>
-        <div class="cm-item">
-          <div class="cm-ico"><i class="fas fa-map-marker-alt"></i></div>
-          <div><h4>Location</h4><p>Anand, Gujarat, India</p></div>
-        </div>
-
-        <div class="c-btns">
-          <a href="https://wa.me/916355938913" class="btn btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
-          <a href="https://instagram.com/thelocalgrowthstudio" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Follow Us</a>
-        </div>
-      </div>
-
-      <div class="c-form-wrap reveal">
-        <h3>Request a Free Quote</h3>
-        <div id="form-status" class="form-status" role="alert"></div>
-        <form id="contactForm" action="https://formspree.io/f/xovpgpnw" method="POST" novalidate>
-          <div class="fg-2">
-            <div class="fg"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="Your name" required /></div>
-            <div class="fg"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required /></div>
-          </div>
-          <div class="fg-2">
-            <div class="fg"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" maxlength="10" pattern="[6-9]{1}[0-9]{9}" placeholder="10-digit number" oninput="this.value=this.value.replace(/[^0-9]/g,'')" required /></div>
-            <div class="fg"><label for="service-type">Service Type</label>
-              <select id="service-type" name="service-type" required>
-                <option value="">Select type</option>
-                <option value="website">Website Design</option>
-                <option value="student-project">Student Project</option>
-                <option value="both">Both</option>
-              </select>
+          <div class="hc-row">
+            <div class="hc-ico"><i class="fas fa-laptop-code"></i></div>
+            <div>
+              <span class="hc-label">Project Type</span>
+              <span class="hc-val">BCA Fourth Year — PHP + MySQL</span>
             </div>
           </div>
-          <div class="fg"><label for="budget">Budget (₹)</label><input type="number" id="budget" name="budget" min="100" placeholder="Your estimated budget" /></div>
-          <div class="fg"><label for="message">Project Details</label><textarea id="message" name="message" rows="4" placeholder="Describe your project requirements..." required></textarea></div>
-          <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Send Message</button>
-        </form>
+
+          <div class="hc-row">
+            <div class="hc-ico gold"><i class="fas fa-clock"></i></div>
+            <div>
+              <span class="hc-label">Delivered In</span>
+              <span class="hc-val">5 Days</span>
+            </div>
+          </div>
+
+          <div class="hc-row">
+            <div class="hc-ico teal"><i class="fas fa-star"></i></div>
+            <div>
+              <span class="hc-label">Client Review</span>
+              <span class="hc-val">⭐⭐⭐⭐⭐ Highly Recommended!</span>
+            </div>
+          </div>
+
+          <div class="hc-badges">
+            <span class="hc-badge"><i class="fas fa-shield-check"></i> Verified Delivery</span>
+            <span class="hc-badge"><i class="fas fa-bolt"></i> Fast Turnaround</span>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- ═══ TRUST BAR ════════════════════════════════════════════ -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item"><i class="fas fa-check-circle"></i> Demo Before Payment</div>
+      <div class="trust-item"><i class="fas fa-shield-alt"></i> 100% Satisfaction</div>
+      <div class="trust-item"><i class="fas fa-bolt"></i> Fast Delivery</div>
+      <div class="trust-item"><i class="fas fa-headset"></i> WhatsApp Support</div>
+      <div class="trust-item"><i class="fas fa-map-marker-alt"></i> Based in Gujarat, India</div>
+    </div>
   </div>
-</section>
 
-<!-- ═══ WHATSAPP FLOAT ════════════════════════════════════════ -->
-<a href="https://wa.me/916355938913" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <div class="wa-pulse"></div>
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- ═══ FEATURES ══════════════════════════════════════════════ -->
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-line"></div>
+        <span class="tag">Why Choose Us</span>
+        <h2>Built for Results</h2>
+        <p>Clean code, great design, and honest communication — every time.</p>
+      </div>
 
-<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="#home" class="logo"><span class="logo-top">LocalGrowth</span><span class="logo-sub">Studio</span></a>
-      <p>Professional websites and student projects from Anand, Gujarat. Quality code. Honest pricing. Demo first.</p>
-      <div class="f-socials">
-        <a href="https://wa.me/916355938913" class="f-soc" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com/thelocalgrowthstudio" class="f-soc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <div class="features-grid">
+        <div class="feature-card card reveal rd1">
+          <div class="f-ico"><i class="fas fa-laptop-code"></i></div>
+          <h3>Custom Web Design</h3>
+          <p>No templates. Every website is built from scratch for your brand and business goals.</p>
+        </div>
+        <div class="feature-card card reveal rd2">
+          <div class="f-ico"><i class="fas fa-database"></i></div>
+          <h3>Database Integration</h3>
+          <p>Full-stack solutions — user accounts, product catalogs, admin panels, booking systems.</p>
+        </div>
+        <div class="feature-card card reveal rd3">
+          <div class="f-ico"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Student Projects</h3>
+          <p>Academic projects in Python, Java, PHP, C/C++, SQL and more at student-friendly prices.</p>
+        </div>
+        <div class="feature-card card reveal rd4">
+          <div class="f-ico"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Mobile Responsive</h3>
+          <p>Pixel-perfect on all screen sizes — phones, tablets, and desktops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ══════════════════════════════════════════════ -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-line"></div>
+        <span class="tag">Our Services</span>
+        <h2>What We Offer</h2>
+        <p>Professional website solutions for businesses of all sizes, built with modern standards.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card card reveal rd1">
+          <div class="s-ico"><i class="fas fa-paint-brush"></i></div>
+          <h3>Custom Website Design</h3>
+          <p>Unique, responsive websites tailored for your business with modern UI/UX that converts visitors into
+            customers.</p>
+        </div>
+        <div class="service-card card reveal rd2">
+          <div class="s-ico"><i class="fas fa-server"></i></div>
+          <h3>Database & Backend</h3>
+          <p>Secure backend solutions for user accounts, product catalogs, booking systems, and dynamic content.</p>
+        </div>
+        <div class="service-card card reveal rd3">
+          <div class="s-ico"><i class="fas fa-envelope-open-text"></i></div>
+          <h3>Lead Forms & CRM</h3>
+          <p>Custom forms that capture leads, send notifications, and integrate seamlessly with your workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ══════════════════════════════════════════ -->
+  <section id="how-it-works">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-line"></div>
+        <span class="tag">Process</span>
+        <h2>Simple. Transparent. Fast.</h2>
+        <p>No hidden fees, no confusion. Just clear steps from requirement to delivery.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card card reveal rd1">
+          <div class="step-num">01</div>
+          <h3>Share Requirements</h3>
+          <p>Tell us your project needs, features, and deadline on WhatsApp. We suggest the best plan.</p>
+        </div>
+        <div class="step-card card reveal rd2">
+          <div class="step-num">02</div>
+          <h3>Get a Live Demo</h3>
+          <p>We build and show you the working demo first. Request changes before final delivery.</p>
+        </div>
+        <div class="step-card card reveal rd3">
+          <div class="step-num">03</div>
+          <h3>Pay After Satisfaction</h3>
+          <p>Payment only after you're 100% satisfied — then we deliver source code, docs, and setup help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STUDENT PROJECTS ══════════════════════════════════════ -->
+  <section id="student-projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-line"></div>
+        <span class="tag tag-gold">Student Friendly</span>
+        <h2>Student Projects</h2>
+        <p>Final-year & academic projects built to your exact requirements. Multiple languages, proper documentation
+          included.</p>
+      </div>
+
+      <div class="custom-note reveal">
+        <i class="fas fa-code"></i>
+        Custom projects available in ANY programming language — just share your requirements!
+      </div>
+
+      <div class="langs-grid reveal">
+        <div class="lang-pill py"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="lang-pill"><i class="fab fa-html5"></i><span>HTML/CSS</span></div>
+        <div class="lang-pill js"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="lang-pill php"><i class="fab fa-php"></i><span>PHP</span></div>
+        <div class="lang-pill"><i class="fas fa-database"></i><span>SQL</span></div>
+        <div class="lang-pill java"><i class="fab fa-java"></i><span>Java</span></div>
+        <div class="lang-pill cpp"><i class="fas fa-copyright"></i><span>C / C++</span></div>
+        <div class="lang-pill react"><i class="fab fa-react"></i><span>React</span></div>
+        <div class="lang-pill node"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+        <div class="lang-pill ejs"><i class="fas fa-code"></i><span>EJS</span></div>
+      </div>
+
+      <div class="proj-grid">
+        <div class="proj-card card reveal rd1">
+          <div class="proj-head">
+            <span class="proj-badge">Tier 1</span>
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.5rem;">Basic Project</h3>
+            <p>Simple coding tasks & scripts</p>
+          </div>
+          <ul class="proj-features">
+            <li><i class="fas fa-check"></i> Small programs & scripts</li>
+            <li><i class="fas fa-check"></i> Basic HTML/CSS pages</li>
+            <li><i class="fas fa-check"></i> Simple calculations</li>
+            <li><i class="fas fa-check"></i> Basic form validation</li>
+            <li><i class="fas fa-check"></i> 2–3 days delivery</li>
+          </ul>
+          <div class="proj-cta"><a href="#contact" class="btn btn-ghost">Order Now</a></div>
+        </div>
+
+        <div class="proj-card card reveal rd2">
+          <div class="proj-head">
+            <span class="proj-badge">Tier 2</span>
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.5rem;">Intermediate Project</h3>
+            <p>Medium complexity dynamic apps</p>
+          </div>
+          <ul class="proj-features">
+            <li><i class="fas fa-check"></i> Database connectivity</li>
+            <li><i class="fas fa-check"></i> Multi-page websites</li>
+            <li><i class="fas fa-check"></i> CRUD operations</li>
+            <li><i class="fas fa-check"></i> API integration</li>
+            <li><i class="fas fa-check"></i> 5–7 days delivery</li>
+          </ul>
+          <div class="proj-cta"><a href="#contact" class="btn btn-primary">Order Now</a></div>
+        </div>
+
+        <div class="proj-card card reveal rd3">
+          <div class="proj-head">
+            <span class="proj-badge">Tier 3</span>
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.5rem;">Advanced Project</h3>
+            <p>Complex full-stack applications</p>
+          </div>
+          <ul class="proj-features">
+            <li><i class="fas fa-check"></i> Full-stack applications</li>
+            <li><i class="fas fa-check"></i> User authentication</li>
+            <li><i class="fas fa-check"></i> Complex algorithms</li>
+            <li><i class="fas fa-check"></i> Documentation included</li>
+            <li><i class="fas fa-check"></i> 7–10 days delivery</li>
+          </ul>
+          <div class="proj-cta"><a href="#contact" class="btn btn-gold">Order Now</a></div>
+        </div>
+      </div>
+
+      <div class="pay-pill reveal">
+        <h4><i class="fas fa-handshake" style="color:var(--gold-2);margin-right:.5rem;"></i> Satisfaction Guaranteed
+        </h4>
+        <p>We know how important your project is.</p>
+        <p class="big">See the fully working demo first — complete satisfaction before final delivery. ✅</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ════════════════════════════════════════════════ -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-line"></div>
+        <span class="tag">Website Packages</span>
+        <h2>Our Packages</h2>
+        <p>No hidden charges. Let's discuss your requirements to get started.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card card reveal rd1">
+          <div class="pricing-top">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Basic Website</h3>
+            <div class="p-note">Great for portfolios & small businesses.</div>
+          </div>
+          <ul class="p-feats">
+            <li><i class="fas fa-check yes"></i> 3–5 Page Custom Website</li>
+            <li><i class="fas fa-check yes"></i> Mobile Responsive</li>
+            <li><i class="fas fa-check yes"></i> Contact Form</li>
+            <li><i class="fas fa-check yes"></i> Basic SEO Setup</li>
+            <li><i class="fas fa-check yes"></i> Free Hosting 3 Months</li>
+            <li class="dim"><i class="fas fa-times no"></i> No Admin Panel / Database</li>
+          </ul>
+          <div class="p-cta"><a href="#contact" class="btn btn-ghost">Get Started</a></div>
+        </div>
+
+        <div class="pricing-card card featured reveal rd2">
+          <div class="pop-badge">Most Popular</div>
+          <div class="pricing-top">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Business Website</h3>
+            <div class="p-note">For established setups needing database logic.</div>
+          </div>
+          <ul class="p-feats">
+            <li><i class="fas fa-check yes"></i> 5–10 Page Custom Website</li>
+            <li><i class="fas fa-check yes"></i> Database Integration</li>
+            <li><i class="fas fa-check yes"></i> Multiple Contact Forms</li>
+            <li><i class="fas fa-check yes"></i> Advanced SEO Optimization</li>
+            <li><i class="fas fa-check yes"></i> Free Hosting 6 Months</li>
+            <li><i class="fas fa-check yes"></i> Admin Dashboard</li>
+            <li><i class="fas fa-check yes"></i> 1 Month Support</li>
+            <li><i class="fas fa-check yes"></i> Basic CMS Integration</li>
+          </ul>
+          <div class="p-cta"><a href="#contact" class="btn btn-primary">Get Started</a></div>
+        </div>
+
+        <div class="pricing-card card reveal rd3">
+          <div class="pricing-top">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">E-Commerce Website</h3>
+            <div class="p-note">Complete stores with payment & inventory.</div>
+          </div>
+          <ul class="p-feats">
+            <li><i class="fas fa-check yes"></i> Full E-Commerce Website</li>
+            <li><i class="fas fa-check yes"></i> Product & Inventory Mgmt</li>
+            <li><i class="fas fa-check yes"></i> Payment Gateway</li>
+            <li><i class="fas fa-check yes"></i> User Account System</li>
+            <li><i class="fas fa-check yes"></i> Free Hosting 12 Months</li>
+            <li><i class="fas fa-check yes"></i> 3 Months Support</li>
+          </ul>
+          <div class="p-cta"><a href="#contact" class="btn btn-ghost">Get Started</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ══════════════════════════════════════════ -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-line"></div>
+        <span class="tag">Client Reviews</span>
+        <h2>What Clients Say</h2>
+        <p>Real reviews from real clients across India. Selected for privacy.</p>
+      </div>
+
+      <div class="testi-shell reveal">
+        <div class="testi-viewport">
+          <div class="testi-track" id="t-track">
+
+            <div class="t-card">
+              <div class="t-top">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i
+                    class="fas fa-circle-check"></i> Verified</span>
+              </div>
+              <div class="t-text">"LocalGrowth Studio created an amazing website for my business. The database
+                integration works perfectly and the forms capture all the leads I need. Highly recommended!"</div>
+              <div class="t-author">
+                <div class="t-av">M</div>
+                <div>
+                  <h4>Michael</h4>
+                  <p>GitHub User</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-top">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i
+                    class="fas fa-circle-check"></i> Verified</span>
+              </div>
+              <div class="t-text">"As a college student, I needed a Python-based Truecaller project for my final year.
+                They delivered excellent code with proper documentation at an affordable price!"</div>
+              <div class="t-author">
+                <div class="t-av">AG</div>
+                <div>
+                  <h4>Angela Garland</h4>
+                  <p>Repeated Customer</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-top">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i
+                    class="fas fa-circle-check"></i> Verified</span>
+              </div>
+              <div class="t-text">"I needed a Car Selling Management System in PHP and MySQL. LocalGrowth Studio
+                delivered a complete, well-structured system with clean UI. Ran perfectly on WAMP!"</div>
+              <div class="t-author">
+                <div class="t-av">VP</div>
+                <div>
+                  <h4>Vrund Patel</h4>
+                  <p>BCA Student</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-top">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i
+                    class="fas fa-circle-check"></i> Verified</span>
+              </div>
+              <div class="t-text">"A well-structured website project with clean UI and smooth functionality. Ran
+                perfectly on WAMP — easy to manage and deploy. Highly recommended!"</div>
+              <div class="t-author">
+                <div class="t-av">VP</div>
+                <div>
+                  <h4>Vaishnavi Parekh</h4>
+                  <p>College Student</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-card">
+              <div class="t-top">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="verified-badge"><i
+                    class="fas fa-circle-check"></i> Verified</span>
+              </div>
+              <div class="t-text">"Got a Flower Management System in PHP and MySQL — beautiful clean UI, smooth
+                functionality. Highly recommended for any student project!"</div>
+              <div class="t-author">
+                <div class="t-av">NS</div>
+                <div>
+                  <h4>Nikki Soni</h4>
+                  <p>College Student</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="t-controls">
+          <button class="t-btn" id="t-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+          <div class="t-dots" id="t-dots"></div>
+          <button class="t-btn" id="t-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQs ══════════════════════════════════════════════════ -->
+  <section id="faqs">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-line"></div>
+        <span class="tag">FAQ</span>
+        <h2>Common Questions</h2>
+        <p>Everything you need to know about pricing, delivery, and our process.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-item reveal">
+          <button class="faq-q" type="button">How fast do you deliver? <i
+              class="fas fa-chevron-down faq-chev"></i></button>
+          <div class="faq-a">
+            <p>Basic tasks: 2–3 days. Intermediate: 5–7 days. Advanced: 7–10 days — depends on features and complexity.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" type="button">Do you provide a demo before payment? <i
+              class="fas fa-chevron-down faq-chev"></i></button>
+          <div class="faq-a">
+            <p>Yes — we show you the fully working demo first. Payment happens only after you're completely satisfied
+              with the result.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" type="button">What do I receive after completion? <i
+              class="fas fa-chevron-down faq-chev"></i></button>
+          <div class="faq-a">
+            <p>You get source code, documentation, setup steps / walkthrough video, and guidance to run it on your
+              system or deploy it live.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" type="button">Can you build in any programming language? <i
+              class="fas fa-chevron-down faq-chev"></i></button>
+          <div class="faq-a">
+            <p>Yes! Custom projects are available in most languages. Share your requirements on WhatsApp and we'll
+              confirm feasibility right away.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ════════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-line"></div>
+        <span class="tag">Get In Touch</span>
+        <h2>Let's Work Together</h2>
+        <p>Ready to start? Reach out on WhatsApp or fill in the form below.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <h3>Talk to Us</h3>
+          <p>We're here to help with your website or academic project. Reach us through any channel below.</p>
+
+          <div class="cm-item">
+            <div class="cm-ico"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>Aayush — Quick Responses</p>
+            </div>
+          </div>
+          <div class="cm-item">
+            <div class="cm-ico"><i class="fab fa-instagram"></i></div>
+            <div>
+              <h4>Instagram</h4>
+              <p>@thelocalgrowthstudio</p>
+            </div>
+          </div>
+          <div class="cm-item">
+            <div class="cm-ico"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>Anand, Gujarat, India</p>
+            </div>
+          </div>
+
+          <div class="c-btns">
+            <a href="https://wa.me/916355938913" class="btn btn-wa" target="_blank" rel="noopener"><i
+                class="fab fa-whatsapp"></i> WhatsApp Now</a>
+            <a href="https://instagram.com/thelocalgrowthstudio" class="btn btn-ghost" target="_blank" rel="noopener"><i
+                class="fab fa-instagram"></i> Follow Us</a>
+          </div>
+        </div>
+
+        <div class="c-form-wrap reveal">
+          <h3>Request a Free Quote</h3>
+          <div id="form-status" class="form-status" role="alert"></div>
+          <form id="contactForm" action="https://formspree.io/f/xovpgpnw" method="POST" novalidate>
+            <div class="fg-2">
+              <div class="fg"><label for="name">Full Name</label><input type="text" id="name" name="name"
+                  placeholder="Your name" required /></div>
+              <div class="fg"><label for="email">Email</label><input type="email" id="email" name="email"
+                  placeholder="your@email.com" required /></div>
+            </div>
+            <div class="fg-2">
+              <div class="fg"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"
+                  maxlength="10" pattern="[6-9]{1}[0-9]{9}" placeholder="10-digit number"
+                  oninput="this.value=this.value.replace(/[^0-9]/g,'')" required /></div>
+              <div class="fg"><label for="service-type">Service Type</label>
+                <select id="service-type" name="service-type" required>
+                  <option value="">Select type</option>
+                  <option value="website">Website Design</option>
+                  <option value="student-project">Student Project</option>
+                  <option value="both">Both</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg"><label for="budget">Budget (₹)</label><input type="number" id="budget" name="budget"
+                min="100" placeholder="Your estimated budget" /></div>
+            <div class="fg"><label for="message">Project Details</label><textarea id="message" name="message" rows="4"
+                placeholder="Describe your project requirements..." required></textarea></div>
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Send
+              Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHATSAPP FLOAT ════════════════════════════════════════ -->
+  <a href="https://wa.me/916355938913" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <div class="wa-pulse"></div>
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo"><span class="logo-top">LocalGrowth</span><span class="logo-sub">Studio</span></a>
+        <p>Professional websites and student projects from Anand, Gujarat. Quality code. Honest pricing. Demo first.</p>
+        <div class="f-socials">
+          <a href="https://wa.me/916355938913" class="f-soc" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/thelocalgrowthstudio" class="f-soc" target="_blank" rel="noopener"
+            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#student-projects">Student Projects</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Custom Website Design</a></li>
+          <li><a href="#services">Database Integration</a></li>
+          <li><a href="#student-projects">Python Projects</a></li>
+          <li><a href="#student-projects">PHP + MySQL Projects</a></li>
+          <li><a href="#student-projects">Java / C++ Projects</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="footer-col">
-      <h5>Navigation</h5>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#student-projects">Student Projects</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>© 2025 LocalGrowth Studio. All rights reserved.</p>
+      <p>Anand, Gujarat, India · Serving clients before this site went live.</p>
     </div>
+  </footer>
 
-    <div class="footer-col">
-      <h5>Services</h5>
-      <ul>
-        <li><a href="#services">Custom Website Design</a></li>
-        <li><a href="#services">Database Integration</a></li>
-        <li><a href="#student-projects">Python Projects</a></li>
-        <li><a href="#student-projects">PHP + MySQL Projects</a></li>
-        <li><a href="#student-projects">Java / C++ Projects</a></li>
-      </ul>
-    </div>
-  </div>
+  <!-- ═══ SCRIPTS ════════════════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
 
-  <div class="footer-bottom">
-    <p>© 2025 LocalGrowth Studio. All rights reserved.</p>
-    <p>Anand, Gujarat, India · Serving clients before this site went live.</p>
-  </div>
-</footer>
+      /* ── SUPABASE AUTH ── */
+      const SUPABASE_URL = "https://mtnuxxrqtfrezrbypqzr.supabase.co";
+      const SUPABASE_ANON_KEY = "sb_publishable_DmlEgucOtfmUfu5FBeOUHw_mReGFpR1";
+      const sb = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-<!-- ═══ SCRIPTS ════════════════════════════════════════════════ -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+      const logoutLi = document.getElementById('logout-li');
+      const logoutBtn = document.getElementById('logout-btn');
 
-  /* ── SUPABASE AUTH ── */
-  const SUPABASE_URL = "https://mtnuxxrqtfrezrbypqzr.supabase.co";
-  const SUPABASE_ANON_KEY = "sb_publishable_DmlEgucOtfmUfu5FBeOUHw_mReGFpR1";
-  const sb = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-  const logoutLi  = document.getElementById('logout-li');
-  const logoutBtn = document.getElementById('logout-btn');
-
-  async function requireAuth() {
-    if (!sb) return;
-    try {
-      const { data: { session } } = await sb.auth.getSession();
-      if (!session) { localStorage.removeItem('isLoggedIn'); window.location.href = 'index.html'; return; }
-      if (logoutLi) logoutLi.style.display = 'block';
-      localStorage.setItem('isLoggedIn', 'true');
-    } catch (_) {}
-  }
-
-  async function doLogout(e) {
-    e.preventDefault();
-    try { if (sb) await sb.auth.signOut(); } catch (_) {}
-    localStorage.removeItem('isLoggedIn');
-    window.location.href = 'index.html';
-  }
-
-  requireAuth();
-  logoutBtn?.addEventListener('click', doLogout);
-
-  /* ── HEADER SCROLL ── */
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
-
-  /* ── MOBILE NAV ── */
-  const menuBtn  = document.getElementById('menu-btn');
-  const menuIcon = document.getElementById('menu-icon');
-  const navLinks = document.getElementById('nav-links');
-
-  menuBtn?.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-      navLinks.classList.remove('open');
-      menuIcon.className = 'fas fa-bars';
-    }
-  });
-
-  /* ── SMOOTH SCROLL ── */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const id = a.getAttribute('href');
-      if (!id || id === '#') return;
-      const el = document.querySelector(id);
-      if (!el) return;
-      e.preventDefault();
-      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
-      navLinks.classList.remove('open');
-      menuIcon.className = 'fas fa-bars';
-    });
-  });
-
-  /* ── ACTIVE NAV ── */
-  const navA = document.querySelectorAll('.nav-link');
-  const sids = ['home','services','student-projects','pricing','testimonials','contact'];
-  const sEls = sids.map(id => document.getElementById(id)).filter(Boolean);
-
-  new IntersectionObserver(entries => {
-    const vis = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (vis?.target?.id) navA.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${vis.target.id}`));
-  }, { threshold: [0.25, 0.5], rootMargin: '-20% 0px -55% 0px' }).observe && sEls.forEach(el => {
-    new IntersectionObserver(entries => {
-      const vis = entries.filter(e => e.isIntersecting)[0];
-      if (vis) navA.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${el.id}`));
-    }, { threshold: 0.5 }).observe(el);
-  });
-
-  /* ── SCROLL REVEAL ── */
-  const revObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
-
-  /* ── TESTIMONIAL SLIDER ── */
-  const track   = document.getElementById('t-track');
-  const prevBtn = document.getElementById('t-prev');
-  const nextBtn = document.getElementById('t-next');
-  const dotsEl  = document.getElementById('t-dots');
-
-  let idx = 0, timer = null;
-
-  const cnt    = () => track ? track.children.length : 0;
-  const gapPx  = () => parseFloat(getComputedStyle(track).columnGap || '0') || 0;
-  const slideW = () => track?.children?.[0] ? track.children[0].getBoundingClientRect().width + gapPx() : 0;
-
-  const buildDots = () => {
-    if (!dotsEl) return;
-    dotsEl.innerHTML = '';
-    for (let i = 0; i < cnt(); i++) {
-      const b = document.createElement('button');
-      b.className = 'dot-btn' + (i === idx ? ' active' : '');
-      b.type = 'button'; b.setAttribute('aria-label', `Slide ${i+1}`);
-      b.addEventListener('click', () => { goTo(i); restart(); });
-      dotsEl.appendChild(b);
-    }
-  };
-
-  const updateDots = () => [...(dotsEl?.children || [])].forEach((d,i) => d.classList.toggle('active', i === idx));
-
-  const goTo = (i) => {
-    if (!track) return;
-    idx = (i + cnt()) % cnt();
-    track.style.transform = `translateX(${-idx * slideW()}px)`;
-    updateDots();
-  };
-
-  const start   = () => { if (!timer) timer = setInterval(() => goTo(idx + 1), 4200); };
-  const stop    = () => { clearInterval(timer); timer = null; };
-  const restart = () => { stop(); start(); };
-
-  if (track) {
-    buildDots(); goTo(0); start();
-    prevBtn?.addEventListener('click', () => { goTo(idx - 1); restart(); });
-    nextBtn?.addEventListener('click', () => { goTo(idx + 1); restart(); });
-    const shell = track.closest('.testi-shell');
-    shell?.addEventListener('mouseenter', stop);
-    shell?.addEventListener('mouseleave', start);
-    window.addEventListener('resize', () => goTo(idx));
-  }
-
-  /* ── FAQ ACCORDION ── */
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-q')?.addEventListener('click', () => {
-      document.querySelectorAll('.faq-item.open').forEach(o => { if (o !== item) o.classList.remove('open'); });
-      item.classList.toggle('open');
-    });
-  });
-
-  /* ── CONTACT FORM ── */
-  const cForm = document.getElementById('contactForm');
-  if (cForm) {
-    cForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const statusDiv = document.getElementById('form-status');
-      const submitBtn = cForm.querySelector('button[type="submit"]');
-      if (!statusDiv || !submitBtn) return;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
-      submitBtn.disabled = true;
-      try {
-        const res = await fetch(cForm.action, { method: 'POST', body: new FormData(cForm), headers: { 'Accept': 'application/json' } });
-        if (res.ok) {
-          statusDiv.textContent = "✅ Message sent! We'll get back to you soon.";
-          statusDiv.className = 'form-status success'; cForm.reset();
-        } else throw new Error();
-      } catch {
-        statusDiv.textContent = '❌ Something went wrong. Please try WhatsApp instead.';
-        statusDiv.className = 'form-status error';
-      } finally {
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-        submitBtn.disabled = false;
-        statusDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      async function requireAuth() {
+        if (!sb) return;
+        try {
+          const { data: { session } } = await sb.auth.getSession();
+          if (!session) { localStorage.removeItem('isLoggedIn'); window.location.href = 'index.html'; return; }
+          if (logoutLi) logoutLi.style.display = 'block';
+          localStorage.setItem('isLoggedIn', 'true');
+        } catch (_) { }
       }
-    });
-  }
 
-}); // end DOMContentLoaded
-</script>
+      async function doLogout(e) {
+        e.preventDefault();
+        try { if (sb) await sb.auth.signOut(); } catch (_) { }
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = 'index.html';
+      }
+
+      requireAuth();
+      logoutBtn?.addEventListener('click', doLogout);
+
+      /* ── HEADER SCROLL ── */
+      const header = document.getElementById('site-header');
+      window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+
+      /* ── MOBILE NAV ── */
+      const menuBtn = document.getElementById('menu-btn');
+      const menuIcon = document.getElementById('menu-icon');
+      const navLinks = document.getElementById('nav-links');
+
+      menuBtn?.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+          navLinks.classList.remove('open');
+          menuIcon.className = 'fas fa-bars';
+        }
+      });
+
+      /* ── SMOOTH SCROLL ── */
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const id = a.getAttribute('href');
+          if (!id || id === '#') return;
+          const el = document.querySelector(id);
+          if (!el) return;
+          e.preventDefault();
+          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+          navLinks.classList.remove('open');
+          menuIcon.className = 'fas fa-bars';
+        });
+      });
+
+      /* ── ACTIVE NAV ── */
+      const navA = document.querySelectorAll('.nav-link');
+      const sids = ['home', 'services', 'student-projects', 'pricing', 'testimonials', 'contact'];
+      const sEls = sids.map(id => document.getElementById(id)).filter(Boolean);
+
+      const observer = new IntersectionObserver(entries => {
+        const vis = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (vis?.target?.id) navA.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${vis.target.id}`));
+      }, { threshold: [0.25, 0.5], rootMargin: '-20% 0px -55% 0px' });
+
+      sEls.forEach(el => observer.observe(el));
+
+      /* ── SCROLL REVEAL ── */
+      const revObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+      /* ── TESTIMONIAL SLIDER ── */
+      const track = document.getElementById('t-track');
+      const prevBtn = document.getElementById('t-prev');
+      const nextBtn = document.getElementById('t-next');
+      const dotsEl = document.getElementById('t-dots');
+
+      let idx = 0, timer = null;
+
+      const cnt = () => track ? track.children.length : 0;
+      const gapPx = () => parseFloat(getComputedStyle(track).columnGap || '0') || 0;
+      const slideW = () => track?.children?.[0] ? track.children[0].getBoundingClientRect().width + gapPx() : 0;
+
+      const buildDots = () => {
+        if (!dotsEl) return;
+        dotsEl.innerHTML = '';
+        for (let i = 0; i < cnt(); i++) {
+          const b = document.createElement('button');
+          b.className = 'dot-btn' + (i === idx ? ' active' : '');
+          b.type = 'button'; b.setAttribute('aria-label', `Slide ${i + 1}`);
+          b.addEventListener('click', () => { goTo(i); restart(); });
+          dotsEl.appendChild(b);
+        }
+      };
+
+      const updateDots = () => [...(dotsEl?.children || [])].forEach((d, i) => d.classList.toggle('active', i === idx));
+
+      const goTo = (i) => {
+        if (!track) return;
+        idx = (i + cnt()) % cnt();
+        track.style.transform = `translateX(${-idx * slideW()}px)`;
+        updateDots();
+      };
+
+      const start = () => { if (!timer) timer = setInterval(() => goTo(idx + 1), 4200); };
+      const stop = () => { clearInterval(timer); timer = null; };
+      const restart = () => { stop(); start(); };
+
+      if (track) {
+        buildDots(); goTo(0); start();
+        prevBtn?.addEventListener('click', () => { goTo(idx - 1); restart(); });
+        nextBtn?.addEventListener('click', () => { goTo(idx + 1); restart(); });
+        const shell = track.closest('.testi-shell');
+        shell?.addEventListener('mouseenter', stop);
+        shell?.addEventListener('mouseleave', start);
+        window.addEventListener('resize', () => goTo(idx));
+      }
+
+      /* ── FAQ ACCORDION ── */
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-q')?.addEventListener('click', () => {
+          document.querySelectorAll('.faq-item.open').forEach(o => { if (o !== item) o.classList.remove('open'); });
+          item.classList.toggle('open');
+        });
+      });
+
+      /* ── CONTACT FORM ── */
+      const cForm = document.getElementById('contactForm');
+      if (cForm) {
+        cForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const statusDiv = document.getElementById('form-status');
+          const submitBtn = cForm.querySelector('button[type="submit"]');
+          if (!statusDiv || !submitBtn) return;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+          submitBtn.disabled = true;
+          try {
+            const res = await fetch(cForm.action, { method: 'POST', body: new FormData(cForm), headers: { 'Accept': 'application/json' } });
+            if (res.ok) {
+              statusDiv.textContent = "✅ Message sent! We'll get back to you soon.";
+              statusDiv.className = 'form-status success'; cForm.reset();
+            } else throw new Error();
+          } catch {
+            statusDiv.textContent = '❌ Something went wrong. Please try WhatsApp instead.';
+            statusDiv.className = 'form-status error';
+          } finally {
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            submitBtn.disabled = false;
+            statusDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+      }
+
+    }); // end DOMContentLoaded
+  </script>
 </body>
+
 </html>
